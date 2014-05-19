@@ -13,7 +13,7 @@
 	<packaging>pom</packaging>
 	<name>Gaia :: Crawlers</name>
 	<modules>
-		<module>aperture-crawler</module>
+<!--		<module>aperture-crawler</module> -->
 		<module>behemoth-crawler</module>
 		<module>dih-crawler</module>
 <!-- 		<module>external-crawler</module> -->

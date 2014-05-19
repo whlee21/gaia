@@ -26,8 +26,8 @@
 		<module>gaia-search</module>
 		<module>gaia-behemoth</module>
 		<module>gaia-crawlers</module>
-		<module>gaia-hadoop</module>
-		<module>gaia-bigdata</module>
+		<!--module>gaia-hadoop</module-->
+		<!--module>gaia-bigdata</module-->
 		<module>gaia-connector</module>
 		<module>gaia-curator-examples</module>
 		<!-- <module>jetty-jersey-guice-hello</module> -->
