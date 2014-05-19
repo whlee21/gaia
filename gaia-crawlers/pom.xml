@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>gaia</groupId>
+		<artifactId>gaia</artifactId>
+		<version>0.1</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>gaia</groupId>
+	<artifactId>gaia-crawlers</artifactId>
+	<packaging>pom</packaging>
+	<name>Gaia :: Crawlers</name>
+	<modules>
+		<module>aperture-crawler</module>
+		<module>behemoth-crawler</module>
+		<module>dih-crawler</module>
+<!-- 		<module>external-crawler</module> -->
+		<module>fs-crawler</module>
+		<module>gaialogs-crawler</module>
+<!-- 		<module>gcm-crawler</module> -->
+<!-- 		<module>mongodb-crawler</module> -->
+		<module>solrxml-crawler</module>
+		<module>twitter-crawler</module>
+	</modules>
+</project>

@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<config>
+  
+  <!--
+    Controls what version of Lucene various components of Solr adhere to. Generally, you want
+    to use the latest version to get all bug fixes and improvements. It is highly recommended 
+    that you fully re-index after changing this setting as it can affect both how text is indexed
+    and queried.
+  -->
+  <luceneMatchVersion>LUCENE_44</luceneMatchVersion>
+
+  <!-- lib directives can be used to instruct Solr to load an Jars identified
+       and use them to resolve any "plugins" specified in your solrconfig.xml or
+       schema.xml (ie: Analyzers, Request Handlers, etc...).
+
+       All directories and paths are resolved relative to the instanceDir.
+
+       If a "./lib" directory exists in your instanceDir, all files found in it
+       are included as if you had used the following syntax...
+       
+              <lib dir="./lib" />
+    -->
+  <!-- A dir option by itself adds any files found in the directory to the
+       classpath, this is useful for including all jars in a directory.
+    -->
+  <lib dir="../../contrib/extraction/lib" />
+  <!-- When a regex is specified in addition to a directory, only the files in that
+       directory which completely match the regex (anchored on both ends)
+       will be included.
+    -->
+  <lib dir="../../dist/" regex="apache-solr-cell-\d.*\.jar" />
+  <lib dir="../../dist/" regex="apache-solr-clustering-\d.*\.jar" />
+  <!-- If a dir option (with or without a regex) is used and nothing is found
+       that matches, it will be ignored
+    -->
+  <lib dir="../../contrib/clustering/lib/downloads/" />
+  <lib dir="../../contrib/clustering/lib/" />
+  <lib dir="/total/crap/dir/ignored" /> 
+  <!-- an exact path can be used to specify a specific file.  This will cause
+       a serious error to be logged if it can't be loaded.
+  <lib path="../a-jar-that-does-not-exist.jar" /> 
+  -->
+
+  <indexConfig>
+    <!-- Values here affect all index writers and act as a default unless overridden. -->
+    <useCompoundFile>false</useCompoundFile>
+    <mergeFactor>10</mergeFactor>
+    <ramBufferSizeMB>64</ramBufferSizeMB>
+    <maxMergeDocs>2147483647</maxMergeDocs>
+    <maxFieldLength>10000</maxFieldLength>
+    <writeLockTimeout>1000</writeLockTimeout>
+    <commitLockTimeout>10000</commitLockTimeout>
+    <!--
+      This option specifies which Lucene LockFactory implementation to use.
+      
+      single = SingleInstanceLockFactory - suggested for a read-only index
+               or when there is no possibility of another process trying
+               to modify the index.
+      native = NativeFSLockFactory  - uses OS native file locking.
+               Do not use when multiple solr webapps in the same JVM are
+               attempting to share a single index.
+      simple = SimpleFSLockFactory  - uses a plain file for locking
+
+      (For backwards compatibility with Solr 1.2, 'simple' is the default
+       if not specified.)
+
+      More details on the nuances of each LockFactory...
+      http://wiki.apache.org/lucene-java/AvailableLockFactories
+    -->
+    <lockType>native</lockType>
+    <!-- If true, unlock any held write or commit locks on startup.
+         This defeats the locking mechanism that allows multiple
+         processes to safely access a lucene index, and should be
+         used with care.
+         This is not needed if lock type is 'none' or 'single'
+     -->
+    <unlockOnStartup>false</unlockOnStartup>
+    <deletionPolicy class="gaia.solr.click.ClickDeletionPolicy"/>
+  </indexConfig>
+
+  <jmx/>
+
+  <!-- the default high-performance update handler -->
+  <updateHandler class="solr.DirectUpdateHandler2">
+
+    <!-- A prefix of "solr." for class names is an alias that
+         causes solr to search appropriate packages, including
+         org.apache.solr.(search|update|request|core|analysis)
+     -->
+
+    <!-- Limit the number of deletions Solr will buffer during doc updating.
+
+        Setting this lower can help bound memory use during indexing.
+    -->
+    <maxPendingDeletes>100000</maxPendingDeletes>
+
+    <!-- Perform a <commit/> automatically under certain conditions:
+
+         maxDocs - number of updates since last commit is greater than this
+         maxTime - oldest uncommited update (in ms) is this long ago
+
+    -->
+    <autoCommit>
+       <maxTime>15000</maxTime> 
+       <openSearcher>false</openSearcher> 
+    </autoCommit>
+    <!-- The RunExecutableListener executes an external command.
+         exe - the name of the executable to run
+         dir - dir to use as the current working directory. default="."
+         wait - the calling thread waits until the executable returns. default="true"
+         args - the arguments to pass to the program.  default=nothing
+         env - environment variables to set.  default=nothing
+      -->
+    <!-- A postCommit event is fired after every commit or optimize command
+    <listener event="postCommit" class="solr.RunExecutableListener">
+      <str name="exe">solr/bin/snapshooter</str>
+      <str name="dir">.</str>
+      <bool name="wait">true</bool>
+      <arr name="args"> <str>arg1</str> <str>arg2</str> </arr>
+      <arr name="env"> <str>MYVAR=val1</str> </arr>
+    </listener>
+    -->
+    <!-- A postOptimize event is fired only after every optimize command, useful
+         in conjunction with index distribution to only distribute optimized indicies
+    <listener event="postOptimize" class="solr.RunExecutableListener">
+      <str name="exe">snapshooter</str>
+      <str name="dir">solr/bin</str>
+      <bool name="wait">true</bool>
+    </listener>
+    -->
+
+	    <!-- Enables a transaction log, currently used for real-time get.
+	         "dir" - the target directory for transaction logs, defaults to the
+	            solr data directory.  --> 
+	    <updateLog>
+	      <str name="dir">${solr.data.dir:}</str>
+	    </updateLog>
+  </updateHandler>
+
+  <directoryFactory name="DirectoryFactory" class="${solr.directoryFactory:solr.StandardDirectoryFactory}"/>
+
+  <!-- Enable this component if you want to use the CLICK framework for affecting the scoring
+       based on query log statistics. Please see the documentation for more information on this
+       functionality. NOTE: you also MUST declare additional fields in your schema.xml - please
+       see the commented-out section in the schema.xml. -->
+  <indexReaderFactory name="IndexReaderFactory" class="gaia.solr.click.ClickIndexReaderFactory">
+      <str name="docIdField">id</str>
+      <str name="boostData">click-data</str>
+      <str name="boostField">click</str>
+      <bool name="enabled">false</bool>
+  </indexReaderFactory>
+
+
+  <query>
+    <!-- Maximum number of clauses in a boolean query... can affect
+        range or prefix queries that expand to big boolean
+        queries.  An exception is thrown if exceeded.  -->
+    <maxBooleanClauses>1024</maxBooleanClauses>
+
+
+    <!-- Cache used by SolrIndexSearcher for filters (DocSets),
+    unordered sets of *all* documents that match a query.
+    When a new searcher is opened, its caches may be prepopulated
+    or "autowarmed" using data from caches in the old searcher.
+    autowarmCount is the number of items to prepopulate.  For LRUCache,
+    the autowarmed items will be the most recently accessed items.
+  Parameters:
+    class - the SolrCache implementation (currently only LRUCache)
+    size - the maximum number of entries in the cache
+    initialSize - the initial capacity (number of entries) of
+      the cache.  (seel java.util.HashMap)
+    autowarmCount - the number of entries to prepopulate from
+      and old cache.
+    -->
+    <filterCache autowarmCount="256" class="solr.LRUCache" initialSize="512" size="512"/>
+
+    <!-- queryResultCache caches results of searches - ordered lists of
+document ids (DocList) based on a query, a sort, and the range
+of documents requested.  -->
+    <queryResultCache autowarmCount="256" class="solr.LRUCache" initialSize="512" size="512"/>
+
+    <!-- documentCache caches Lucene Document objects (the stored fields for each document).
+Since Lucene internal document ids are transient, this cache will not be autowarmed.  -->
+    <documentCache autowarmCount="0" class="solr.LRUCache" initialSize="512" size="512"/>
+
+    <!-- If true, stored fields that are not requested will be loaded lazily.
+
+    This can result in a significant speed improvement if the usual case is to
+    not load all stored fields, especially if the skipped fields are large compressed
+    text fields.
+    -->
+    <enableLazyFieldLoading>true</enableLazyFieldLoading>
+
+    <!-- Example of a generic cache.  These caches may be accessed by name
+         through SolrIndexSearcher.getCache(),cacheLookup(), and cacheInsert().
+         The purpose is to enable easy caching of user/application level data.
+         The regenerator argument should be specified as an implementation
+         of solr.search.CacheRegenerator if autowarming is desired.  -->
+    <!--
+    <cache name="myUserCache"
+      class="solr.LRUCache"
+      size="4096"
+      initialSize="1024"
+      autowarmCount="1024"
+      regenerator="org.mycompany.mypackage.MyRegenerator"
+      />
+    -->
+
+   <!-- An optimization that attempts to use a filter to satisfy a search.
+         If the requested sort does not include score, then the filterCache
+         will be checked for a filter matching the query. If found, the filter
+         will be used as the source of document ids, and then the sort will be
+         applied to that.
+    <useFilterForSortedQuery>true</useFilterForSortedQuery>
+   -->
+
+    <!-- An optimization for use with the queryResultCache.  When a search
+is requested, a superset of the requested number of document ids
+are collected.  For example, if a search for a particular query
+requests matching documents 10 through 19, and queryWindowSize is 50,
+then documents 0 through 49 will be collected and cached.  Any further
+requests in that range can be satisfied via the cache.  -->
+    <queryResultWindowSize>50</queryResultWindowSize>
+
+    <!-- Maximum number of documents to cache for any entry in the
+   queryResultCache. -->
+    <queryResultMaxDocsCached>200</queryResultMaxDocsCached>
+
+    <!-- This entry enables an int hash representation for filters (DocSets)
+         when the number of items in the set is less than maxSize.  For smaller
+         sets, this representation is more memory efficient, more efficient to
+         iterate over, and faster to take intersections.  -->
+    <HashDocSet loadFactor="0.75" maxSize="3000"/>
+
+    <!-- a newSearcher event is fired whenever a new searcher is being prepared
+         and there is a current searcher handling requests (aka registered). -->
+    <!-- QuerySenderListener takes an array of NamedList and executes a
+         local query request for each NamedList in sequence. -->
+    <!--
+    <listener event="newSearcher" class="solr.QuerySenderListener">
+      <arr name="queries">
+        <lst> <str name="q">solr</str> <str name="start">0</str> <str name="rows">10</str> </lst>
+        <lst> <str name="q">rocks</str> <str name="start">0</str> <str name="rows">10</str> </lst>
+      </arr>
+    </listener>
+    -->
+
+    <!-- a firstSearcher event is fired whenever a new searcher is being
+         prepared but there is no current registered searcher to handle
+         requests or to gain autowarming data from. -->
+    <!--
+    <listener event="firstSearcher" class="solr.QuerySenderListener">
+      <arr name="queries">
+        <lst> <str name="q">fast_warm</str> <str name="start">0</str> <str name="rows">10</str> </lst>
+      </arr>
+    </listener>
+    -->
+
+    <!-- If a search request comes in and there is no current registered searcher,
+         then immediately register the still warming searcher and use it.  If
+         "false" then all requests will block until the first searcher is done
+         warming. -->
+    <useColdSearcher>false</useColdSearcher>
+
+    <!-- Maximum number of searchers that may be warming in the background
+      concurrently.  An error is returned if this limit is exceeded. Recommend
+      1-2 for read-only slaves, higher for masters w/o cache warming. -->
+    <maxWarmingSearchers>4</maxWarmingSearchers>
+
+  </query>
+
+  <!--
+    Let the dispatch filter handler /select?qt=XXX
+    handleSelect=true will use consistent error handling for /select and /update
+    handleSelect=false will use solr1.1 style error formatting
+    -->
+  <requestDispatcher handleSelect="true">
+    <!--Make sure your system has some authentication before enabling remote streaming!  -->
+    <requestParsers enableRemoteStreaming="true" multipartUploadLimitInKB="2048"/>
+  </requestDispatcher>
+
+  <searchComponent class="org.apache.solr.handler.component.FacetComponent" name="facet"/>
+  
+ <searchComponent class="gaia.handler.RoleBasedFilterComponent" name="filterbyrole">
+    <!-- Solr filter query that will be applied for users without group/role info -->
+    <str name="default.filter">-*:*</str>
+    <!-- Solr filter queries for roles, one role may have multiple filter queries. 
+    name is the role, value is the part of the filterquery that is to be formed.
+    -->
+    <lst name="filters">
+      <str name="DEFAULT">*:*</str>
+    </lst>
+    
+  </searchComponent>
+  <!--
+   Warning: Using feedback can be very expensive time wise
+
+   -->
+  <searchComponent class="gaia.feedback.FeedbackComponent" name="feedback">
+    <lst name="defaults">
+      <str name="fdbk.fl">title</str>
+      <str name="fdbk.fl">body</str>
+      <int name="fdbk.topX">5</int>
+      <!-- Use the bottom set of results as negative feedback -->
+      <bool name="fdbk.useNegatives">false</bool>
+      <!-- Maximum number of query terms used per positive and negative feedback generation-->
+      <int name="fdbk.maxQueryTermsPerDocument">15</int>
+      <!--the minimum term frequency of an "important" term-->
+      <int name="fdbk.minTermFreq">1</int>
+      <!-- The minimum number of documents a term must be in -->
+      <int name="fdbk.minDocFreq">1</int>
+      <!-- The default operator for the feedback portion of the query -->
+      <str name="fdbk.operator">OR</str>
+      <!-- The total maximum number of clauses       -->
+      <int name="fdbk.maxClauses">20</int>
+      <!-- Allow stopwords in the feedback query -->
+      <bool name="fdbk.useStopwords">true</bool>
+      <!-- The minimum length of the word to be used -->
+      <str name="fdbk.minWordLength">4</str>
+
+      <!-- The Rocchio Alpha factor -->
+      <float name="fdbk.rocchio.alpha">1</float>
+      <!-- The Rocchio Beta factor -->
+      <float name="fdbk.rocchio.beta">1</float>
+      <!-- The Rocchio Gamma factor -->
+      <float name="fdbk.rocchio.gamma">1</float>
+      <!-- The field to generate the feedback query for -->
+      <str name="fdbk.rocchio.searchField">text_all</str>
+
+    </lst>
+    <str name="fdbk.stopwords">stopwords.txt</str>
+    <bool name="fdbk.ignoreCase">true</bool>
+    <str name="feedback">gaia.feedback.Rocchio</str>
+  </searchComponent>
+
+
+  <!-- requestHandler plugins... incoming queries will be dispatched to the
+     correct handler based on the path or the qt (query type) param.
+     Names starting with a '/' are accessed with the a path equal to the
+     registered name.  Names without a leading '/' are accessed with:
+      http://host/app/select?qt=name
+     If no qt is defined, the requestHandler that declares default="true"
+     will be used.
+  -->
+  <requestHandler class="solr.StandardRequestHandler" default="true" name="standard">
+    <!-- default values for query parameters -->
+    <lst name="defaults">
+      <str name="echoParams">explicit</str>
+
+    </lst>
+    <!-- Note: to support distrib spellchecking -->
+    <arr name="last-components">
+      <str>spellcheck</str>
+    </arr>    
+  </requestHandler>
+
+
+  <requestHandler class="solr.StandardRequestHandler" name="/gaia">
+  
+    <arr name="components">
+      <str>filterbyrole</str>
+      <str>query</str>
+      <str>mlt</str>
+      <str>stats</str>
+      <str>feedback</str>
+      <!-- Note: highlight needs to be after feedback -->
+      <str>highlight</str>
+      <!-- Note: facet also needs to be after feedback -->
+      <str>facet</str>
+      <str>spellcheck</str>
+      <str>debug</str>
+  		</arr>
+
+<lst name="defaults">
+<str name="shards.qt">/gaia</str>
+<str name="role">DEFAULT</str>
+<str name="feedback">false</str>
+<str name="qf">text_all title^5.0</str>
+<str name="pf">text_all title^5.0</str>
+<str name="stopwords.fields">body,title</str>
+<str name="sort">score desc</str>
+<str name="facet">true</str>
+<str name="q.alt">*:*</str>
+<str name="facet.mincount">1</str>
+<str name="stopwords.enabled">true</str>
+<str name="synonyms.enabled">true</str>
+<str name="boostTrigrams">true</str>
+<str name="defType">gaia</str>
+<str name="echoParams">all</str>
+<str name="hl">true</str>
+<str name="spellcheck">true</str>
+<str name="auto-complete">true</str>
+<str name="facet.limit">11</str>
+<str name="likeDoc.fl">author,title</str>
+<str name="synonyms.fields">body,text_all,title</str>
+<str name="spellcheck.collate">true</str>
+<str name="boost">recip(rord(lastModified),1,1000,1000)</str>
+<!-- add click_terms to the list below to present click_terms in the UI -->
+<str name="fl">id</str>
+<str name="fl">data_source_type</str>
+<str name="fl">lastModified</str>
+<str name="fl">core</str>
+<str name="fl">logPriority</str>
+<str name="fl">logger</str>
+<str name="fl">logtype</str>
+<str name="fl">handler</str>
+<str name="fl">title</str>
+<str name="hl.fl">body</str>
+<str name="spellcheck.onlyMorePopular">true</str>
+<str name="facet.field">core</str>
+<str name="facet.field">logtype</str>
+<str name="facet.field">logger</str>
+<str name="facet.field">logPriority</str>
+<str name="facet.field">handler</str>
+<str name="facet.field">data_source_name</str>
+<str name="feedback.emphasis">relevancy</str>
+<str name="showFindSimilarLinks">true</str>
+</lst>
+</requestHandler>
+
+	<!-- realtime get handler, guaranteed to return the latest stored fields 
+		of any document, without the need to commit or open a new searcher. The current 
+		implementation relies on the updateLog feature being enabled. -->
+	<requestHandler name="/get" class="solr.RealTimeGetHandler">
+		<lst name="defaults">
+			<str name="omitHeader">true</str>
+		</lst>
+	</requestHandler>
+
+  <searchComponent class="gaia.spellchecking.GaiaSpellCheckComponent" name="spellcheck">
+    <lst name="defaults">
+      <!-- omp = Only More Popular -->
+      <str name="spellcheck.onlyMorePopular">false</str>
+      <!-- exr = Extended Results -->
+      <str name="spellcheck.extendedResults">false</str>
+      <!--  The number of suggestions to return -->
+      <str name="spellcheck.count">1</str>
+    </lst>
+    <str name="queryAnalyzerFieldType">textSpell</str>
+
+    <lst name="spellchecker">
+      <str name="classname">org.apache.solr.spelling.DirectSolrSpellChecker</str>
+      <str name="name">default</str>
+      <str name="field">spell</str>
+      <!--  the spellcheck distance measure used, the default is the internal levenshtein -->
+      <str name="distanceMeasure">internal</str>
+      <!--  minimum accuracy needed to be considered a valid spellcheck suggestion -->
+      <float name="accuracy">0.75</float>
+      <!--  the maximum #edits we consider when enumerating terms 
+        this is a little aggressive (2), but offset by the minPrefix and the fact
+        we do "pure" levenshtein, so 2 is currently needed to get a transposition of 1
+      -->
+      <int name="maxEdits">2</int>
+      <!--  the minimum shared prefix when enumerating terms 
+        this is pretty practical and avoids a lot of false positives.
+      -->
+      <int name="minPrefix">1</int>
+      <!--  maximum number of inspections per result. this is multiplied by the count
+        to determine how many top-N we will inspect. In other words, if count=3 and
+        maxInspections=5 our priority queue size is 15. -->
+      <int name="maxInspections">5</int>
+      <!--  the default comparator class
+        <str name="comparatorClass">freq</str>
+      -->
+      <!-- 
+      value in [0..1] (or absolute number >=1) representing a threshold for
+      number of documents (of the total) where a term should appear.
+      this is a practical default, that will avoid suggesting terms that only appear
+      in a single document.
+       -->
+      <float name="thresholdTokenFrequency">1</float>
+      <!-- 
+      minimum length of a query term to be considered, typically terms <= 3
+      will only net bad suggestions with any algorithm.
+       -->
+      <int name="minQueryLength">4</int>
+      <!-- 
+      Set the maximum threshold (default: 0.01f) of documents a query term can 
+      appear in order to provide suggestions. This can avoid correcting already-correct
+      terms which appear in many documents.
+       -->
+      <float name="maxQueryFrequency">0.01</float>
+    </lst>
+  </searchComponent>
+
+
+  <!-- Auto-Complete component -->
+  <searchComponent name="autocomplete" class="solr.SpellCheckComponent">
+    <lst name="spellchecker">
+      <str name="name">autocomplete</str>
+      <str name="classname">org.apache.solr.spelling.suggest.Suggester</str>
+      <str name="lookupImpl">org.apache.solr.spelling.suggest.tst.TSTLookup</str>
+      <str name="field">autocomplete</str>
+      <str name="storeDir">autocomplete</str>
+      <str name="buildOnCommit">false</str>
+      <float name="threshold">.005</float>
+<!--
+      <str name="sourceLocation">american-english</str>
+-->
+    </lst>
+  </searchComponent>
+  <requestHandler name="/autocomplete" class="org.apache.solr.handler.component.SearchHandler">
+    <lst name="defaults">
+      <str name="spellcheck">true</str>
+      <str name="spellcheck.dictionary">autocomplete</str>
+      <str name="spellcheck.collate">true</str>
+      <str name="spellcheck.count">5</str>
+      <str name="spellcheck.onlyMorePopular">true</str>
+    </lst>     
+    <arr name="components">
+      <str>autocomplete</str>
+    </arr>
+  </requestHandler>
+
+  <queryConverter class="org.apache.solr.spelling.SpellingQueryConverter" name="queryConverter"/>
+
+  <!-- Terms Component http://wiki.apache.org/solr/TermsComponent A component 
+       to return terms and document frequency of those terms -->
+  <searchComponent name="terms" class="solr.TermsComponent" />
+
+  <requestHandler name="/terms" class="solr.SearchHandler"
+      startup="lazy">
+     <lst name="defaults">
+       <bool name="terms">true</bool>
+     </lst>
+     <arr name="components">
+       <str>terms</str>
+     </arr>
+   </requestHandler>
+
+  <!--<requestHandler class="solr.SearchHandler" name="spellcheckRH">
+    <lst name="defaults">
+
+    </lst>
+    <arr name="last-components">
+      <str>spellcheck</str>
+    </arr>
+  </requestHandler>-->
+
+  <requestHandler class="solr.UpdateRequestHandler" name="/update">
+    <lst name="defaults">
+      <str name="update.chain">gaia-update-chain</str>
+    </lst>
+  </requestHandler>
+
+  <requestHandler class="solr.UpdateRequestHandler" name="/update/xml">
+    <lst name="defaults">
+      <str name="update.chain">gaia-update-chain</str>
+    </lst>
+  </requestHandler>
+
+  <!-- CSV update handler, loaded on demand -->
+  <requestHandler class="solr.CSVRequestHandler" name="/update/csv" startup="lazy">
+    <lst name="defaults">
+      <str name="update.chain">gaia-update-chain</str>
+    </lst>
+  </requestHandler>
+  
+  <!-- JSON update handler, loaded on demand -->
+  <requestHandler name="/update/json" class="solr.JsonUpdateRequestHandler" startup="lazy">
+    <lst name="defaults">
+      <str name="update.chain">gaia-update-chain</str>
+    </lst>
+  </requestHandler>
+
+  <!-- Binary Update Request Handler
+      http://wiki.apache.org/solr/javabin
+   -->
+  <requestHandler name="/update/javabin" 
+                class="solr.UpdateRequestHandler">
+    <lst name="defaults">
+      <str name="update.chain">gaia-update-chain</str>
+    </lst>
+  </requestHandler>
+
+ <!-- Solr Cell: http://wiki.apache.org/solr/ExtractingRequestHandler -->
+ <!-- TODO: Need to review/update field mapping to reflect the Gaia schema -->
+  <requestHandler name="/update/extract" class="org.apache.solr.handler.extraction.ExtractingRequestHandler" startup="lazy">
+    <lst name="defaults">
+      <str name="update.chain">gaia-update-chain</str>
+      <!-- All the main content goes into "text"... if you need to return
+           the extracted text or do highlighting, use a stored field. -->
+      <str name="fmap.content">text</str>
+      <str name="lowernames">true</str>
+      <str name="uprefix">ignored_</str>
+
+      <!-- capture link hrefs but ignore div attributes -->
+      <str name="captureAttr">true</str>
+      <str name="fmap.a">links</str>
+      <str name="fmap.div">ignored_</str>
+    </lst>
+  </requestHandler>
+
+ <!-- Document highlighter -->
+  <requestHandler name="/dochl" class="gaia.handler.DocumentHighlighterRequestHandler" startup="lazy">
+  </requestHandler>
+  
+  <requestHandler class="gaia.handler.ClickAnalysisRequestHandler" name="/click"/>
+
+
+  <requestHandler class="org.apache.solr.handler.admin.AdminHandlers" name="/admin/"/>
+
+  <!-- Echo the request contents back to the client -->
+  <requestHandler class="solr.DumpRequestHandler" name="/debug/dump">
+    <lst name="defaults">
+      <str name="echoParams">explicit</str>
+      <!-- for all params (including the default etc) use: 'all' -->
+      <str name="echoHandler">true</str>
+    </lst>
+  </requestHandler>
+
+  <!-- Field Analysis Request Handler
+
+       RequestHandler that provides much the same functionality as
+       analysis.jsp. Provides the ability to specify multiple field
+       types and field names in the same request and outputs
+       index-time and query-time analysis for each of them.
+
+       Request parameters are:
+       analysis.fieldname - field name whose analyzers are to be used
+
+       analysis.fieldtype - field type whose analyzers are to be used
+       analysis.fieldvalue - text for index-time analysis
+       q (or analysis.q) - text for query time analysis
+       analysis.showmatch (true|false) - When set to true and when
+           query analysis is performed, the produced tokens of the
+           field value analysis will be marked as "matched" for every
+           token that is produces by the query analysis
+   -->
+  <requestHandler name="/analysis/field" 
+                  startup="lazy"
+                  class="solr.FieldAnalysisRequestHandler" />
+
+
+  <!-- Document Analysis Handler
+
+       http://wiki.apache.org/solr/AnalysisRequestHandler
+
+       An analysis handler that provides a breakdown of the analysis
+       process of provided documents. This handler expects a (single)
+       content stream with the following format:
+
+       <docs>
+         <doc>
+           <field name="id">1</field>
+           <field name="name">The Name</field>
+           <field name="text">The Text Value</field>
+         </doc>
+         <doc>...</doc>
+         <doc>...</doc>
+         ...
+       </docs>
+
+    Note: Each document must contain a field which serves as the
+    unique key. This key is used in the returned response to associate
+    an analysis breakdown to the analyzed document.
+
+    Like the FieldAnalysisRequestHandler, this handler also supports
+    query analysis by sending either an "analysis.query" or "q"
+    request parameter that holds the query text to be analyzed. It
+    also supports the "analysis.showmatch" parameter which when set to
+    true, all field tokens that match the query tokens will be marked
+    as a "match". 
+  -->
+  <requestHandler name="/analysis/document" 
+                  class="solr.DocumentAnalysisRequestHandler" 
+                  startup="lazy" />
+
+  <searchComponent class="solr.HighlightComponent" name="highlight">
+  <highlighting>
+    <!-- Configure the standard fragmenter -->
+    <!-- This could most likely be commented out in the "default" case -->
+    <fragmenter class="org.apache.solr.highlight.GapFragmenter" default="true" name="gap">
+      <lst name="defaults">
+        <int name="hl.fragsize">100</int>
+      </lst>
+    </fragmenter>
+
+    <!-- A regular-expression-based fragmenter (f.i., for sentence extraction) -->
+    <fragmenter class="org.apache.solr.highlight.RegexFragmenter" name="regex">
+      <lst name="defaults">
+        <!-- slightly smaller fragsizes work better because of slop -->
+        <int name="hl.fragsize">70</int>
+        <!-- allow 50% slop on fragment sizes -->
+        <float name="hl.regex.slop">0.5</float>
+        <!-- a basic sentence pattern -->
+        <str name="hl.regex.pattern">[-\w ,/\n\"']{20,200}</str>
+      </lst>
+    </fragmenter>
+
+    <!-- Configure the standard formatter -->
+    <formatter class="org.apache.solr.highlight.HtmlFormatter" default="true" name="html">
+      <lst name="defaults">
+        <str name="hl.simple.pre"><![CDATA[<span class="highlight">]]></str>
+        <str name="hl.simple.post"><![CDATA[</span>]]></str>
+      </lst>
+    </formatter>
+  </highlighting>
+  </searchComponent>
+
+  <!-- queryResponseWriter plugins... query responses will be written using the
+    writer specified by the 'wt' request parameter matching the name of a registered
+    writer.
+    The "default" writer is the default and will be used if 'wt' is not specified
+    in the request. XMLResponseWriter will be used if nothing is specified here.
+    The json, python, and ruby writers are also available by default.
+
+    <queryResponseWriter name="xml" class="org.apache.solr.request.XMLResponseWriter" default="true"/>
+    <queryResponseWriter name="json" class="org.apache.solr.request.JSONResponseWriter"/>
+    <queryResponseWriter name="python" class="org.apache.solr.request.PythonResponseWriter"/>
+    <queryResponseWriter name="ruby" class="org.apache.solr.request.RubyResponseWriter"/>
+    <queryResponseWriter name="php" class="org.apache.solr.request.PHPResponseWriter"/>
+    <queryResponseWriter name="phps" class="org.apache.solr.request.PHPSerializedResponseWriter"/>
+
+    <queryResponseWriter name="custom" class="com.example.MyResponseWriter"/>
+  -->
+  <queryResponseWriter class="org.apache.solr.response.PHPResponseWriter" name="php"/>
+  <queryResponseWriter class="org.apache.solr.response.PHPSerializedResponseWriter" name="phps"/>
+
+  <!-- XSLT response writer transforms the XML output by any xslt file found
+       in Solr's conf/xslt directory.  Changes to xslt files are checked for
+       every xsltCacheLifetimeSeconds.
+   -->
+  <queryResponseWriter class="org.apache.solr.response.XSLTResponseWriter" name="xslt">
+    <int name="xsltCacheLifetimeSeconds">5</int>
+  </queryResponseWriter>
+
+  <requestHandler name="/admin/file" class="org.apache.solr.handler.admin.ShowFileRequestHandler" />
+  
+  <!-- ping/healthcheck -->
+  <requestHandler name="/admin/ping" class="PingRequestHandler">
+    <lst name="defaults">
+      <str name="qt">standard</str>
+      <str name="q">solrpingquery</str>
+      <str name="echoParams">all</str>
+    </lst>
+  </requestHandler>
+
+  <queryParser class="gaia.parser.gaia.GaiaQParserPlugin" name="gaia"/>
+
+  <updateRequestProcessorChain name="gaia-update-chain" default="true">
+    <processor class="gaia.update.DistributedUpdateProcessorFactory">
+      <!-- example configuration...
+       "shards should be in the *same* order for every server
+        in a cluster.  Only "self" should change to represent
+        what server *this* is.
+
+      <str name="self">localhost:8983/solr</str>
+      <arr name="shards">
+        <str>localhost:8983/solr</str>
+        <str>localhost:7574/solr</str>
+      </arr>
+      -->
+    </processor>
+    <processor class="solr.LogUpdateProcessorFactory">
+      <int name="maxNumToLog">10</int>
+    </processor>
+    <processor class="solr.DistributedUpdateProcessorFactory" />
+    <processor class="solr.RunUpdateProcessorFactory"/>
+  </updateRequestProcessorChain>
+
+<requestHandler name="/replication" class="solr.ReplicationHandler">
+ <lst name="master">
+  <str name="replicateAfter">commit</str>
+  <str name="confFiles">admin-extra.html,admin-extra.menu-bottom.html,admin-extra.menu-top.html,elevate.xml,GaiaStemRules_en.txt,protwords.txt,schema.xml,solrconfig.xml,stopwords.txt</str>
+ </lst>
+</requestHandler>
+
+</config>

@@ -1,0 +1,601 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>gaia</groupId>
+		<artifactId>gaia-project</artifactId>
+		<version>0.1</version>
+		<relativePath>../gaia-project/pom.xml</relativePath>
+	</parent>
+
+	<artifactId>gaia-search</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Gaia :: Search</name>
+	<properties>
+		<java.version>1.7</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.bootstrap.classes>${java.home}/lib/rt.jar</java.bootstrap.classes>
+		<java.cryptographic.extension.classes>${java.home}/lib/jce.jar</java.cryptographic.extension.classes>
+		<java.secure.socket.extension.classes>${java.home}/lib/jsse.jar</java.secure.socket.extension.classes>
+	</properties>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.xnap.commons</groupId>
+				<artifactId>maven-gettext-plugin</artifactId>
+				<version>1.2.3</version>
+				<configuration>
+					<targetBundle>gaia.search.i18n.Messages</targetBundle>
+					<!-- <outputFormat>properties</outputFormat> -->
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-servlet</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-persist</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-ldap</artifactId>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.ldap</groupId> -->
+		<!-- <artifactId>spring-ldap-core</artifactId> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.apache.directory.server</groupId>
+			<artifactId>apacheds-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.directory.server</groupId>
+			<artifactId>apacheds-protocol-ldap</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.directory.shared</groupId>
+			<artifactId>shared-ldap</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-servlet</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey.contribs</groupId>
+			<artifactId>jersey-guice</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey.contribs</groupId>
+			<artifactId>jersey-multipart</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-core</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.restlet.jee</groupId>
+					<artifactId>org.restlet</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.restlet.jee</groupId>
+					<artifactId>org.restlet.ext.servlet</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.hadoop</groupId>
+					<artifactId>hadoop-common</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.hadoop</groupId>
+					<artifactId>hadoop-annotations</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.hadoop</groupId>
+					<artifactId>hadoop-auth</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.hadoop</groupId>
+					<artifactId>hadoop-hdfs</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-solrj</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>kr.analyzer</groupId>
+			<artifactId>kranalyzer</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>gaia</groupId>
+			<artifactId>gaia-shared</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>gaia</groupId>
+			<artifactId>gaia-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.objenesis</groupId>
+			<artifactId>objenesis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.xnap.commons</groupId>
+			<artifactId>gettext-commons</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>gaia</groupId>
+			<artifactId>licensing-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<!-- <plugin> -->
+			<!-- <groupId>com.github.wvengen</groupId> -->
+			<!-- <artifactId>proguard-maven-plugin</artifactId> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <id>proguard</id> -->
+			<!-- <phase>package</phase> -->
+			<!-- <goals> -->
+			<!-- <goal>proguard</goal> -->
+			<!-- </goals> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- <configuration> -->
+			<!-- <libs> -->
+			<!-- <lib>${java.bootstrap.classes}</lib> -->
+			<!-- <lib>${java.cryptographic.extension.classes}</lib> -->
+			<!-- <lib>${java.secure.socket.extension.classes}</lib> -->
+			<!-- </libs> -->
+			<!-- <obfuscate>true</obfuscate> -->
+			<!-- <addMavenDescriptor>false</addMavenDescriptor> -->
+			<!-- <proguardInclude>${project.basedir}/proguard.conf</proguardInclude> -->
+			<!-- </configuration> -->
+			<!-- </plugin> -->
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>src/main/assemblies/server.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+					<execution>
+						<id>build-tarball</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>src/main/assemblies/server.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assemblies/server.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+
+			<!-- <plugin> -->
+			<!-- <groupId>org.dstovall</groupId> -->
+			<!-- <artifactId>onejar-maven-plugin</artifactId> -->
+			<!-- <version>1.4.4</version> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <configuration> -->
+			<!-- <mainClass>gaia.search.server.controller.GaiaSearchServer</mainClass> -->
+			<!-- <attachToBuild>true</attachToBuild> -->
+			<!-- <classifier>onejar</classifier> -->
+			<!-- </configuration> -->
+			<!-- <goals> -->
+			<!-- <goal>one-jar</goal> -->
+			<!-- </goals> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- </plugin> -->
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>none</phase>
+						<goals>
+							<goal>rpm</goal>
+							<goal>attached-rpm</goal>
+						</goals>
+						<configuration>
+							<copyright>2012, Apache Software Foundation</copyright>
+							<version>1.2.2-SNAPSHOT</version>
+							<group>Development</group>
+							<description>Maven Recipe: RPM Package.</description>
+							<requires>
+								<require>python >= 2.6</require>
+							</requires>
+							<preremoveScriptlet>
+								<script>mv /etc/gaia-server/conf /etc/gaia-server/conf.save</script>
+							</preremoveScriptlet>
+							<mappings>
+								<mapping>
+									<directory>/usr/lib/gaia-server</directory>
+									<dependency></dependency>
+									<filemode>755</filemode>
+									<username>root</username>
+									<groupname>root</groupname>
+								</mapping>
+								<mapping>
+									<directory>/usr/lib/gaia-server/web</directory>
+									<filemode>755</filemode>
+									<username>root</username>
+									<groupname>root</groupname>
+									<sources>
+										<source>
+											<location>../gaia-web/public</location>
+											<includes>
+												<include>**</include>
+											</includes>
+										</source>
+									</sources>
+								</mapping>
+								<mapping>
+									<directory>/usr/lib/gaia-server</directory>
+									<filemode>755</filemode>
+									<username>root</username>
+									<groupname>root</groupname>
+									<sources>
+										<source>
+											<location>target/gaia-server-0.1.jar</location>
+										</source>
+									</sources>
+								</mapping>
+								<mapping>
+									<directory>/usr/sbin</directory>
+									<filemode>755</filemode>
+									<username>root</username>
+									<groupname>root</groupname>
+									<sources>
+										<source>
+											<location>src/main/python/gaia-server.py</location>
+										</source>
+									</sources>
+								</mapping>
+								<mapping>
+									<directory>/usr/sbin</directory>
+									<filemode>755</filemode>
+									<username>root</username>
+									<groupname>root</groupname>
+									<sources>
+										<source>
+											<location>sbin/gaia-server-server</location>
+										</source>
+									</sources>
+								</mapping>
+								<mapping>
+									<directory>/etc/gaia-server/conf</directory>
+									<filemode>755</filemode>
+									<username>root</username>
+									<groupname>root</groupname>
+									<configuration>true</configuration>
+									<sources>
+										<source>
+											<location>conf/unix/gaia.properties</location>
+										</source>
+										<source>
+											<location>conf/unix/log4j.properties</location>
+										</source>
+									</sources>
+								</mapping>
+								<mapping>
+									<directory>/var/lib/gaia-server/</directory>
+									<filemode>700</filemode>
+									<username>root</username>
+									<groupname>root</groupname>
+									<sources>
+										<source>
+											<location>conf/unix/gaia-env.sh</location>
+										</source>
+									</sources>
+								</mapping>
+								<!-- <mapping> -->
+								<!-- <directory>/var/run/gaia-server/bootstrap</directory> -->
+								<!-- <filemode>755</filemode> -->
+								<!-- <username>root</username> -->
+								<!-- <groupname>root</groupname> -->
+								<!-- </mapping> -->
+								<mapping>
+									<directory>/var/log/gaia-server</directory>
+									<filemode>755</filemode>
+									<username>root</username>
+									<groupname>root</groupname>
+								</mapping>
+								<!-- <mapping> -->
+								<!-- <directory>/usr/lib/python2.6/site-packages/gaia_server</directory> -->
+								<!-- <filemode>755</filemode> -->
+								<!-- <username>root</username> -->
+								<!-- <groupname>root</groupname> -->
+								<!-- <sources> -->
+								<!-- <source> -->
+								<!-- <location>src/main/python/bootstrap.py</location> -->
+								<!-- </source> -->
+								<!-- </sources> -->
+								<!-- </mapping> -->
+								<mapping>
+									<directory>/var/run/gaia-server</directory>
+									<filemode>755</filemode>
+									<username>root</username>
+									<groupname>root</groupname>
+								</mapping>
+							</mappings>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<copyright>2012, Apache Software Foundation</copyright>
+					<version>1.2.2-SNAPSHOT</version>
+					<group>Development</group>
+					<description>Maven Recipe: RPM Package.</description>
+					<requires>
+						<require>python >= 2.6</require>
+					</requires>
+					<preremoveScriptlet>
+						<script>mv /etc/gaia-server/conf /etc/gaia-server/conf.save</script>
+					</preremoveScriptlet>
+					<mappings>
+						<mapping>
+							<directory>/usr/lib/gaia-server</directory>
+							<dependency></dependency>
+							<filemode>755</filemode>
+							<username>root</username>
+							<groupname>root</groupname>
+						</mapping>
+						<!-- <mapping> -->
+						<!-- <directory>/usr/lib/gaia-server/web</directory> -->
+						<!-- <filemode>755</filemode> -->
+						<!-- <username>root</username> -->
+						<!-- <groupname>root</groupname> -->
+						<!-- <sources> -->
+						<!-- <source> -->
+						<!-- <location>../gaia-web/public</location> -->
+						<!-- <includes> -->
+						<!-- <include>**</include> -->
+						<!-- </includes> -->
+						<!-- </source> -->
+						<!-- </sources> -->
+						<!-- </mapping> -->
+						<mapping>
+							<directory>/usr/lib/gaia-server</directory>
+							<filemode>755</filemode>
+							<username>root</username>
+							<groupname>root</groupname>
+							<sources>
+								<source>
+									<location>target/gaia-server-0.1.jar</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/usr/sbin</directory>
+							<filemode>755</filemode>
+							<username>root</username>
+							<groupname>root</groupname>
+							<sources>
+								<source>
+									<location>src/main/python/gaia-server.py</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/usr/sbin</directory>
+							<filemode>755</filemode>
+							<username>root</username>
+							<groupname>root</groupname>
+							<sources>
+								<source>
+									<location>sbin/gaia-server</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/etc/gaia-server/conf</directory>
+							<filemode>755</filemode>
+							<username>root</username>
+							<groupname>root</groupname>
+							<configuration>true</configuration>
+							<sources>
+								<source>
+									<location>conf/unix/gaia.properties</location>
+								</source>
+								<source>
+									<location>conf/unix/log4j.properties</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/var/lib/gaia-server/</directory>
+							<filemode>700</filemode>
+							<username>root</username>
+							<groupname>root</groupname>
+							<sources>
+								<source>
+									<location>conf/unix/gaia-env.sh</location>
+								</source>
+							</sources>
+						</mapping>
+						<!-- <mapping> -->
+						<!-- <directory>/var/run/gaia-server/bootstrap</directory> -->
+						<!-- <filemode>755</filemode> -->
+						<!-- <username>root</username> -->
+						<!-- <groupname>root</groupname> -->
+						<!-- </mapping> -->
+						<mapping>
+							<directory>/var/log/gaia-server</directory>
+							<filemode>755</filemode>
+							<username>root</username>
+							<groupname>root</groupname>
+						</mapping>
+						<!-- <mapping> -->
+						<!-- <directory>/usr/lib/python2.6/site-packages/gaia_server</directory> -->
+						<!-- <filemode>755</filemode> -->
+						<!-- <username>root</username> -->
+						<!-- <groupname>root</groupname> -->
+						<!-- <sources> -->
+						<!-- <source> -->
+						<!-- <location>src/main/python/bootstrap.py</location> -->
+						<!-- </source> -->
+						<!-- </sources> -->
+						<!-- </mapping> -->
+						<mapping>
+							<directory>/var/run/gaia-server</directory>
+							<filemode>755</filemode>
+							<username>root</username>
+							<groupname>root</groupname>
+						</mapping>
+					</mappings>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.rat</groupId>
+				<artifactId>apache-rat-plugin</artifactId>
+				<version>0.9</version>
+				<configuration>
+					<excludes>
+						<exclude>**/*.json</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<redirectTestOutputToFile>true</redirectTestOutputToFile>
+							<forkMode>always</forkMode>
+							<forkedProcessTimeoutInSeconds>900</forkedProcessTimeoutInSeconds>
+							<useFile>false</useFile>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<redirectTestOutputToFile>true</redirectTestOutputToFile>
+					<forkMode>always</forkMode>
+					<forkedProcessTimeoutInSeconds>900</forkedProcessTimeoutInSeconds>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.xnap.commons</groupId>
+				<artifactId>maven-gettext-plugin</artifactId>
+				<configuration>
+					<poDirectory>${basedir}/src/main/i18n</poDirectory>
+					<targetBundle>gaia.search.i18n.Messages</targetBundle>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>dist</goal>
+						</goals>
+						<phase>prepare-package</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+</project>

@@ -1,0 +1,55 @@
+<workflow-app xmlns="uri:oozie:workflow:0.1" name="kmeans">
+  <start to="run-kmeans"/>
+
+  <!-- KMEANS -->
+  <action name="run-kmeans">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+        <!-- <property>
+        <name>mapred.child.java.opts</name>
+        <value>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=5758,suspend=y</value>
+        </property> -->                
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.util.RunClass</main-class>
+      <arg>org.apache.mahout.clustering.kmeans.KMeansDriver</arg>
+      <arg>--input</arg><arg>${input}</arg>
+      <arg>--output</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/document-clusters")}</arg>
+      <arg>--clusters</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/clusters-init")}</arg>
+      <arg>--clustering</arg>
+      <arg>--maxIter</arg><arg>${kmeans_maxIter}</arg>
+      <arg>--numClusters</arg><arg>${kmeans_numClusters}</arg>
+      <arg>--convergenceDelta</arg><arg>${kmeans_convergenceDelta}</arg>
+      <arg>--distanceMeasure</arg><arg>${kmeans_distanceMeasure}</arg>
+    </java>
+    <ok to="join-clusters-to-docs"/>
+    <error to="fail"/>
+  </action>
+  
+  <action name="join-clusters-to-docs">
+    <!-- Inverts the clusterId->document (clusteredPoints) data and attaches the clusterIds to the documents -->
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.clustering.ClusterLoader</main-class>
+      <arg>--input</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/document-clusters/clusteredPoints")}</arg>
+      <arg>--centroids</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/document-clusters")}</arg>
+      <arg>--distanceMeasure</arg><arg>${kmeans_distanceMeasure}</arg>
+      <arg>--zkConnect</arg><arg>${zkConnect}</arg>
+      <arg>--numberOfRegions</arg><arg>${numberOfRegions}</arg>
+    </java>
+    <ok to="end"/>
+    <error to="fail"/>
+  </action>
+        
+  <kill name="fail">
+    <message>Kmeans Sub workflow failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+  </kill>
+
+  <end name="end"/>
+</workflow-app>

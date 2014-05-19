@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<assembly>
+	<id>uberjar</id>
+	<formats>
+		<format>jar</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>${project.build.outputDirectory}</directory>
+			<outputDirectory>/</outputDirectory>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<unpack>false</unpack>
+			<scope>runtime</scope>
+			<includes>
+				<include>gaia:behemoth-core</include>
+				<include>gaia:behemoth-gaiasearch</include>
+				<include>gaia:behemoth-tika</include>
+				<include>commons-cli:*</include>
+				<include>commons-configuration:*</include>
+				<include>commons-net:*</include>
+				<include>org.apache.hadoop:*</include>
+				<include>com.sun.jersey:*</include>
+				<include>xmlenc:*</include>
+				<include>com.google.protobuf:*</include>
+			</includes>
+		</dependencySet>
+	</dependencySets>
+</assembly>

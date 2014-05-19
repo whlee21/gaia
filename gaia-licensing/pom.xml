@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>gaia</groupId>
+		<artifactId>gaia</artifactId>
+		<version>0.1</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>gaia-licensing</artifactId>
+	<packaging>pom</packaging>
+	<name>Gaia :: Licensing</name>
+	<modules>
+		<module>licensing-core</module>
+		<module>licensing-licensor-base</module>
+		<module>licensing-licensor-ui-cli</module>
+		<module>licensing-licensor-ui-core</module>
+		<module>licensing-samples</module>
+		<module>licensing-assembly</module>
+		<module>licensing-private</module>
+	</modules>
+</project>

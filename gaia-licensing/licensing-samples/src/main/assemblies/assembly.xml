@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<assembly>
+	<id>uberjar</id>
+	<formats>
+		<format>jar</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>${project.build.outputDirectory}</directory>
+			<outputDirectory>/</outputDirectory>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<unpack>false</unpack>
+			<scope>runtime</scope>
+			<includes>
+				<include>gaia:licensing-core</include>
+				<include>gaia:licensing-licensor-base</include>
+				<include>gaia:licensing-licensor-base</include>
+				<include>commons-codec:commons-codec</include>
+				<include>commons-io:commons-io</include>
+			</includes>
+		</dependencySet>
+	</dependencySets>
+</assembly>

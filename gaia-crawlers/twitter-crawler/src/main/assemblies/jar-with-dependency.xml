@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<assembly>
+	<id>uberjar</id>
+	<formats>
+		<format>jar</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>${project.build.outputDirectory}</directory>
+			<outputDirectory>/</outputDirectory>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<unpack>false</unpack>
+			<scope>runtime</scope>
+			<includes>
+				<include>info.aduna.commons:*</include>
+				<include>org.antlr:*</include>
+				<include>org.semanticdesktop.aperture:*</include>
+				<include>org.twitter4j:*</include>
+			</includes>
+		</dependencySet>
+	</dependencySets>
+</assembly>

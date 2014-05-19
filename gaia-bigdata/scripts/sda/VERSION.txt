@@ -1,0 +1,11 @@
+#Build Information
+#Tue, 26 Feb 2013 05:15:29 -0800
+
+git.commit=845f715d14b70952945e0010abea45f4e45cd968
+build.date=2013/02/26 05\:15
+build.host=build1
+build.user=jenkins
+build.os=Linux
+status=packaged
+version=1.1.0-final
+hudson.build.number=10009

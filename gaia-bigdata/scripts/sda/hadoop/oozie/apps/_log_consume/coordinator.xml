@@ -1,0 +1,20 @@
+<coordinator-app name="log-consume-coord" frequency="${coord:minutes(20)}" start="${start}" end="${end}" timezone="UTC"
+                 xmlns="uri:oozie:coordinator:0.1">
+   <!-- <datasets>
+      <dataset name="raw-logs" frequency="${coord:minutes(20)}" initial-instance="2012-03-08T00:00Z" timezone="UTC">
+         <uri-template>${nameNode}data/raw-logs/${YEAR}-${MONTH}-${DAY}/${HOUR}/${MINUTE}</uri-template>
+         <done-flag/>
+      </dataset>
+   </datasets>
+   <input-events>
+      <data-in name="input" dataset="raw-logs">
+          <start-instance>${coord:current(-3)}</start-instance>
+          <end-instance>${coord:current(-1)}</end-instance>
+      </data-in>
+   </input-events> -->
+   <action>
+      <workflow>
+         <app-path>${wfAppPath}</app-path>
+      </workflow>
+   </action>     
+</coordinator-app>

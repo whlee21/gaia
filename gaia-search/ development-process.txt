@@ -1,0 +1,7 @@
+1. Service Class 생성
+2. key_properties.json 파일 수정
+3. properties.json 파일 프라퍼티 추가
+4.1. ResourceInstanceFactoryImpl.java 에 타입 설정 case 추가
+4.2. AbstractControllerResourceProvider.java 에 타입 설정 case 추가
+4.2. GaiaSearchModule.java 에 bind 설정  추가 - Controller binding 처리
+5. 해당 객체의 ResourceProvider 객체 생성

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<assembly>
+	<id>dist</id>
+	<formats>
+		<format>dir</format>
+		<format>tar.gz</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<files>
+		<file>
+			<source>${project.build.directory}/${artifact.artifactId}-${artifact.version}.jar</source>
+			<outputDirectory>gaia-server-${project.version}/lib/gaia-server</outputDirectory>
+		</file>
+	</files>
+	<fileSets>
+		<!-- Distro files, readme, licenses, etc -->
+		<fileSet>
+			<directory>${basedir}/../</directory>
+			<outputDirectory>gaia-server-${project.version}/</outputDirectory>
+			<includes>
+				<include>*.txt</include>
+			</includes>
+		</fileSet>
+
+		<!--
+		<fileSet>
+		<directory>${basedir}/../lwe-web/public</directory>
+		<outputDirectory>/lwe-server-${project.version}/web</outputDirectory>
+		<includes>
+		<include>**</include>
+		</includes>
+		</fileSet>
+		-->
+		<fileSet>
+			<directory>src/main/conf</directory>
+			<outputDirectory>/gaia-server-${project.version}/etc/gaia-server/conf</outputDirectory>
+		</fileSet>
+		<!--
+		<fileSet>
+		<directory>src/main/resources</directory>
+		<outputDirectory>/lwe-server-${project.version}/var/lib/lwe-server/resources/</outputDirectory>
+		<includes>
+		<include>stacks/**</include>
+		</includes>
+		</fileSet>
+		-->
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>gaia-server-${project.version}/lib/gaia-server</outputDirectory>
+			<unpack>false</unpack>
+			<scope>compile</scope>
+		</dependencySet>
+	</dependencySets>
+</assembly>

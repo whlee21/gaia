@@ -1,0 +1,3 @@
+#macro(param $key)$request.params.get($key)#end
+
+#macro(url_for_solr)/solr#if($request.core.name != "")/$request.core.name#end#end

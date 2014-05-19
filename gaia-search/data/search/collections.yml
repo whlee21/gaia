@@ -1,0 +1,143 @@
+authorizations: null
+collectionsMap:
+  collection1:
+    cmds:
+      80f2482fedcc4f5abedd4989ae523b46:
+        createDate: 2013-09-16T04:19:06.030Z
+        id: 80f2482fedcc4f5abedd4989ae523b46
+        lastModified: null
+        name: click
+        params:
+          vals:
+            jobEndDate:
+            - '2013-09-16T04:19:06.030Z'
+            commit:
+            - 'true'
+            sync:
+            - 'true'
+            jobRepeat:
+            - 'true'
+            jobRepeatInterval:
+            - '86400'
+            request:
+            - PROCESS
+            jobHandler:
+            - /click
+            coreName:
+            - collection1
+            jobRepeatUnits:
+            - SECOND
+            jobStartDate:
+            - '2013-09-16T06:00:00.000Z'
+        schedule:
+          active: false
+          activity: click
+          createDate: 2013-09-16T04:19:06.030Z
+          endTime: 2013-09-16T04:19:06.030Z
+          id: b37fe3f5fc704c6294867a1dec0bf61d
+          interval: 86400
+          lastModified: null
+          repeatUnit: SECOND
+          startTime: 2013-09-16T06:00:00Z
+          triggerName: null
+      7af1c8a85cfc44f4af6d012a64a49ce4:
+        createDate: 2013-09-16T04:19:06.066Z
+        id: 7af1c8a85cfc44f4af6d012a64a49ce4
+        lastModified: null
+        name: autocomplete
+        params:
+          vals:
+            jobEndDate:
+            - '2013-09-16T04:19:06.066Z'
+            spellcheck:
+            - 'true'
+            cmd_id:
+            - 7af1c8a85cfc44f4af6d012a64a49ce4
+            jobRepeat:
+            - 'true'
+            q:
+            - foo
+            jobRepeatInterval:
+            - '86400'
+            jobHandler:
+            - /autocomplete
+            coreName:
+            - collection1
+            jobRepeatUnits:
+            - SECOND
+            jobStartDate:
+            - '2013-09-16T07:00:00.000Z'
+            spellcheck.build:
+            - 'true'
+            rows:
+            - '0'
+        schedule:
+          active: false
+          activity: autocomplete
+          createDate: 2013-09-16T04:19:06.066Z
+          endTime: 2013-09-16T04:19:06.066Z
+          id: 4da3102ca4ed4b50be27d436c06c3b91
+          interval: 86400
+          lastModified: null
+          repeatUnit: SECOND
+          startTime: 2013-09-16T07:00:00Z
+          triggerName: null
+      b7dac38d55804358ae1ae49bc3af1585:
+        createDate: 2013-09-16T04:19:05.999Z
+        id: b7dac38d55804358ae1ae49bc3af1585
+        lastModified: null
+        name: optimize
+        params:
+          vals:
+            optimize:
+            - 'true'
+            jobEndDate:
+            - '2013-09-16T04:19:05.999Z'
+            jobRepeat:
+            - 'true'
+            jobRepeatInterval:
+            - '86400'
+            jobHandler:
+            - /update
+            coreName:
+            - collection1
+            jobRepeatUnits:
+            - SECOND
+            jobStartDate:
+            - '2013-09-16T05:00:00.000Z'
+        schedule:
+          active: false
+          activity: optimize
+          createDate: 2013-09-16T04:19:05.999Z
+          endTime: 2013-09-16T04:19:05.999Z
+          id: 24044d39de64416ab751f8f1c3da6c92
+          interval: 86400
+          lastModified: null
+          repeatUnit: SECOND
+          startTime: 2013-09-16T05:00:00Z
+          triggerName: null
+    createDate: 2013-09-16T04:16:47.753Z
+    description: The default GaiaSearch (TM) collection
+    id: 0
+    instanceDir: collection1_0
+    lastModified: 2013-09-16T04:16:47.753Z
+    name: collection1
+    roles:
+      DEFAULT:
+        createDate: 2013-09-16T04:16:47.753Z
+        description: ''
+        groups: []
+        id: -1
+        info: {}
+        lastModified: 2013-09-16T04:16:47.753Z
+        name: DEFAULT
+        users:
+        - admin
+defaultCollection: collection1
+file: collections.yml
+gaiaSearchHandler: /gaia
+location: DATA
+mltHandler: /mlt
+nextId: 10
+schedules: {}
+updateChain: gaia-update-chain

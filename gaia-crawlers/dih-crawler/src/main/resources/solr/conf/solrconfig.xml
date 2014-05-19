@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <luceneMatchVersion>LUCENE_44</luceneMatchVersion>
+
+	<lib dir="../lib-dirs/a" />
+
+	<directoryFactory name="DirectoryFactory" class="solr.RAMDirectoryFactory" />
+
+	<updateRequestProcessorChain>
+		<processor class="gaia.crawl.dih.ForwardingUpdateProcessorFactory" />
+	</updateRequestProcessorChain>
+	
+</config>

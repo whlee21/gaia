@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<assembly>
+	<id>dist</id>
+	<formats>
+		<format>dir</format>
+		<format>tar.gz</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<files>
+		<file>
+			<source>${project.build.directory}/${artifact.artifactId}-${artifact.version}.jar</source>
+			<outputDirectory>gaia-search-${project.version}/lib/gaia-search</outputDirectory>
+		</file>
+	</files>
+	<fileSets>
+		<!-- Distro files, readme, licenses, etc -->
+		<fileSet>
+			<directory>${basedir}/../</directory>
+			<outputDirectory>gaia-search-${project.version}/</outputDirectory>
+			<includes>
+				<include>*.txt</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/web</directory>
+			<outputDirectory>/gaia-search-${project.version}/web</outputDirectory>
+			<includes>
+				<include>**</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/conf</directory>
+			<outputDirectory>/gaia-search-${project.version}/etc/gaia/conf</outputDirectory>
+		</fileSet>
+		<!--
+		<fileSet>
+		<directory>src/main/resources</directory>
+		<outputDirectory>/lwe-server-${project.version}/var/lib/lwe-server/resources/</outputDirectory>
+		<includes>
+		<include>stacks/**</include>
+		</includes>
+		</fileSet>
+		-->
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>gaia-search-${project.version}/lib/gaia-search</outputDirectory>
+			<unpack>false</unpack>
+			<scope>compile</scope>
+		</dependencySet>
+	</dependencySets>
+</assembly>

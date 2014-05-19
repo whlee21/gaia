@@ -1,0 +1,10 @@
+mvn install:install-file -Dfile=bcrypt-0.3.jar -DgroupId=org.bcrypt -DartifactId=bcrypt -Dversion=0.3 -Dpackaging=jar
+mvn install:install-file -Dfile=qspeller-0.3.jar -DgroupId=com.teragram.spelling -DartifactId=qspeller -Dversion=0.3 -Dpackaging=jar
+mvn install:install-file -Dfile=kranalyzer-4.0.jar -DgroupId=kr.analyzer -DartifactId=kranalyzer -Dversion=4.0 -Dpackaging=jar
+mvn install:install-file -Dfile=edtFTPj-2.4.0.jar -DgroupId=com.enterprisedt -DartifactId=edtFTPj -Dversion=2.4.0 -Dpackaging=jar
+mvn install:install-file -Dfile=tm-extractors-1.0-aperture.bundle.jar -DgroupId=org.textmining -DartifactId=tm-extractors -Dversion=1.0 -Dpackaging=jar
+mvn install:install-file -Dfile=hadoop-consumer-0.8.0.jar -DgroupId=org.apache.kafka -DartifactId=hadoop-consumer -Dversion=0.8.0-beta1 -Dpackaging=jar
+mvn install:install-file -Dfile=hadoop-producer-0.8.0.jar -DgroupId=org.apache.kafka -DartifactId=hadoop-producer -Dversion=0.8.0-beta1 -Dpackaging=jar
+mvn install:install-file -Dfile=kafka_2.8.0-0.8.0.jar -DgroupId=org.apache.kafka -DartifactId=kafka_2.8.0 -Dversion=0.8.0-beta1 -Dpackaging=jar
+mvn install:install-file -Dfile=eproperties-1.1.5.jar -DgroupId=net.jmatrix -DartifactId=eproperties -Dversion=1.1.5 -Dpackaging=jar
+mvn install:install-file -Dfile=gdata-gsa-1.0.jar -DgroupId=com.google.enterprise.api -DartifactId=gdata-gsa -Dversion=1.0 -Dpackaging=jar

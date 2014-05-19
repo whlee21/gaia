@@ -1,0 +1,114 @@
+file: defaults.yml
+initCalled: true
+location: CONF
+readOnly: false
+values:
+  crawlers.crawl.item.timeout: 600000
+  crawlers.enabled.crawlers: ''
+  crawlers.filesystem.crawl.home: null
+  datasource.add_failed_docs: false
+  datasource.bounds: none
+  datasource.caching: false
+  datasource.commit_on_finish: true
+  datasource.commit_within: 900000
+  datasource.crawl_depth: -1
+  datasource.gaia.aperture.file.exclude_paths: []
+  datasource.gaia.aperture.web.bounds: tree
+  datasource.gaia.aperture.web.crawl_depth: 3
+  datasource.gaia.aperture.web.exclude_paths: []
+  datasource.gaia.fs.exclude_paths: []
+  datasource.gaia.gcm.sharepoint.excluded_urls: []
+  datasource.indexing: true
+  datasource.mapping.aperture: &id001 !!gaia.crawl.datasource.FieldMapping
+    addGaiaSearchFields: true
+    addOriginalContent: false
+    datasourceField: data_source
+    defaultField: null
+    dynamicField: attr
+    literals: {}
+    mappings:
+      slide-count: pageCount
+      content-type: mimeType
+      body: body
+      slides: pageCount
+      subject: subject
+      plaintextmessagecontent: body
+      lastmodified: lastModified
+      lastmodifiedby: author
+      content-encoding: characterSet
+      type: null
+      date: null
+      creator: creator
+      author: author
+      title: title
+      mimetype: mimeType
+      plaintextcontent: body
+      created: dateCreated
+      pagecount: pageCount
+      description: description
+      contentcreated: dateCreated
+      contributor: author
+      name: title
+      filelastmodified: lastModified
+      fullname: author
+      fulltext: body
+      messagesubject: title
+      last-modified: lastModified
+      acl: acl
+      keyword: keywords
+      contentlastmodified: lastModified
+      last-printed: null
+      links: null
+      url: url
+      batch_id: batch_id
+      crawl_uri: crawl_uri
+      filesize: fileSize
+      page-count: pageCount
+      content-length: fileSize
+      filename: fileName
+    multiVal:
+      fileSize: false
+      body: false
+      author: true
+      title: false
+      acl: true
+      description: false
+      dateCreated: false
+      mimeType: false
+    types:
+      filesize: LONG
+      lastmodified: DATE
+      datecreated: DATE
+      date: DATE
+    uniqueKey: id
+    verifySchema: true
+  datasource.mapping.tika: *id001
+  datasource.max_bytes: 10485760
+  datasource.max_docs: -1
+  datasource.max_threads: 1
+  datasource.parsing: true
+  datasource.proxy_host: null
+  datasource.proxy_password: null
+  datasource.proxy_port: null
+  datasource.proxy_username: null
+  datasource.tika.parsers.flatten.compound: true
+  datasource.tika.parsers.include.images: false
+  datasource.use_direct_solr: false
+  datasource.verify_access: true
+  ftp.password: crawl@example.com
+  ftp.username: anonymous
+  http.accept.charset: utf-8,ISO-8859-1;q=0.7,*;q=0.7
+  http.accept.encoding: x-gzip, gzip, deflate
+  http.accept.language: en-us,en-gb,en;q=0.7,*;q=0.3
+  http.accept.mime: text/html,application/xml;q=0.9,application/xhtml+xml,text/xml;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+  http.agent.browser: Mozilla/5.0
+  http.agent.email: crawler at example dot com
+  http.agent.name: GaiaSearch
+  http.agent.string: ''
+  http.agent.url: ''
+  http.agent.version: ''
+  http.crawl.delay: 2000
+  http.max.redirects: 10
+  http.num.threads: 1
+  http.timeout: 10000
+  http.use.http11: true

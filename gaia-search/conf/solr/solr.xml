@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<solr persistent="true" sharedLib="lib">
+  <cores defaultCoreName="collection1" host="${host:}" adminPath="/admin/cores" hostPort="${jetty.port:}">
+    <core loadOnStartup="true" instanceDir="cores/collection1_0/" transient="false" name="collection1" dataDir="${data.dir}/solr/cores/collection1_0/data" collection="collection1"/>
+  </cores>
+</solr>

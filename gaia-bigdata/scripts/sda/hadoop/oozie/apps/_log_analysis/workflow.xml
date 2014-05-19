@@ -1,0 +1,114 @@
+<workflow-app xmlns="uri:oozie:workflow:0.2" name="_log_analysis">
+    <start to="popular-queries"/>
+    <action name="popular-queries">
+    	<pig>
+    		<job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapreduce.fileoutputcommitter.marksuccessfuljobs</name>
+                    <value>false</value>
+                </property>
+                <property>
+                    <name>hbase.zookeeper.quorum</name>
+                    <value>${zkhost}</value>
+                </property>
+            </configuration>
+            <script>scripts/popular-queries-and-terms.pig</script>
+            <param>input=${baseDir}/logs/query/*/${date}/${hour}/*</param>
+            <file>scripts/common.pig</file>
+	 	</pig>
+    	<ok to="mrr"/>
+        <error to="fail"/>
+    </action>
+    <action name="mrr">
+    	<pig>
+    		<job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapreduce.fileoutputcommitter.marksuccessfuljobs</name>
+                    <value>false</value>
+                </property>
+                <property>
+                    <name>hbase.zookeeper.quorum</name>
+                    <value>${zkhost}</value>
+                </property>
+            </configuration>
+            <script>scripts/mean-reciprocal-rank.pig</script>
+            <param>input_q=${baseDir}/logs/query/*/${date}/${hour}/*</param>
+            <param>input_c=${baseDir}/logs/click/*/${date}/${hour}/*</param>
+            <file>scripts/common.pig</file>
+    	</pig>
+    	<ok to="binned-results"/>
+        <error to="fail"/>
+    </action>
+    <action name="binned-results">
+    	<pig>
+    		<job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapreduce.fileoutputcommitter.marksuccessfuljobs</name>
+                    <value>false</value>
+                </property>
+                <property>
+                    <name>hbase.zookeeper.quorum</name>
+                    <value>${zkhost}</value>
+                </property>
+            </configuration>
+            <script>scripts/binned-results.pig</script>
+            <param>input=${baseDir}/logs/query/*/${date}/${hour}/*</param>
+            <file>scripts/common.pig</file>
+    	</pig>
+    	<ok to="query-counts"/>
+        <error to="fail"/>
+    </action>
+    <action name="query-counts">
+    	<pig>
+    		<job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapreduce.fileoutputcommitter.marksuccessfuljobs</name>
+                    <value>false</value>
+                </property>
+                <property>
+                    <name>hbase.zookeeper.quorum</name>
+                    <value>${zkhost}</value>
+                </property>
+            </configuration>
+            <script>scripts/daily-query-counts.pig</script>
+            <param>input=${baseDir}/logs/query/*/${date}/${hour}/*</param>
+            <file>scripts/common.pig</file>
+    	</pig>
+    	<ok to="less-than-n"/>
+        <error to="fail"/>
+    </action>
+    <action name="less-than-n">
+    	<pig>
+    		<job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapreduce.fileoutputcommitter.marksuccessfuljobs</name>
+                    <value>false</value>
+                </property>
+                <property>
+                    <name>hbase.zookeeper.quorum</name>
+                    <value>${zkhost}</value>
+                </property>
+            </configuration>
+            <script>scripts/less-than-n-results.pig</script>
+            <param>input=${baseDir}/logs/query/*/${date}/${hour}/*</param>
+            <param>n=100</param>
+            <file>scripts/common.pig</file>
+    	</pig>
+    	<ok to="end"/>
+        <error to="fail"/>
+    </action>
+    <kill name="fail">
+        <message>Pig failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

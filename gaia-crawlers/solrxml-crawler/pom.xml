@@ -1,0 +1,160 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>gaia</groupId>
+		<artifactId>gaia-project</artifactId>
+		<version>0.1</version>
+		<relativePath>../../gaia-project/pom.xml</relativePath>
+	</parent>
+
+	<artifactId>solrxml-crawler</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Gaia :: Crawler :: Solrxml</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.slf4j</groupId> -->
+		<!-- <artifactId>log4j-over-slf4j</artifactId> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>gaia</groupId>
+			<artifactId>gaia-shared</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.xnap.commons</groupId>
+			<artifactId>gettext-commons</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-core</artifactId>
+			<exclusions>
+				<!-- <exclusion> -->
+				<!-- <groupId>org.restlet.jee</groupId> -->
+				<!-- <artifactId>org.restlet</artifactId> -->
+				<!-- </exclusion> -->
+				<!-- <exclusion> -->
+				<!-- <groupId>org.restlet.jee</groupId> -->
+				<!-- <artifactId>org.restlet.ext.servlet</artifactId> -->
+				<!-- </exclusion> -->
+				<exclusion>
+					<groupId>org.apache.hadoop</groupId>
+					<artifactId>hadoop-common</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.hadoop</groupId>
+					<artifactId>hadoop-annotations</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.hadoop</groupId>
+					<artifactId>hadoop-auth</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.hadoop</groupId>
+					<artifactId>hadoop-hdfs</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assemblies/jar-with-dependency.xml</descriptor>
+					</descriptors>
+					<archive>
+						<manifestEntries>
+							<Crawler-Alias>gaia.solrxml</Crawler-Alias>
+							<Crawler-Class>gaia.crawl.solrxml.SolrXmlCrawlerController</Crawler-Class>
+						</manifestEntries>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<!-- unbinds rpm creation from maven lifecycle -->
+						<phase>none</phase>
+						<goals>
+							<goal>attached-rpm</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<copyright>2012, Apache Software Foundation</copyright>
+					<group>Development</group>
+					<description>Maven Recipe: RPM Package.</description>
+					<mappings />
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.rat</groupId>
+				<artifactId>apache-rat-plugin</artifactId>
+				<version>0.9</version>
+				<configuration>
+					<excludes>
+						<exclude>**/*.json</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<redirectTestOutputToFile>true</redirectTestOutputToFile>
+							<forkMode>always</forkMode>
+							<forkedProcessTimeoutInSeconds>900</forkedProcessTimeoutInSeconds>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<redirectTestOutputToFile>true</redirectTestOutputToFile>
+					<forkMode>always</forkMode>
+					<forkedProcessTimeoutInSeconds>900</forkedProcessTimeoutInSeconds>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.xnap.commons</groupId>
+				<artifactId>maven-gettext-plugin</artifactId>
+				<configuration>
+					<poDirectory>${basedir}/src/main/i18n</poDirectory>
+					<!-- <targetBundle>gaia.search.Messages</targetBundle> -->
+					<targetBundle>Message</targetBundle>
+					<outputFormat>properties</outputFormat>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

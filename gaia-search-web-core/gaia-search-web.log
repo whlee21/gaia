@@ -1,0 +1,394 @@
+12:07:24,695  INFO Configuration:218 - Home dir : /home/whlee21/workspace/gaia/gaia-search-web-core
+12:07:24,699  INFO Configuration:298 - Web App DIR : /home/whlee21/workspace/gaia/gaia-search-web-core/web
+12:07:24,699  INFO Configuration:331 - Conf Dir : /home/whlee21/workspace/gaia/gaia-search-web-core/conf
+12:07:24,699  INFO Configuration:336 - Data Dir : /home/whlee21/workspace/gaia/gaia-search-web-core/data
+12:07:24,701  INFO Configuration:341 - Logs Dir : /home/whlee21/workspace/gaia/gaia-search-web-core/logs
+12:07:24,842 DEBUG GaiaSearchUIModule:99 - whlee21 buildJpaPersistModule LOCAL
+12:07:24,842  INFO Configuration:336 - Data Dir : /home/whlee21/workspace/gaia/gaia-search-web-core/data
+12:07:24,844 DEBUG Configuration:402 - Reading password from file /home/whlee21/workspace/gaia/gaia-search-web-core/conf/password.dat
+12:07:25,085  INFO GaiaSearchUIServer:202 - Getting the controller
+[EL Info]: 2013-12-06 12:07:26.166--ServerSession(807302825)--EclipseLink, version: Eclipse Persistence Services - 2.5.0.v20130507-3faac2b
+[EL Info]: connection: 2013-12-06 12:07:26.875--ServerSession(807302825)--file:/home/whlee21/workspace/gaia/gaia-search-web-core/target/gaia-search-web-core-0.1-dist/gaia-search-web/lib/gaia-search-web-core-0.1.jar_gaia-search-ui_url=jdbc:h2:file:/home/whlee21/workspace/gaia/gaia-search-web-core/data/gaia_user=gaia login successful
+12:07:26,955  INFO GaiaSearchUIServer:148 - Local database is used - creating default users
+12:07:27,082 DEBUG log:162 - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+12:07:27,101  INFO ClassPathXmlApplicationContext:456 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5ff1769d: startup date [Fri Dec 06 12:07:27 KST 2013]; root of context hierarchy
+12:07:27,135 DEBUG ClassPathXmlApplicationContext:470 - Bean factory for org.springframework.context.support.ClassPathXmlApplicationContext@5ff1769d: org.springframework.beans.factory.support.DefaultListableBeanFactory@6a51e65a: defining beans []; root of factory hierarchy
+12:07:27,146 DEBUG ClassPathXmlApplicationContext:776 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@2ef83b4c]
+12:07:27,148 DEBUG ClassPathXmlApplicationContext:800 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@6867da8b]
+12:07:27,149  INFO DefaultListableBeanFactory:557 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6a51e65a: defining beans []; root of factory hierarchy
+12:07:27,151 DEBUG ClassPathXmlApplicationContext:827 - Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@4e4f3c9c]
+12:07:27,151 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'lifecycleProcessor'
+12:07:27,157  INFO ClassPathXmlApplicationContext:456 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5741f75b: startup date [Fri Dec 06 12:07:27 KST 2013]; parent: org.springframework.context.support.ClassPathXmlApplicationContext@5ff1769d
+12:07:27,160  INFO XmlBeanDefinitionReader:315 - Loading XML bean definitions from class path resource [webapp/WEB-INF/spring-security.xml]
+12:07:27,174 DEBUG DefaultDocumentLoader:72 - Using JAXP provider [org.apache.xerces.jaxp.DocumentBuilderFactoryImpl]
+12:07:27,308 DEBUG PluggableSchemaResolver:140 - Loading schema mappings from [META-INF/spring.schemas]
+12:07:27,312 DEBUG PluggableSchemaResolver:146 - Loaded schema mappings: {http://www.springframework.org/schema/util/spring-util.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/task/spring-task.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://www.springframework.org/schema/security/spring-security-2.0.2.xsd=org/springframework/security/config/spring-security-2.0.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.0.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://www.springframework.org/schema/aop/spring-aop-2.0.xsd=org/springframework/aop/config/spring-aop-2.0.xsd, http://www.springframework.org/schema/tool/spring-tool-2.5.xsd=org/springframework/beans/factory/xml/spring-tool-2.5.xsd, http://www.springframework.org/schema/security/spring-security-3.1.xsd=org/springframework/security/config/spring-security-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/jee/spring-jee-2.5.xsd=org/springframework/ejb/config/spring-jee-2.5.xsd, http://www.springframework.org/schema/security/spring-security-3.0.3.xsd=org/springframework/security/config/spring-security-3.0.3.xsd, http://www.springframework.org/schema/aop/spring-aop.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://www.springframework.org/schema/beans/spring-beans-2.0.xsd=org/springframework/beans/factory/xml/spring-beans-2.0.xsd, http://www.springframework.org/schema/beans/spring-beans-3.0.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/security/spring-security-2.0.1.xsd=org/springframework/security/config/spring-security-2.0.1.xsd, http://www.springframework.org/schema/task/spring-task-3.0.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://www.springframework.org/schema/security/spring-security-2.0.xsd=org/springframework/security/config/spring-security-2.0.xsd, http://www.springframework.org/schema/security/spring-security-3.0.xsd=org/springframework/security/config/spring-security-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-2.5.xsd=org/springframework/transaction/config/spring-tx-2.5.xsd, http://www.springframework.org/schema/context/spring-context-2.5.xsd=org/springframework/context/config/spring-context-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd=org/springframework/jdbc/config/spring-jdbc-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.0.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx.xsd=org/springframework/transaction/config/spring-tx-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool-2.0.xsd=org/springframework/beans/factory/xml/spring-tool-2.0.xsd, http://www.springframework.org/schema/util/spring-util-2.5.xsd=org/springframework/beans/factory/xml/spring-util-2.5.xsd, http://www.springframework.org/schema/lang/spring-lang.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.5.xsd=org/springframework/scripting/config/spring-lang-2.5.xsd, http://www.springframework.org/schema/security/spring-security-2.0.4.xsd=org/springframework/security/config/spring-security-2.0.4.xsd, http://www.springframework.org/schema/jee/spring-jee-3.0.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/jee/spring-jee-2.0.xsd=org/springframework/ejb/config/spring-jee-2.0.xsd, http://www.springframework.org/schema/security/spring-security.xsd=org/springframework/security/config/spring-security-3.1.xsd, http://www.springframework.org/schema/context/spring-context.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/jee/spring-jee.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/aop/spring-aop-2.5.xsd=org/springframework/aop/config/spring-aop-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc.xsd=org/springframework/jdbc/config/spring-jdbc-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-2.0.xsd=org/springframework/transaction/config/spring-tx-2.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.0.xsd=org/springframework/transaction/config/spring-tx-3.0.xsd, http://www.springframework.org/schema/context/spring-context-3.0.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/util/spring-util-3.0.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-3.0.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/util/spring-util-2.0.xsd=org/springframework/beans/factory/xml/spring-util-2.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.0.xsd=org/springframework/scripting/config/spring-lang-2.0.xsd, http://www.springframework.org/schema/beans/spring-beans-2.5.xsd=org/springframework/beans/factory/xml/spring-beans-2.5.xsd}
+12:07:27,312 DEBUG PluggableSchemaResolver:118 - Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.0.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.0.xsd
+12:07:27,371 DEBUG PluggableSchemaResolver:118 - Found XML schema [http://www.springframework.org/schema/security/spring-security-3.1.xsd] in classpath: org/springframework/security/config/spring-security-3.1.xsd
+12:07:27,427 DEBUG DefaultBeanDefinitionDocumentReader:87 - Loading bean definitions
+12:07:27,443 DEBUG DefaultNamespaceHandlerResolver:156 - Loaded NamespaceHandler mappings: {http://www.springframework.org/schema/p=org.springframework.beans.factory.xml.SimplePropertyNamespaceHandler, http://www.springframework.org/schema/util=org.springframework.beans.factory.xml.UtilNamespaceHandler, http://www.springframework.org/schema/jee=org.springframework.ejb.config.JeeNamespaceHandler, http://www.springframework.org/schema/aop=org.springframework.aop.config.AopNamespaceHandler, http://www.springframework.org/schema/jdbc=org.springframework.jdbc.config.JdbcNamespaceHandler, http://www.springframework.org/schema/security=org.springframework.security.config.SecurityNamespaceHandler, http://www.springframework.org/schema/tx=org.springframework.transaction.config.TxNamespaceHandler, http://www.springframework.org/schema/task=org.springframework.scheduling.config.TaskNamespaceHandler, http://www.springframework.org/schema/lang=org.springframework.scripting.config.LangNamespaceHandler, http://www.springframework.org/schema/context=org.springframework.context.config.ContextNamespaceHandler}
+12:07:27,447  INFO SpringSecurityCoreVersion:33 - You are running with Spring Security Core 3.1.4.RELEASE
+12:07:27,447  INFO SecurityNamespaceHandler:59 - Spring Security 'config' module version is 3.1.4.RELEASE
+12:07:27,483  INFO FilterInvocationSecurityMetadataSourceParser:134 - Creating access control expression attribute 'isAuthenticated()' for /**
+12:07:27,483  INFO FilterInvocationSecurityMetadataSourceParser:134 - Creating access control expression attribute 'hasRole('ADMIN')' for /**
+12:07:27,495  INFO HttpSecurityBeanDefinitionParser:264 - Checking sorted filter chain: [Root bean: class [org.springframework.security.web.context.SecurityContextPersistenceFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 200, Root bean: class [org.springframework.security.web.authentication.www.BasicAuthenticationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1200, Root bean: class [org.springframework.security.web.savedrequest.RequestCacheAwareFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1300, Root bean: class [org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1400, Root bean: class [org.springframework.security.web.authentication.AnonymousAuthenticationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1700, Root bean: class [org.springframework.security.web.session.SessionManagementFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1800, Root bean: class [org.springframework.security.web.access.ExceptionTranslationFilter]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null, order = 1900, <org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0>, order = 2000]
+12:07:27,502 DEBUG XmlBeanDefinitionReader:185 - Loaded 20 bean definitions from location pattern [classpath:/webapp/WEB-INF/spring-security.xml]
+12:07:27,502 DEBUG ClassPathXmlApplicationContext:470 - Bean factory for org.springframework.context.support.ClassPathXmlApplicationContext@5741f75b: org.springframework.beans.factory.support.DefaultListableBeanFactory@1dfadf99: defining beans [org.springframework.security.filterChains,org.springframework.security.filterChainProxy,org.springframework.security.web.PortMapperImpl#0,org.springframework.security.web.PortResolverImpl#0,org.springframework.security.config.authentication.AuthenticationManagerFactoryBean#0,org.springframework.security.authentication.ProviderManager#0,org.springframework.security.web.context.HttpSessionSecurityContextRepository#0,org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy#0,org.springframework.security.web.savedrequest.HttpSessionRequestCache#0,org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#0,org.springframework.security.access.vote.AffirmativeBased#0,org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0,org.springframework.security.web.access.DefaultWebInvocationPrivilegeEvaluator#0,org.springframework.security.authentication.AnonymousAuthenticationProvider#0,org.springframework.security.userDetailsServiceFactory,org.springframework.security.web.DefaultSecurityFilterChain#0,org.springframework.security.authentication.dao.DaoAuthenticationProvider#0,org.springframework.security.authentication.DefaultAuthenticationEventPublisher#0,org.springframework.security.authenticationManager,gaiaEntryPoint]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@6a51e65a
+12:07:27,508 DEBUG ClassPathXmlApplicationContext:776 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@4d5cef4c]
+12:07:27,508 DEBUG ClassPathXmlApplicationContext:800 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@10628e42]
+12:07:27,510  INFO DefaultListableBeanFactory:557 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1dfadf99: defining beans [org.springframework.security.filterChains,org.springframework.security.filterChainProxy,org.springframework.security.web.PortMapperImpl#0,org.springframework.security.web.PortResolverImpl#0,org.springframework.security.config.authentication.AuthenticationManagerFactoryBean#0,org.springframework.security.authentication.ProviderManager#0,org.springframework.security.web.context.HttpSessionSecurityContextRepository#0,org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy#0,org.springframework.security.web.savedrequest.HttpSessionRequestCache#0,org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#0,org.springframework.security.access.vote.AffirmativeBased#0,org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0,org.springframework.security.web.access.DefaultWebInvocationPrivilegeEvaluator#0,org.springframework.security.authentication.AnonymousAuthenticationProvider#0,org.springframework.security.userDetailsServiceFactory,org.springframework.security.web.DefaultSecurityFilterChain#0,org.springframework.security.authentication.dao.DaoAuthenticationProvider#0,org.springframework.security.authentication.DefaultAuthenticationEventPublisher#0,org.springframework.security.authenticationManager,gaiaEntryPoint]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@6a51e65a
+12:07:27,511 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.filterChains'
+12:07:27,511 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.filterChains'
+12:07:27,524 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.filterChains' to allow for resolving potential circular references
+12:07:27,534 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.web.DefaultSecurityFilterChain#0'
+12:07:27,534 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.web.DefaultSecurityFilterChain#0'
+12:07:27,537 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)'
+12:07:27,537 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)'
+12:07:27,538 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#1'
+12:07:27,538 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.web.context.HttpSessionSecurityContextRepository#0'
+12:07:27,538 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.web.context.HttpSessionSecurityContextRepository#0'
+12:07:27,542 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.web.context.HttpSessionSecurityContextRepository#0' to allow for resolving potential circular references
+12:07:27,549 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.web.context.HttpSessionSecurityContextRepository#0'
+12:07:27,564 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name '(inner bean)#1'
+12:07:27,565 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#1'
+12:07:27,565 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#2'
+12:07:27,566 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.authentication.ProviderManager#0'
+12:07:27,566 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.authentication.ProviderManager#0'
+12:07:27,566 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.authentication.AnonymousAuthenticationProvider#0'
+12:07:27,566 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.authentication.AnonymousAuthenticationProvider#0'
+12:07:27,569 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.authentication.AnonymousAuthenticationProvider#0' to allow for resolving potential circular references
+12:07:27,569 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name 'org.springframework.security.authentication.AnonymousAuthenticationProvider#0'
+12:07:27,570 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.authentication.AnonymousAuthenticationProvider#0'
+12:07:27,570 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.config.authentication.AuthenticationManagerFactoryBean#0'
+12:07:27,570 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.config.authentication.AuthenticationManagerFactoryBean#0'
+12:07:27,571 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.config.authentication.AuthenticationManagerFactoryBean#0' to allow for resolving potential circular references
+12:07:27,571 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.config.authentication.AuthenticationManagerFactoryBean#0'
+12:07:27,571 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.authenticationManager'
+12:07:27,571 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.authenticationManager'
+12:07:27,572 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.authentication.dao.DaoAuthenticationProvider#0'
+12:07:27,572 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.authentication.dao.DaoAuthenticationProvider#0'
+12:07:27,576 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.authentication.dao.DaoAuthenticationProvider#0' to allow for resolving potential circular references
+12:07:27,576 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'passwordEncoder'
+12:07:27,581 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'gaiaLocalUserService'
+12:07:27,584 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name 'org.springframework.security.authentication.dao.DaoAuthenticationProvider#0'
+12:07:27,585 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.authentication.dao.DaoAuthenticationProvider#0'
+12:07:27,585 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'gaiaLdapAuthenticationProvider'
+12:07:27,591 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.authenticationManager' to allow for resolving potential circular references
+12:07:27,591 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher#0'
+12:07:27,591 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher#0'
+12:07:27,595 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher#0' to allow for resolving potential circular references
+12:07:27,595 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher#0'
+12:07:27,598 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name 'org.springframework.security.authenticationManager'
+12:07:27,599 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.authenticationManager'
+12:07:27,599 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.authentication.ProviderManager#0' to allow for resolving potential circular references
+12:07:27,599 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#2'
+12:07:27,600 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.config.authentication.AuthenticationManagerFactoryBean#0'
+12:07:27,607 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name '(inner bean)#2'
+12:07:27,608 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#2'
+12:07:27,608 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name 'org.springframework.security.authentication.ProviderManager#0'
+12:07:27,608 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.authentication.ProviderManager#0'
+12:07:27,609 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'gaiaEntryPoint'
+12:07:27,609 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'gaiaEntryPoint'
+12:07:27,609 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'gaiaEntryPoint' to allow for resolving potential circular references
+12:07:27,610 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'gaiaEntryPoint'
+12:07:27,613 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name '(inner bean)#2'
+12:07:27,613 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#2'
+12:07:27,613 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#3'
+12:07:27,614 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.web.savedrequest.HttpSessionRequestCache#0'
+12:07:27,614 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.web.savedrequest.HttpSessionRequestCache#0'
+12:07:27,615 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.web.savedrequest.HttpSessionRequestCache#0' to allow for resolving potential circular references
+12:07:27,617 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.web.PortResolverImpl#0'
+12:07:27,618 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.web.PortResolverImpl#0'
+12:07:27,618 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.web.PortResolverImpl#0' to allow for resolving potential circular references
+12:07:27,618 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.web.PortMapperImpl#0'
+12:07:27,619 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.web.PortMapperImpl#0'
+12:07:27,619 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.web.PortMapperImpl#0' to allow for resolving potential circular references
+12:07:27,619 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.web.PortMapperImpl#0'
+12:07:27,622 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.web.PortResolverImpl#0'
+12:07:27,622 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.web.savedrequest.HttpSessionRequestCache#0'
+12:07:27,623 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name '(inner bean)#3'
+12:07:27,623 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#3'
+12:07:27,623 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#4'
+12:07:27,624 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name '(inner bean)#4'
+12:07:27,624 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#4'
+12:07:27,624 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#5'
+12:07:27,627 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name '(inner bean)#5'
+12:07:27,627 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#5'
+12:07:27,628 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#6'
+12:07:27,628 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.context.HttpSessionSecurityContextRepository#0'
+12:07:27,628 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy#0'
+12:07:27,628 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy#0'
+12:07:27,629 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy#0' to allow for resolving potential circular references
+12:07:27,632 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy#0'
+12:07:27,634 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#6'
+12:07:27,634 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#6'
+12:07:27,638 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name '(inner bean)#6'
+12:07:27,638 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#6'
+12:07:27,638 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#7'
+12:07:27,638 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'gaiaEntryPoint'
+12:07:27,639 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.savedrequest.HttpSessionRequestCache#0'
+12:07:27,643 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#7'
+12:07:27,643 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#7'
+12:07:27,647 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name '(inner bean)#7'
+12:07:27,647 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#7'
+12:07:27,648 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0'
+12:07:27,648 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0'
+12:07:27,650 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0' to allow for resolving potential circular references
+12:07:27,651 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.access.vote.AffirmativeBased#0'
+12:07:27,651 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.access.vote.AffirmativeBased#0'
+12:07:27,651 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#8'
+12:07:27,653 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#0'
+12:07:27,653 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#0'
+12:07:27,654 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#0' to allow for resolving potential circular references
+12:07:27,654 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#0'
+12:07:27,657 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#8'
+12:07:27,658 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.access.vote.AffirmativeBased#0' to allow for resolving potential circular references
+12:07:27,658 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name 'org.springframework.security.access.vote.AffirmativeBased#0'
+12:07:27,659 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.access.vote.AffirmativeBased#0'
+12:07:27,664 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.authentication.ProviderManager#0'
+12:07:27,664 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#9'
+12:07:27,665 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#9'
+12:07:27,667 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#9'
+12:07:27,667 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#10'
+12:07:27,669 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#10'
+12:07:27,670 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#11'
+12:07:27,670 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#11'
+12:07:27,670 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#12'
+12:07:27,671 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#12'
+12:07:27,671 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#0'
+12:07:27,673 DEBUG ExpressionBasedFilterInvocationSecurityMetadataSource:47 - Adding web access control expression 'isAuthenticated()', for Ant [pattern='/**', GET]
+12:07:27,690 DEBUG ExpressionBasedFilterInvocationSecurityMetadataSource:47 - Adding web access control expression 'hasRole('ADMIN')', for org.springframework.security.web.util.AnyRequestMatcher@1
+12:07:27,691 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#9'
+12:07:27,691 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name 'org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0'
+12:07:27,692 DEBUG FilterSecurityInterceptor:159 - Validated configuration attributes
+12:07:27,692 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0'
+12:07:27,699  INFO DefaultSecurityFilterChain:28 - Creating filter chain: org.springframework.security.web.util.AnyRequestMatcher@1, [org.springframework.security.web.context.SecurityContextPersistenceFilter@1beacf75, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@54da18a4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a87e281, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f27a12c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52c667e3, org.springframework.security.web.session.SessionManagementFilter@5fce9289, org.springframework.security.web.access.ExceptionTranslationFilter@72f69182, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@19cb28c5]
+12:07:27,699 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.web.DefaultSecurityFilterChain#0' to allow for resolving potential circular references
+12:07:27,699 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.web.DefaultSecurityFilterChain#0'
+12:07:27,704 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name 'org.springframework.security.filterChains'
+12:07:27,704 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.filterChains'
+12:07:27,705 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.filterChainProxy'
+12:07:27,705 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.filterChainProxy'
+12:07:27,705 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.filterChains'
+12:07:27,707 DEBUG BeanUtils:421 - No property editor [org.springframework.security.web.SecurityFilterChainEditor] found for type org.springframework.security.web.SecurityFilterChain according to 'Editor' suffix convention
+12:07:27,710 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.filterChainProxy' to allow for resolving potential circular references
+12:07:27,710 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean '(inner bean)#13'
+12:07:27,711 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean '(inner bean)#13'
+12:07:27,715 DEBUG DefaultListableBeanFactory:1463 - Invoking afterPropertiesSet() on bean with name 'org.springframework.security.filterChainProxy'
+12:07:27,717 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.filterChainProxy'
+12:07:27,717 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.PortMapperImpl#0'
+12:07:27,717 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.PortResolverImpl#0'
+12:07:27,717 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.config.authentication.AuthenticationManagerFactoryBean#0'
+12:07:27,717 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.authentication.ProviderManager#0'
+12:07:27,717 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.context.HttpSessionSecurityContextRepository#0'
+12:07:27,717 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy#0'
+12:07:27,717 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.savedrequest.HttpSessionRequestCache#0'
+12:07:27,718 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler#0'
+12:07:27,718 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.access.vote.AffirmativeBased#0'
+12:07:27,718 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0'
+12:07:27,718 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.web.access.DefaultWebInvocationPrivilegeEvaluator#0'
+12:07:27,718 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.web.access.DefaultWebInvocationPrivilegeEvaluator#0'
+12:07:27,718 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.access.intercept.FilterSecurityInterceptor#0'
+12:07:27,719 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.web.access.DefaultWebInvocationPrivilegeEvaluator#0' to allow for resolving potential circular references
+12:07:27,719 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.web.access.DefaultWebInvocationPrivilegeEvaluator#0'
+12:07:27,719 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.authentication.AnonymousAuthenticationProvider#0'
+12:07:27,720 DEBUG DefaultListableBeanFactory:214 - Creating shared instance of singleton bean 'org.springframework.security.userDetailsServiceFactory'
+12:07:27,720 DEBUG DefaultListableBeanFactory:429 - Creating instance of bean 'org.springframework.security.userDetailsServiceFactory'
+12:07:27,720 DEBUG DefaultListableBeanFactory:503 - Eagerly caching bean 'org.springframework.security.userDetailsServiceFactory' to allow for resolving potential circular references
+12:07:27,720 DEBUG DefaultListableBeanFactory:457 - Finished creating instance of bean 'org.springframework.security.userDetailsServiceFactory'
+12:07:27,720 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.web.DefaultSecurityFilterChain#0'
+12:07:27,721 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.authentication.dao.DaoAuthenticationProvider#0'
+12:07:27,721 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher#0'
+12:07:27,721 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.authenticationManager'
+12:07:27,721 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'gaiaEntryPoint'
+12:07:27,721 DEBUG ClassPathXmlApplicationContext:827 - Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@3691190a]
+12:07:27,722 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'lifecycleProcessor'
+12:07:27,732 DEBUG Container:206 - Container org.eclipse.jetty.server.Server@26d5acae + o.e.j.s.ServletContextHandler{/,null} as handler
+12:07:27,745  INFO Configuration:298 - Web App DIR : /home/whlee21/workspace/gaia/gaia-search-web-core/web
+12:07:27,758 DEBUG ServletHandler:1347 - filterNameMap={com.google.inject.servlet.GuiceFilter-abffd00=com.google.inject.servlet.GuiceFilter-abffd00}
+12:07:27,760 DEBUG ServletHandler:1348 - pathFilters=[[/*]/[]==0=>com.google.inject.servlet.GuiceFilter-abffd00]
+12:07:27,760 DEBUG ServletHandler:1349 - servletFilterMap={}
+12:07:27,760 DEBUG ServletHandler:1350 - servletPathMap=null
+12:07:27,760 DEBUG ServletHandler:1351 - servletNameMap={}
+12:07:27,765 DEBUG ServletHandler:1347 - filterNameMap={com.google.inject.servlet.GuiceFilter-abffd00=com.google.inject.servlet.GuiceFilter-abffd00}
+12:07:27,765 DEBUG ServletHandler:1348 - pathFilters=[[/*]/[]==0=>com.google.inject.servlet.GuiceFilter-abffd00]
+12:07:27,766 DEBUG ServletHandler:1349 - servletFilterMap={}
+12:07:27,766 DEBUG ServletHandler:1350 - servletPathMap={/=org.eclipse.jetty.servlet.DefaultServlet-5577817}
+12:07:27,766 DEBUG ServletHandler:1351 - servletNameMap={org.eclipse.jetty.servlet.DefaultServlet-5577817=org.eclipse.jetty.servlet.DefaultServlet-5577817}
+12:07:27,766 DEBUG ServletHandler:1347 - filterNameMap={com.google.inject.servlet.GuiceFilter-abffd00=com.google.inject.servlet.GuiceFilter-abffd00}
+12:07:27,766 DEBUG ServletHandler:1348 - pathFilters=[[/*]/[]==0=>com.google.inject.servlet.GuiceFilter-abffd00]
+12:07:27,767 DEBUG ServletHandler:1349 - servletFilterMap={}
+12:07:27,767 DEBUG ServletHandler:1350 - servletPathMap={/api/v1/*=gaia.search.ui.controller.GaiaProxyServlet-52f24202, /=org.eclipse.jetty.servlet.DefaultServlet-5577817}
+12:07:27,767 DEBUG ServletHandler:1351 - servletNameMap={gaia.search.ui.controller.GaiaProxyServlet-52f24202=gaia.search.ui.controller.GaiaProxyServlet-52f24202, org.eclipse.jetty.servlet.DefaultServlet-5577817=org.eclipse.jetty.servlet.DefaultServlet-5577817}
+12:07:27,769 DEBUG Container:206 - Container org.eclipse.jetty.server.Server@26d5acae + qtp24275411{8<=0<=0/25,-1} as threadpool
+12:07:27,777 DEBUG Container:206 - Container org.eclipse.jetty.server.Server@26d5acae + SelectChannelConnector@0.0.0.0:9091 as connector
+12:07:27,777 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'lifecycleProcessor'
+12:07:27,778 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.server.Server@26d5acae
+12:07:27,780  INFO Server:272 - jetty-8.1.14.v20131031
+12:07:27,789 DEBUG AbstractLifeCycle:179 - starting o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web}
+12:07:27,803 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@5471eca8 + com.google.inject.servlet.GuiceFilter-abffd00 as filter
+12:07:27,804 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@5471eca8 + [/*]/[]==0=>com.google.inject.servlet.GuiceFilter-abffd00 as filterMapping
+12:07:27,804 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@5471eca8 + org.eclipse.jetty.servlet.DefaultServlet-5577817 as servlet
+12:07:27,804 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@5471eca8 + gaia.search.ui.controller.GaiaProxyServlet-52f24202 as servlet
+12:07:27,804 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@5471eca8 + [/]=>org.eclipse.jetty.servlet.DefaultServlet-5577817 as servletMapping
+12:07:27,805 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@5471eca8 + [/api/v1/*]=>gaia.search.ui.controller.GaiaProxyServlet-52f24202 as servletMapping
+12:07:27,805 DEBUG Container:206 - Container org.eclipse.jetty.security.ConstraintSecurityHandler@36834e8 + org.eclipse.jetty.servlet.ServletHandler@5471eca8 as handler
+12:07:27,805 DEBUG Container:206 - Container org.eclipse.jetty.server.session.SessionHandler@2e696d17 + org.eclipse.jetty.security.ConstraintSecurityHandler@36834e8 as handler
+12:07:27,805 DEBUG Container:206 - Container org.eclipse.jetty.server.session.SessionHandler@2e696d17 + org.eclipse.jetty.server.session.HashSessionManager@b7918cf as sessionManager
+12:07:27,805 DEBUG Container:206 - Container o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web} + org.eclipse.jetty.server.session.SessionHandler@2e696d17 as handler
+12:07:27,806 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.server.session.SessionHandler@2e696d17
+12:07:27,806 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.server.session.HashSessionManager@b7918cf
+12:07:27,807 DEBUG Container:206 - Container org.eclipse.jetty.server.Server@26d5acae + org.eclipse.jetty.server.session.HashSessionIdManager@376f026 as sessionIdManager
+12:07:27,807 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.server.session.HashSessionIdManager@376f026
+12:07:27,808 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.server.session.HashSessionIdManager@376f026
+12:07:27,808 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.server.session.HashSessionManager@b7918cf
+12:07:27,809 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.security.ConstraintSecurityHandler@36834e8
+12:07:27,810 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.servlet.ServletHandler@5471eca8
+12:07:27,810 DEBUG ServletHandler:1347 - filterNameMap={com.google.inject.servlet.GuiceFilter-abffd00=com.google.inject.servlet.GuiceFilter-abffd00}
+12:07:27,810 DEBUG ServletHandler:1348 - pathFilters=[[/*]/[]==0=>com.google.inject.servlet.GuiceFilter-abffd00]
+12:07:27,810 DEBUG ServletHandler:1349 - servletFilterMap={}
+12:07:27,811 DEBUG ServletHandler:1350 - servletPathMap={/api/v1/*=gaia.search.ui.controller.GaiaProxyServlet-52f24202, /=org.eclipse.jetty.servlet.DefaultServlet-5577817}
+12:07:27,811 DEBUG ServletHandler:1351 - servletNameMap={gaia.search.ui.controller.GaiaProxyServlet-52f24202=gaia.search.ui.controller.GaiaProxyServlet-52f24202, org.eclipse.jetty.servlet.DefaultServlet-5577817=org.eclipse.jetty.servlet.DefaultServlet-5577817}
+12:07:27,811 DEBUG AbstractHandler:57 - starting org.eclipse.jetty.servlet.ServletHandler@5471eca8
+12:07:27,811 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.servlet.ServletHandler@5471eca8
+12:07:27,811 DEBUG AbstractHandler:57 - starting org.eclipse.jetty.security.ConstraintSecurityHandler@36834e8
+12:07:27,812 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.security.ConstraintSecurityHandler@36834e8
+12:07:27,812 DEBUG AbstractHandler:57 - starting org.eclipse.jetty.server.session.SessionHandler@2e696d17
+12:07:27,812 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.server.session.SessionHandler@2e696d17
+12:07:27,812 DEBUG AbstractHandler:57 - starting o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web}
+12:07:27,813 DEBUG AbstractLifeCycle:179 - starting com.google.inject.servlet.GuiceFilter-abffd00
+12:07:27,815 DEBUG DelegatingFilterProxy:157 - Initializing filter 'Key[type=javax.servlet.Filter, annotation=@com.google.inject.internal.UniqueAnnotations$Internal(value=1)]'
+12:07:27,818 DEBUG DefaultListableBeanFactory:244 - Returning cached instance of singleton bean 'org.springframework.security.filterChainProxy'
+12:07:27,819 DEBUG DelegatingFilterProxy:182 - Filter 'Key[type=javax.servlet.Filter, annotation=@com.google.inject.internal.UniqueAnnotations$Internal(value=1)]' configured successfully
+12월 06, 2013 12:07:27 오후 com.sun.jersey.api.core.PackagesResourceConfig init
+정보: Scanning for root resource and provider classes in the packages:
+  gaia.search.ui.api
+12월 06, 2013 12:07:27 오후 com.sun.jersey.api.core.ScanningResourceConfig logClasses
+정보: Root resource classes found:
+  class gaia.search.ui.api.LogoutService
+  class gaia.search.ui.api.UserService
+12월 06, 2013 12:07:27 오후 com.sun.jersey.api.core.ScanningResourceConfig init
+정보: No provider classes found.
+12월 06, 2013 12:07:27 오후 com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+정보: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+12월 06, 2013 12:07:28 오후 com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory getComponentProvider
+정보: Binding gaia.search.ui.api.UserService to GuiceInstantiatedComponentProvider
+12월 06, 2013 12:07:28 오후 com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory getComponentProvider
+정보: Binding gaia.search.ui.api.LogoutService to GuiceInstantiatedComponentProvider
+12:07:28,558 DEBUG AbstractLifeCycle:172 - STARTED com.google.inject.servlet.GuiceFilter-abffd00
+12:07:28,559 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.servlet.DefaultServlet-5577817
+12:07:28,559 DEBUG Holder:109 - Holding class org.eclipse.jetty.servlet.DefaultServlet
+12:07:28,563 DEBUG DefaultServlet:298 - resource base = null
+12:07:28,563 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.servlet.DefaultServlet-5577817
+12:07:28,563 DEBUG AbstractLifeCycle:179 - starting gaia.search.ui.controller.GaiaProxyServlet-52f24202
+12:07:28,563 DEBUG Holder:109 - Holding class gaia.search.ui.controller.GaiaProxyServlet
+12:07:28,568 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.client.HttpClient@4ca4ef99
+12:07:28,570 DEBUG AbstractLifeCycle:179 - starting SslContextFactory@626ec10f(null,null)
+12:07:28,570 DEBUG SslContextFactory:249 - No keystore or trust store configured.  ACCEPTING UNTRUSTED CERTIFICATES!!!!!
+12:07:28,572 DEBUG AbstractLifeCycle:172 - STARTED SslContextFactory@626ec10f(null,null)
+12:07:28,573 DEBUG AbstractLifeCycle:179 - starting null/null
+12:07:28,574 DEBUG AbstractLifeCycle:172 - STARTED PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
+12:07:28,575 DEBUG AbstractLifeCycle:179 - starting gaia.search.ui.controller.GaiaProxyServlet-52f24202{8<=0<=0/254,-1}
+12:07:28,577 DEBUG AbstractLifeCycle:172 - STARTED gaia.search.ui.controller.GaiaProxyServlet-52f24202{8<=7<=8/254,0}
+12:07:28,577 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.client.SelectConnector@79a3709b
+12:07:28,577 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.client.SelectConnector$Manager@65e8b7c4
+12:07:28,582 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.client.SelectConnector$Manager@65e8b7c4
+12:07:28,583 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.client.SelectConnector@79a3709b
+12:07:28,583 DEBUG nio:285 - Starting Thread[gaia.search.ui.controller.GaiaProxyServlet-52f24202-20 Selector0,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@15ee7e61
+12:07:28,583 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.client.HttpClient@4ca4ef99
+12:07:28,583 DEBUG AbstractLifeCycle:172 - STARTED gaia.search.ui.controller.GaiaProxyServlet-52f24202
+12:07:28,583 DEBUG AbstractLifeCycle:172 - STARTED o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web}
+12:07:28,583 DEBUG AbstractHandler:57 - starting org.eclipse.jetty.server.Server@26d5acae
+12:07:28,584 DEBUG AbstractLifeCycle:179 - starting qtp24275411{8<=0<=0/25,-1}
+12:07:28,585 DEBUG AbstractLifeCycle:172 - STARTED qtp24275411{8<=7<=8/25,0}
+12:07:28,585 DEBUG AbstractLifeCycle:179 - starting SelectChannelConnector@0.0.0.0:9091
+12:07:28,589 DEBUG AbstractLifeCycle:179 - starting null/null
+12:07:28,589 DEBUG AbstractLifeCycle:172 - STARTED PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
+12:07:28,589 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@2217d78e
+12:07:28,590 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@2217d78e
+12:07:28,590 DEBUG nio:285 - Starting Thread[qtp24275411-29 Selector1,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@1478232f
+12:07:28,590 DEBUG nio:285 - Starting Thread[qtp24275411-28 Selector0,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@4b48bd1e
+12:07:28,590  INFO AbstractConnector:338 - Started SelectChannelConnector@0.0.0.0:9091
+12:07:28,591 DEBUG AbstractLifeCycle:172 - STARTED SelectChannelConnector@0.0.0.0:9091
+12:07:28,591 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.server.Server@26d5acae
+12:07:39,570 DEBUG nio:842 - created SCEP@113bf1c7{l(/127.0.0.1:34889)<->r(/127.0.0.1:9091),s=0,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=0}-{AsyncHttpConnection@5cd408b7,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-14,l=0,c=0},r=0}
+12:07:39,571 DEBUG nio:842 - created SCEP@767e48a7{l(/127.0.0.1:34888)<->r(/127.0.0.1:9091),s=0,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=0}-{AsyncHttpConnection@648855fd,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-14,l=0,c=0},r=0}
+12:07:39,572 DEBUG nio:842 - created SCEP@468b9227{l(/127.0.0.1:34890)<->r(/127.0.0.1:9091),s=0,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=0}-{AsyncHttpConnection@20211ac5,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-14,l=0,c=0},r=0}
+12:07:39,573 DEBUG nio:842 - created SCEP@37dbb38f{l(/127.0.0.1:34891)<->r(/127.0.0.1:9091),s=0,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=0}-{AsyncHttpConnection@7422bef1,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-14,l=0,c=0},r=0}
+12:07:39,573 DEBUG HttpParser:281 - filled 394/394
+12:07:39,573 DEBUG HttpParser:281 - filled 0/0
+12:07:39,574 DEBUG HttpParser:281 - filled 0/0
+12:07:39,573 DEBUG HttpParser:281 - filled 0/0
+12:07:39,578 DEBUG Server:365 - REQUEST / on AsyncHttpConnection@648855fd,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-5,l=29,c=0},r=1
+12:07:39,579 DEBUG ContextHandler:942 - scope null||/ @ o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web}
+12:07:39,579 DEBUG ContextHandler:1014 - context=||/ @ o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web}
+12:07:39,580 DEBUG session:187 - sessionManager=org.eclipse.jetty.server.session.HashSessionManager@b7918cf
+12:07:39,580 DEBUG session:188 - session=null
+12:07:39,580 DEBUG ServletHandler:414 - servlet |/|null -> org.eclipse.jetty.servlet.DefaultServlet-5577817
+12:07:39,585 DEBUG ServletHandler:476 - chain=com.google.inject.servlet.GuiceFilter-abffd00->org.eclipse.jetty.servlet.DefaultServlet-5577817
+12:07:39,586 DEBUG ServletHandler:1464 - call filter com.google.inject.servlet.GuiceFilter-abffd00
+12:07:39,587 DEBUG ServletHandler:1495 - call servlet org.eclipse.jetty.servlet.DefaultServlet-5577817
+12:07:39,587 DEBUG DefaultServlet:391 - Resource /=file:/home/whlee21/workspace/gaia/gaia-search-web-core/web
+12:07:39,588 DEBUG DefaultServlet:485 - uri=/ resource=file:/home/whlee21/workspace/gaia/gaia-search-web-core/web
+12:07:39,592 DEBUG Server:367 - RESPONSE /  404 handled=true
+12:07:39,593 DEBUG AsyncHttpConnection:211 - Enabled read interest SCEP@767e48a7{l(/127.0.0.1:34888)<->r(/127.0.0.1:9091),s=1,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=0r}-{AsyncHttpConnection@648855fd,g=HttpGenerator{s=4,h=0,b=0,c=-1},p=HttpParser{s=0,l=29,c=0},r=1}
+12:07:39,594 DEBUG HttpParser:281 - filled 0/0
+12:07:48,832 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.server.Server@26d5acae
+12:07:48,833 DEBUG AbstractLifeCycle:187 - stopping SelectChannelConnector@0.0.0.0:9091
+12:07:48,833 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@2217d78e
+12:07:48,833 DEBUG nio:304 - Stopped Thread[qtp24275411-28 Selector0,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@4b48bd1e
+12:07:48,845 DEBUG ChannelEndPoint:209 - close SCEP@113bf1c7{l(/127.0.0.1:34889)<->r(/127.0.0.1:9091),s=0,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=1}-{AsyncHttpConnection@5cd408b7,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-14,l=0,c=0},r=0}
+12:07:48,848 DEBUG ChannelEndPoint:209 - close SCEP@468b9227{l(/127.0.0.1:34890)<->r(/127.0.0.1:9091),s=0,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=1}-{AsyncHttpConnection@20211ac5,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-14,l=0,c=0},r=0}
+12:07:48,849 DEBUG nio:304 - Stopped Thread[qtp24275411-29 Selector1,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@1478232f
+12:07:48,861 DEBUG ChannelEndPoint:209 - close SCEP@37dbb38f{l(/127.0.0.1:34891)<->r(/127.0.0.1:9091),s=0,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=1}-{AsyncHttpConnection@7422bef1,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-14,l=0,c=0},r=0}
+12:07:48,862 DEBUG ChannelEndPoint:209 - close SCEP@767e48a7{l(/127.0.0.1:34888)<->r(/127.0.0.1:9091),s=0,open=true,ishut=false,oshut=false,rb=false,wb=false,w=true,i=1r}-{AsyncHttpConnection@648855fd,g=HttpGenerator{s=0,h=-1,b=-1,c=-1},p=HttpParser{s=-14,l=0,c=-3},r=1}
+12:07:48,863 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@2217d78e
+12:07:48,863 DEBUG AbstractLifeCycle:187 - stopping PooledBuffers [4/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [1/1024@6144,1/1024@32768,0/1024@-]
+12:07:48,863 DEBUG AbstractLifeCycle:196 - STOPPED null/null
+12:07:48,864 DEBUG AbstractLifeCycle:196 - STOPPED SelectChannelConnector@0.0.0.0:9091
+12:07:48,864 DEBUG AbstractLifeCycle:187 - stopping o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web}
+12:07:48,864 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.server.session.SessionHandler@2e696d17
+12:07:48,864 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.server.session.HashSessionManager@b7918cf
+12:07:48,864 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.server.session.HashSessionManager@b7918cf
+12:07:48,864 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.security.ConstraintSecurityHandler@36834e8
+12:07:48,865 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.servlet.ServletHandler@5471eca8
+12:07:48,865 DEBUG AbstractHandler:68 - stopping org.eclipse.jetty.servlet.ServletHandler@5471eca8
+12:07:48,865 DEBUG AbstractLifeCycle:187 - stopping com.google.inject.servlet.GuiceFilter-abffd00
+12:07:48,865 DEBUG AbstractLifeCycle:196 - STOPPED com.google.inject.servlet.GuiceFilter-abffd00
+12:07:48,865 DEBUG AbstractLifeCycle:187 - stopping gaia.search.ui.controller.GaiaProxyServlet-52f24202
+12:07:48,865 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.client.HttpClient@4ca4ef99
+12:07:48,866 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.client.SelectConnector@79a3709b
+12:07:48,866 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.client.SelectConnector$Manager@65e8b7c4
+12:07:48,866 DEBUG nio:304 - Stopped Thread[gaia.search.ui.controller.GaiaProxyServlet-52f24202-20 Selector0,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@15ee7e61
+12:07:48,877 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.client.SelectConnector$Manager@65e8b7c4
+12:07:48,877 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.client.SelectConnector@79a3709b
+12:07:48,877 DEBUG AbstractLifeCycle:187 - stopping gaia.search.ui.controller.GaiaProxyServlet-52f24202{8<=7<=8/254,0}
+12:07:48,931 DEBUG AbstractLifeCycle:196 - STOPPED gaia.search.ui.controller.GaiaProxyServlet-52f24202{8<=0<=0/254,0}
+12:07:48,932 DEBUG AbstractLifeCycle:187 - stopping PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
+12:07:48,933 DEBUG AbstractLifeCycle:196 - STOPPED null/null
+12:07:48,933 DEBUG AbstractLifeCycle:187 - stopping SslContextFactory@626ec10f(null,null)
+12:07:48,934 DEBUG AbstractLifeCycle:196 - STOPPED SslContextFactory@626ec10f(null,null)
+12:07:48,934 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.client.HttpClient@4ca4ef99
+12:07:48,934 DEBUG AbstractLifeCycle:196 - STOPPED gaia.search.ui.controller.GaiaProxyServlet-52f24202
+12:07:48,934 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.servlet.DefaultServlet-5577817
+12:07:48,935 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.servlet.DefaultServlet-5577817
+12:07:48,935 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.servlet.ServletHandler@5471eca8
+12:07:48,935 DEBUG AbstractHandler:68 - stopping org.eclipse.jetty.security.ConstraintSecurityHandler@36834e8
+12:07:48,935 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.security.ConstraintSecurityHandler@36834e8
+12:07:48,935 DEBUG AbstractHandler:68 - stopping org.eclipse.jetty.server.session.SessionHandler@2e696d17
+12:07:48,936 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.server.session.SessionHandler@2e696d17
+12:07:48,936 DEBUG AbstractHandler:68 - stopping o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web}
+12:07:48,936  INFO ContextHandler:843 - stopped o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web}
+12:07:48,937 DEBUG Container:224 - Container o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web} - org.eclipse.jetty.server.session.SessionHandler@2e696d17 as handler
+12:07:48,937 DEBUG AbstractLifeCycle:196 - STOPPED o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web}
+12:07:48,937 DEBUG AbstractHandler:68 - stopping org.eclipse.jetty.server.Server@26d5acae
+12:07:48,937 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.server.session.HashSessionIdManager@376f026
+12:07:48,937 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.server.session.HashSessionIdManager@376f026
+12:07:48,938 DEBUG AbstractLifeCycle:187 - stopping qtp24275411{8<=8<=8/25,0}
+12:07:48,991 DEBUG AbstractLifeCycle:196 - STOPPED qtp24275411{8<=0<=0/25,7}
+12:07:48,991  INFO GaiaSearchUIServer:125 - Joined the Server
+12:07:48,991 DEBUG ShutdownThread:83 - shutdown already commenced
+12:07:48,991 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.server.Server@26d5acae
+12:07:48,991 DEBUG ShutdownThread:133 - Stopped org.eclipse.jetty.server.Server@26d5acae
+12:07:48,991 DEBUG Container:224 - Container org.eclipse.jetty.server.Server@26d5acae - o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search-web-core/web} as handler
+12:07:48,991 DEBUG ShutdownThread:139 - Destroyed org.eclipse.jetty.server.Server@26d5acae

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+export JAVA_HOME=/usr/lib/jvm/java-6-oracle-amd64
+export SDA_VERSION=1.1.0-final-10009
+export SDA_HOME=/data/sda/lucidworks-sda-1.1.0-final-10009
+export SDA_HEAPSIZE=2048
+export SDA_CONF_DIR=/data/sda/lucidworks-sda-1.1.0-final-10009/conf
+export SDA_OPTS="-Dregions.number=2 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=3010 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
+
+exec 2>&1
+exec chpst -u hadoop  /data/sda/lucidworks-sda-1.1.0-final-10009/bin/start.sh --api com.lucid.sda.api.admin.AdminAPIModule --api com.lucid.sda.api.analytics.AnalyticsAPIModule --api com.lucid.sda.api.connector.lucidworks.ConnectorAPIModule --api com.lucid.sda.api.client.ClientAPIModule --api com.lucid.sda.api.data.DataManagementAPIModule --api com.lucid.sda.api.document.DocumentAPIModule --api com.lucid.sda.api.JobAPIModule --api com.lucid.sda.api.lucidworks.LucidWorksProxyAPIModule --api com.lucid.sda.api.hdfs.WebHDFSProxyAPIModule --api com.lucid.sda.api.WorkflowAPIModule --api com.lucid.sda.api.user.UserAPIModule --api com.lucid.commons.api.ping.PingAPIModule --api com.lucid.sda.classification.ClassifierAPIModule --api com.lucid.sda.classification.ClassifierStateAPIModule
+
+
+
+
+
+

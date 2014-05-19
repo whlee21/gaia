@@ -1,0 +1,59 @@
+<workflow-app xmlns="uri:oozie:workflow:0.2" name="_log_consume">
+	<start to="consume-logs"/>
+	
+	<fork name="consume-logs">
+		<path start="consume-click-logs"/>
+		<path start="consume-query-logs"/>
+	</fork>
+	
+	<action name="consume-click-logs">
+		<java>
+        	<job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+            	<property>
+                	<name>mapred.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <main-class>com.lucid.sda.hadoop.util.RunClass</main-class>
+            <arg>com.lucid.sda.hadoop.KafkaIntoHDFSJob</arg>
+            <arg>--input</arg><arg>/tmp/kafka-click-offsets</arg>
+            <arg>--kafkaUri</arg><arg>${kafkaUri}</arg>
+            <arg>--kafkaTopic</arg><arg>click-logs</arg>
+            <arg>--kafkaTopicPartitions</arg><arg>${kafkaPartitions}</arg>
+            <arg>--output</arg><arg>/data/logs/click</arg>
+        </java>
+    	<ok to="join-consume-logs"/>
+        <error to="fail"/>
+	</action>
+	
+	<action name="consume-query-logs">
+		<java>
+        	<job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+            	<property>
+                	<name>mapred.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <main-class>com.lucid.sda.hadoop.util.RunClass</main-class>
+            <arg>com.lucid.sda.hadoop.KafkaIntoHDFSJob</arg>
+            <arg>--input</arg><arg>/tmp/kafka-query-offsets</arg>
+            <arg>--kafkaUri</arg><arg>${kafkaUri}</arg>
+            <arg>--kafkaTopic</arg><arg>query-logs</arg>
+            <arg>--kafkaTopicPartitions</arg><arg>${kafkaPartitions}</arg>
+            <arg>--output</arg><arg>/data/logs/query</arg>
+        </java>
+    	<ok to="join-consume-logs"/>
+        <error to="fail"/>
+	</action>
+    
+    <join name="join-consume-logs" to="end"/>
+    
+    <kill name="fail">
+        <message>_log_consume failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

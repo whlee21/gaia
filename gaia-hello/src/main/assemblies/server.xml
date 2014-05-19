@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<assembly>
+	<id>dist</id>
+	<formats>
+		<format>dir</format>
+		<format>tar.gz</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<files>
+		<file>
+			<source>${project.build.directory}/${artifact.artifactId}-${artifact.version}.jar</source>
+			<outputDirectory>gaia-hello-${project.version}/lib/gaia-hello</outputDirectory>
+		</file>
+	</files>
+	<fileSets>
+		<!-- Distro files, readme, licenses, etc -->
+		<fileSet>
+			<directory>${basedir}/../</directory>
+			<outputDirectory>gaia-hello-${project.version}/</outputDirectory>
+			<includes>
+				<include>*.txt</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/../gaia-hello-web/public</directory>
+			<outputDirectory>/gaia-hello-${project.version}/web</outputDirectory>
+			<includes>
+				<include>**</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/conf</directory>
+			<outputDirectory>/gaia-hello-${project.version}/etc/gaia-hello/conf</outputDirectory>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>gaia-hello-${project.version}/lib/gaia-hello</outputDirectory>
+			<unpack>false</unpack>
+			<scope>compile</scope>
+		</dependencySet>
+	</dependencySets>
+</assembly>

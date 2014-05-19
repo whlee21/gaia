@@ -1,0 +1,57 @@
+<workflow-app xmlns="uri:oozie:workflow:0.1" name="vectorize">
+  <start to="vectorize-docs-prep"/>
+
+  <!-- Check if "document-text" has been generated already -->
+  <decision name="vectorize-docs-prep">
+    <switch>
+      <case to="vectorize-docs">${fs:exists(wf:conf("documentsAsText")) == "true"}</case>
+      <default to="dump-document-text"/>
+    </switch>
+  </decision>
+
+  <!-- Dump out the document's text to "document-text" -->
+  <action name="dump-document-text">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.realtime.DocumentsToSequenceFile</main-class>
+      <arg>--collection</arg><arg>${collection}</arg>
+      <arg>--zkConnect</arg><arg>${zkConnect}</arg>
+      <arg>--output</arg><arg>${documentsAsText}</arg>
+      <arg>--numberOfRegions</arg><arg>${numberOfRegions}</arg>
+    </java>
+    <ok to="vectorize-docs"/>
+    <error to="fail"/>
+  </action>
+  
+  <!-- Generate Mahout sparse vectors from "document-text" -->
+  <action name="vectorize-docs">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.util.RunClass</main-class>
+      <arg>org.apache.mahout.vectorizer.SparseVectorsFromSequenceFiles</arg>
+      <arg>--input</arg><arg>${documentsAsText}</arg>
+      <arg>--output</arg><arg>${documentsAsVectors}</arg>
+      <arg>--namedVector</arg>
+      <arg>--norm</arg><arg>2</arg>
+      <arg>--maxDFPercent</arg><arg>95</arg>
+      <arg>--maxNGramSize</arg><arg>${vec_nGrams}</arg>
+      <arg>--analyzerName</arg><arg>${vec_analyzer}</arg>
+    </java>
+    <ok to="end"/> 
+    <error to="fail"/>
+  </action>
+    
+  <kill name="fail">
+    <message>Vectorize Sub workflow failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+  </kill>
+
+  <end name="end"/>
+</workflow-app>

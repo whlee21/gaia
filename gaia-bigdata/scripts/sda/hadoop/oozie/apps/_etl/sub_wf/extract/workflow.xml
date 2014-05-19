@@ -1,0 +1,30 @@
+<workflow-app xmlns="uri:oozie:workflow:0.1" name="extract">
+  <start to="tika-extract"/>
+
+  <!-- Tika text extraction -->
+  <action name="tika-extract">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+        <property><name>tika.metadata</name><value>true</value></property>
+        <property><name>tika.annotations</name><value>false</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.extract.TikaExtract</main-class>
+      <arg>--zkConnect</arg><arg>${zkConnect}</arg>
+      <arg>--collection</arg><arg>${collection}</arg>
+      <arg>--tikaProcessorClass</arg><arg>${tikaProcessorClass}</arg>
+      <arg>--tempDir</arg><arg>${nameNode}/${concat(wf:conf("workingDir"), wf:conf("parentWfId"))}</arg>
+      <arg>--numberOfRegions</arg><arg>${numberOfRegions}</arg>
+    </java>
+    <ok to="end"/>
+    <error to="fail"/>
+  </action>
+    
+  <kill name="fail">
+    <message>Document extract sub workflow failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+  </kill>
+
+  <end name="end"/>
+</workflow-app>

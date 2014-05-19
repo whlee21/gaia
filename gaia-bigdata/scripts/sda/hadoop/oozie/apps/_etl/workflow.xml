@@ -1,0 +1,228 @@
+<workflow-app xmlns="uri:oozie:workflow:0.2" name="_etl">
+  <start to="do-ingest"/>
+  <decision name="do-ingest">
+    <switch>
+      <case to="ingest">${wf:conf("doIngest") == "true"}</case>
+      <default to="do-extract"/>
+    </switch>
+  </decision>
+  <action name="ingest">
+    <sub-workflow>
+      <app-path>${concat(wf:appPath(),"/sub_wf/ingest")}</app-path>
+      <configuration>
+        <property><name>jobTracker</name><value>${jobTracker}</value></property>
+        <property><name>nameNode</name><value>${nameNode}</value></property>
+        <property><name>queueName</name><value>${queueName}</value></property>              
+        <property><name>numberOfRegions</name><value>${numberOfRegions}</value></property>              
+        <property><name>inputDir</name><value>${inputDir}</value></property>
+        <property><name>workingDir</name><value>${workingDir}</value></property>              
+        <property><name>mapperClass</name><value>${mapperClass}</value></property> 
+        <property><name>awsAccessKeyId</name><value>${awsAccessKeyId}</value></property>
+        <property><name>awsSecretAccessKey</name><value>${awsSecretAccessKey}</value></property>  
+        <property><name>inputType</name><value>${inputType}</value></property>
+        <property><name>parentWfId</name><value>${wf:id()}</value></property>              
+        <property><name>zkConnect</name><value>${zkhost}</value></property>
+        <property><name>collection</name><value>${collection}</value></property>                     
+        <property><name>tikaProcessorClass</name><value>${tikaProcessorClass}</value></property>
+        <property><name>overwrite</name><value>${overwrite}</value></property>
+        <property><name>idField</name><value>${idField}</value></property>
+        <property><name>csvFieldMapping</name><value>${csvFieldMapping}</value></property>
+        <property><name>csvStrategy</name><value>${csvStrategy}</value></property>
+      </configuration>          
+    </sub-workflow>
+    <ok to="extract"/>
+    <error to="fail"/>
+  </action>
+  <decision name="do-extract">
+    <switch>
+      <case to="extract">${wf:conf("doExtract") == "true"}</case>
+      <default to="do-vectorization"/>
+    </switch>
+  </decision>
+  <action name="extract">
+    <sub-workflow>
+      <app-path>${concat(wf:appPath(),"/sub_wf/extract")}</app-path>
+      <configuration>
+        <property><name>jobTracker</name><value>${jobTracker}</value></property>
+        <property><name>nameNode</name><value>${nameNode}</value></property>
+        <property><name>queueName</name><value>${queueName}</value></property>
+        <property><name>numberOfRegions</name><value>${numberOfRegions}</value></property>              
+        <property><name>workingDir</name><value>${workingDir}</value></property>
+        <property><name>parentWfId</name><value>${wf:id()}</value></property>
+        <property><name>zkConnect</name><value>${zkhost}</value></property>
+        <property><name>collection</name><value>${collection}</value></property>
+        <property><name>tikaProcessorClass</name><value>${tikaProcessorClass}</value></property>
+      </configuration>
+    </sub-workflow>
+    <ok to="do-vectorization"/>
+    <error to="fail"/>
+  </action>
+
+  <!-- Determine if we need to generate vectors for sub-workflows -->
+  <decision name="do-vectorization">
+    <switch>
+      <case to="vectorize">${wf:conf("doAnnotations") == "true"}</case>
+      <case to="vectorize">${wf:conf("doKMeans") == "true"}</case>
+      <case to="vectorize">${wf:conf("doSIPs") == "true"}</case>
+      <case to="vectorize">${wf:conf("doSimdoc") == "true"}</case>
+      <default to="end"/>
+    </switch>
+  </decision>
+  
+  <action name="vectorize">
+    <sub-workflow>
+      <app-path>${concat(wf:appPath(),"/sub_wf/vectorize")}</app-path>
+      <configuration>
+        <property><name>jobTracker</name><value>${jobTracker}</value></property>
+        <property><name>nameNode</name><value>${nameNode}</value></property>
+        <property><name>queueName</name><value>${queueName}</value></property>
+        <property><name>numberOfRegions</name><value>${numberOfRegions}</value></property>              
+        <property><name>workingDir</name><value>${workingDir}</value></property>               
+        <property><name>parentWfId</name><value>${wf:id()}</value></property>    
+        <property><name>vec_nGrams</name><value>${vec_nGrams}</value></property>          
+        <property><name>vec_analyzer</name><value>${vec_analyzer}</value></property>          
+        <property><name>collection</name><value>${collection}</value></property>
+        <property><name>zkConnect</name><value>${zkhost}</value></property>
+        <property><name>documentsAsText</name><value>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:id()),"/document-text")}</value></property>
+        <property><name>documentsAsVectors</name><value>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:id()),"/document-vectors")}</value></property>
+      </configuration>          
+    </sub-workflow>
+    <ok to="do-annotations"/>
+    <error to="fail"/>
+  </action>
+
+  <decision name="do-annotations">
+    <switch>
+      <case to="annotate-with-uima">${wf:conf("doAnnotations") == "true"}</case>
+      <default to="do-kmeans"/>
+    </switch>
+  </decision>
+      
+  <decision name="do-kmeans">
+    <switch>
+      <case to="kmeans">${wf:conf("doKMeans") == "true"}</case>
+      <default to="do-simdoc"/>
+    </switch>
+  </decision>
+
+  <decision name="do-simdoc">
+    <switch>
+      <case to="simdoc">${wf:conf("doSimdoc") == "true"}</case>
+      <default to="do-sips"/>
+    </switch>
+  </decision>
+
+  <decision name="do-sips">
+    <switch>
+      <case to="sips">${wf:conf("doSIPs") == "true"}</case>
+      <default to="end"/>
+    </switch>
+  </decision>
+
+  <action name="annotate-with-uima">
+    <sub-workflow>
+      <app-path>${concat(wf:appPath(),"/sub_wf/annotate")}</app-path>
+      <configuration>
+        <property><name>jobTracker</name><value>${jobTracker}</value></property>
+        <property><name>nameNode</name><value>${nameNode}</value></property>
+        <property><name>queueName</name><value>${queueName}</value></property>
+        <property><name>numberOfRegions</name><value>${numberOfRegions}</value></property>              
+        <property><name>documentsAsText</name><value>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:id()),"/document-text")}</value></property>
+        <property><name>workingDir</name><value>${workingDir}</value></property>               
+        <property><name>parentWfId</name><value>${wf:id()}</value></property>  
+        <property><name>zkConnect</name><value>${zkhost}</value></property>
+        <property><name>collection</name><value>${collection}</value></property>
+      </configuration>          
+    </sub-workflow>
+    <ok to="do-kmeans"/>
+    <error to="fail"/>
+  </action>
+
+
+  <action name="kmeans">
+    <sub-workflow>
+      <app-path>${concat(wf:appPath(),"/sub_wf/kmeans")}</app-path>
+      <configuration>
+        <property><name>jobTracker</name><value>${jobTracker}</value></property>
+        <property><name>nameNode</name><value>${nameNode}</value></property>
+        <property><name>queueName</name><value>${queueName}</value></property>
+        <property><name>numberOfRegions</name><value>${numberOfRegions}</value></property>              
+        <property><name>input</name><value>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:id()), "/document-vectors/tfidf-vectors")}</value></property>
+        <property><name>workingDir</name><value>${workingDir}</value></property>
+        <property><name>parentWfId</name><value>${wf:id()}</value></property>   
+        <property><name>kmeans_numClusters</name><value>${kmeans_numClusters}</value></property>               
+        <property><name>kmeans_maxIter</name><value>${kmeans_maxIter}</value></property>               
+        <property><name>kmeans_distanceMeasure</name><value>${kmeans_distanceMeasure}</value></property>               
+        <property><name>kmeans_convergenceDelta</name><value>${kmeans_convergenceDelta}</value></property>               
+        <property><name>zkConnect</name><value>${zkhost}</value></property>
+      </configuration>          
+    </sub-workflow>
+    <ok to="do-simdoc"/>
+    <error to="fail"/>
+  </action>
+  
+  <action name="simdoc">
+      <sub-workflow>
+          <app-path>${concat(wf:appPath(),"/sub_wf/simdoc")}</app-path>
+          <configuration>
+              <property><name>jobTracker</name><value>${jobTracker}</value></property>
+              <property><name>nameNode</name><value>${nameNode}</value></property>
+              <property><name>queueName</name><value>${queueName}</value></property>   
+              <property><name>numberOfRegions</name><value>${numberOfRegions}</value></property>              
+              <property><name>input</name><value>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:id()), "/document-vectors/tfidf-vectors")}</value></property>
+              <property><name>workingDir</name><value>${workingDir}</value></property>               
+              <property><name>parentWfId</name><value>${wf:id()}</value></property> 
+              <property><name>simdoc_threshold</name><value>${simdoc_threshold}</value></property>               
+              <property><name>zkhost</name><value>${zkhost}</value></property>
+              <property><name>collection</name><value>${collection}</value></property>                     
+          </configuration>          
+      </sub-workflow>
+      <ok to="do-sips"/>
+      <error to="fail" />
+  </action>
+  
+  <action name="sips">
+      <sub-workflow>
+          <app-path>${concat(wf:appPath(),"/sub_wf/sips")}</app-path>
+          <configuration>
+              <property><name>jobTracker</name><value>${jobTracker}</value></property>
+              <property><name>nameNode</name><value>${nameNode}</value></property>
+              <property><name>queueName</name><value>${queueName}</value></property>   
+              <property><name>input</name><value>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:id()), "/document-vectors/tokenized-documents")}</value></property>
+              <property><name>output</name><value>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:id()), "/sips-output")}</value></property>
+              <property><name>workingDir</name><value>${workingDir}</value></property>               
+              <property><name>parentWfId</name><value>${wf:id()}</value></property>  
+              <property><name>sips_maxNGramSize</name><value>${sips_maxNGramSize}</value></property>               
+              <property><name>sips_minLLR</name><value>${sips_minLLR}</value></property>               
+          </configuration>          
+      </sub-workflow>
+      <ok to="index_sips"/>
+      <error to="fail" />
+  </action>
+  
+    <action name="index_sips">
+      <sub-workflow>
+          <app-path>${concat(wf:appPath(),"/sub_wf/index_sips")}</app-path>
+          <configuration>
+              <property><name>jobTracker</name><value>${jobTracker}</value></property>
+              <property><name>nameNode</name><value>${nameNode}</value></property>
+              <property><name>queueName</name><value>${queueName}</value></property>
+              <property><name>input</name><value>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:id()), "/sips-output/ngrams")}</value></property>
+              <property><name>workingDir</name><value>${workingDir}</value></property>               
+              <property><name>parentWfId</name><value>${wf:id()}</value></property>         
+              <property><name>solr_zkHost</name><value>${solr_zkHost}</value></property>                     
+              <property><name>collection</name><value>${collection}</value></property>                     
+              <property><name>solrFailedThresholdPercent</name><value>${solrFailedThresholdPercent}</value></property>                     
+          </configuration>          
+      </sub-workflow>
+      <ok to="end"/>
+      <error to="fail"/>
+  </action>
+
+  <kill name="fail">
+    <message>_etl failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+  </kill>
+
+  <end name="end"/>
+
+</workflow-app>

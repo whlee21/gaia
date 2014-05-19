@@ -1,0 +1,131 @@
+! Simple plural stemmer for LucidWorks Enterprise
+!
+! By Jack Krupansky for Lucid Imagination, Inc.
+!
+! This is mostly mapping plural to singular and primarily those ending with
+! "s", but there are also verb forms ending with "s" that fall under the
+! same heuristic rules.
+! 
+! It is understood that this simple heuristic approach will mangle a
+! non-zero fraction of words that should either not be stemmed or should
+! be stemmed differently.
+! 
+! The rules do go to some effort to avoid removing "s" endings that are
+! not plural (or verb conjugations), such as "alias" or "business."
+!
+! Input token does not need to be lower case, but stemming change will be lower case.
+!
+! General Formatting rules:
+!
+! 1. Exclamation point indicates a comment or comment line to be ignored.
+! 2. White space is extraneous and ignored.
+! 3. Blank lines ignored.
+!
+! Types of stemming rules:
+!
+! 1. Protected word. Will not be changed.
+!
+!    Just write the word itself.
+!
+! 2. Replacement word. Word will always be changed to a replacement word.
+!
+!    word => new-word
+!    word -> new-word
+!    word --> new-word
+!    word = new-word
+!
+! 3. Protected suffixes. Any Matching word will be protected.
+!
+!    pattern suffix
+!
+!    Pattern may start with an asterisk to indicate variable length.
+!    Use zero or more question marks to indicate that a character is required.
+!    Use a trailing slash if a consonant is required.
+!
+!    Examples:
+!
+!      ?ass
+!      *??ass
+!      *???/ass
+!
+! 4. Translation suffix. Suffix of matching word will be replaced with new suffix.
+!
+!    pattern suffix => new-suffix
+!
+!    Pattern rules are the same as for protected suffixes.
+!
+!    The pattern may be repeated before the replacement suffix for readability.
+!
+!    Examples:
+!
+!      *ses => se
+!      *ses -> *se
+!      *?/uses => se
+!      *???s =>
+!      *???s => *
+!
+!    Note: The latter two examples show now new suffix, meaning that the existing
+!          suffix is simply deleted.
+!
+! Rules are evaluated in the order that they appear in the rules file, except
+! that whole protected words and replacement words are processed before examining
+! suffixes.
+! 
+! Here is the example, proposed rule set:
+!
+
+? ! Minimum of four characters before any stemming. 
+??
+???
+*ss ! No change : business
+*'s ! No change : cat's - Handled in other filters.
+*elves => *elf ! selves => self, elves, themselves, shelves
+appendices => appendix
+*indices => *index ! indices => index, subindices - NOT jaundices
+*theses => *thesis ! hypotheses => hypothesis, parentheses, theses
+*aderies => aderie ! camaraderie
+*ies => *y ! countries => country, flies, fries, ponies, phonies, queries, symphonies
+*hes => *h ! dishes => dish, ashes, smashes, matches, batches
+*???oes => *o : potatoes => potato, avocadoes, tomatoes, zeroes
+goes => go
+does => do
+?oes => *oe ! toes => toe, foes, hoes, joes, moes - NOT does, goes - but "does" is also plural for "doe"
+??oes => ??oe ! floes => floe
+*sses => *ss ! passes => pass, bosses, classes, presses, tosses
+*igases => *igase ! ligases => ligase
+*gases => *gas ! outgases => outgas, gases, degases
+*mases => *mas ! Christmases => Christmas, Thomases
+*?vases => *vas ! canvases => canvas - NOT vases
+*iases => *ias ! aliases => alias, bias, Eliases
+*abuses => *abuse ! disabuses => disabuse, abuses
+*cuses => *cuse ! accuses => accuse, recuses, excuses
+*fuses => *fuse ! diffuses => diffuse, fuses, refuses
+*/uses => *us : buses => bus, airbuses, viruses; NOT houses, mouses, causes
+*xes => *x ! indexes => index, axes, taxes
+*zes => *z ! buzzes => buzz
+*es => *e ! spaces => space, files, planes, bases, cases, races, paces
+*ras => *ra ! zebras => zebra, agoras, algebras
+*us
+*/s => * ! cats => cat (require consonant (not "s") or "o" before "s")
+*oci => *ocus ! foci => focus
+*cti => *ctus ! cacti => cactus
+plusses => plus
+gasses => gas
+classes => class
+mice => mouse
+data => datum
+!bases => basis
+amebiases => amebiasis
+atlases => atlas
+Eliases => Elias
+molasses
+feet => foot
+backhoes => backhoe
+calories => calorie
+
+! Some plurals that don't make sense as singular
+sales
+news
+jeans
+
+!EOD

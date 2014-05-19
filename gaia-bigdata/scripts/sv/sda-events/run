@@ -1,0 +1,11 @@
+#!/bin/sh
+
+JAVA_HOME="/usr/lib/jvm/java-6-oracle-amd64"
+SDA_HOME="/data/sda/lucidworks-sda-1.1.0-final-10009"
+JMX_OPTS="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=10000 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
+SDA_OPTS="$JMX_OPTS -Dregions.number=2 -Dkafka.zk.connect=lwbd:2181/kafka -Dhbase.zk.connect=lwbd:2181 -Dsolr.zk.connect=lwbd:2181/solr -Dsda.zk.connect=lwbd/sda -Dsolr.commit.within=60000"
+CLASSPATH="$SDA_HOME:$SDA_HOME/events/lib/*"
+CLASSNAME="com.lucid.sda.events.SolrUpdateStream"
+
+exec 2>&1
+exec chpst -u hadoop java $SDA_OPTS -cp $CLASSPATH $CLASSNAME

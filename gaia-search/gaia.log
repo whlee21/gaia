@@ -1,0 +1,851 @@
+18:17:45,244  INFO Configuration:273 - Conf Dir : /home/whlee21/workspace/gaia/gaia-search/conf
+18:17:45,246  INFO Configuration:283 - Data Dir : /home/whlee21/workspace/gaia/gaia-search/data
+18:17:45,246  INFO Configuration:288 - Logs Dir : /home/whlee21/workspace/gaia/gaia-search/
+18:17:45,247  INFO Configuration:278 - App Dir : /home/whlee21/workspace/gaia/gaia-search/app
+18:17:45,270  INFO Configuration:293 - Crawler Dir : /home/whlee21/workspace/gaia/gaia-search/crawler
+18:17:45,270  INFO Configuration:298 - Crawler Resource Dir : /home/whlee21/workspace/gaia/gaia-search/crawler-resources
+18:17:45,270  INFO Configuration:303 - Hadoop Job Dir : /home/whlee21/workspace/gaia/gaia-search/
+18:17:45,270  INFO Configuration:308 - Hadoop Job Dir : http://127.0.0.1:8881/connector/v1/mtr
+18:17:45,358  INFO SolrResourceLoader:116 - new SolrResourceLoader for directory: '/home/whlee21/workspace/gaia/gaia-search/conf/solr/'
+18:17:45,662  INFO ConfigSolr:52 - Loading container configuration from /home/whlee21/workspace/gaia/gaia-search/conf/solr/solr.xml
+18:17:46,009 DEBUG Config:246 - null missing optional solr/str[@name='adminHandler']
+18:17:46,010 DEBUG Config:246 - null missing optional solr/int[@name='coreLoadThreads']
+18:17:46,011 DEBUG Config:246 - null missing optional solr/str[@name='coreRootDirectory']
+18:17:46,013 DEBUG Config:246 - null missing optional solr/solrcloud/int[@name='distribUpdateConnTimeout']
+18:17:46,014 DEBUG Config:246 - null missing optional solr/solrcloud/int[@name='distribUpdateSoTimeout']
+18:17:46,015 DEBUG Config:246 - null missing optional solr/solrcloud/str[@name='host']
+18:17:46,018 DEBUG Config:246 - null missing optional solr/solrcloud/str[@name='hostContext']
+18:17:46,020 DEBUG Config:246 - null missing optional solr/solrcloud/int[@name='hostPort']
+18:17:46,021 DEBUG Config:246 - null missing optional solr/solrcloud/int[@name='leaderVoteWait']
+18:17:46,022 DEBUG Config:246 - null missing optional solr/solrcloud/int[@name='genericCoreNodeNames']
+18:17:46,023 DEBUG Config:246 - null missing optional solr/str[@name='managementPath']
+18:17:46,024 DEBUG Config:246 - null missing optional solr/str[@name='sharedLib']
+18:17:46,025 DEBUG Config:246 - null missing optional solr/str[@name='shareSchema']
+18:17:46,026 DEBUG Config:246 - null missing optional solr/int[@name='transientCacheSize']
+18:17:46,034 DEBUG Config:246 - null missing optional solr/solrcloud/int[@name='zkClientTimeout']
+18:17:46,036 DEBUG Config:246 - null missing optional solr/solrcloud/int[@name='zkHost']
+18:17:46,037 DEBUG Config:246 - null missing optional solr/logging/str[@name='class']
+18:17:46,039 DEBUG Config:246 - null missing optional solr/logging/str[@name='enabled']
+18:17:46,040 DEBUG Config:246 - null missing optional solr/logging/watcher/int[@name='size']
+18:17:46,042 DEBUG Config:246 - null missing optional solr/logging/watcher/int[@name='threshold']
+18:17:46,044 DEBUG Config:246 - null missing optional solr/@coreLoadThreads
+18:17:46,046 DEBUG Config:367 - null solr/@sharedLib=lib
+18:17:46,047 DEBUG Config:246 - null missing optional solr/@zkHost
+18:17:46,048 DEBUG Config:246 - null missing optional solr/logging/@class
+18:17:46,049 DEBUG Config:246 - null missing optional solr/logging/@enabled
+18:17:46,051 DEBUG Config:246 - null missing optional solr/logging/watcher/@size
+18:17:46,052 DEBUG Config:246 - null missing optional solr/logging/watcher/@threshold
+18:17:46,053 DEBUG Config:246 - null missing optional solr/cores/@adminHandler
+18:17:46,054 DEBUG Config:246 - null missing optional solr/cores/@distribUpdateConnTimeout
+18:17:46,055 DEBUG Config:246 - null missing optional solr/cores/@distribUpdateSoTimeout
+18:17:46,056 DEBUG Config:367 - null solr/cores/@host=${host:}
+18:17:46,057 DEBUG Config:246 - null missing optional solr/cores/@hostContext
+18:17:46,058 DEBUG Config:367 - null solr/cores/@hostPort=${jetty.port:}
+18:17:46,059 DEBUG Config:246 - null missing optional solr/cores/@leaderVoteWait
+18:17:46,061 DEBUG Config:246 - null missing optional solr/cores/@genericCoreNodeNames
+18:17:46,062 DEBUG Config:246 - null missing optional solr/cores/@managementPath
+18:17:46,063 DEBUG Config:246 - null missing optional solr/cores/@shareSchema
+18:17:46,064 DEBUG Config:246 - null missing optional solr/cores/@transientCacheSize
+18:17:46,065 DEBUG Config:246 - null missing optional solr/cores/@zkClientTimeout
+18:17:46,066 DEBUG Config:367 - null solr/cores/@defaultCoreName=collection1
+18:17:46,068 DEBUG Config:367 - null solr/@persistent=true
+18:17:46,069 DEBUG Config:367 - null solr/cores/@adminPath=/admin/cores
+18:17:46,072 DEBUG Config:367 - null solr/@persistent=true
+18:17:46,097  INFO CoreContainer:125 - New CoreContainer 1737011065
+18:17:46,468 DEBUG GaiaSearchModule:144 - whlee21 buildJpaPersistModule LOCAL
+18:17:46,468  INFO Configuration:283 - Data Dir : /home/whlee21/workspace/gaia/gaia-search/data
+18:17:46,468 DEBUG Configuration:381 - Reading password from file /home/whlee21/workspace/gaia/gaia-search/conf/password.dat
+18:17:46,614 DEBUG GaiaSearchModule:99 - whlee21 solrAddress = http://127.0.0.1:8088/solr
+18:17:46,647  INFO Configuration:308 - Hadoop Job Dir : http://127.0.0.1:8881/connector/v1/mtr
+18:17:46,659  INFO GaiaSearchModule:112 - Using RestConnectorManager with url 'http://127.0.0.1:8881/connector/v1/mtr'
+18:17:47,318 DEBUG YamlBean:52 - Loading Defaults state from /home/whlee21/workspace/gaia/gaia-search/conf/search/defaults.yml
+18:17:47,448  INFO YamlBean:69 - Loaded Defaults
+18:17:47,449  INFO CoreContainer:205 - Loading cores into CoreContainer [instanceDir=/home/whlee21/workspace/gaia/gaia-search/conf/solr/]
+18:17:47,449  INFO CoreContainer:211 - loading shared library: /home/whlee21/workspace/gaia/gaia-search/conf/solr/lib
+18:17:47,449  WARN SolrResourceLoader:170 - Can't find (or read) directory to add to classloader: lib (resolved as: /home/whlee21/workspace/gaia/gaia-search/conf/solr/lib).
+18:17:47,456 DEBUG Config:246 - null missing optional solr/cores/shardHandlerFactory
+18:17:47,517  INFO HttpShardHandlerFactory:175 - Setting socketTimeout to: 0
+18:17:47,517  INFO HttpShardHandlerFactory:175 - Setting urlScheme to: http://
+18:17:47,517  INFO HttpShardHandlerFactory:175 - Setting connTimeout to: 0
+18:17:47,517  INFO HttpShardHandlerFactory:175 - Setting maxConnectionsPerHost to: 20
+18:17:47,517  INFO HttpShardHandlerFactory:175 - Setting corePoolSize to: 0
+18:17:47,517  INFO HttpShardHandlerFactory:175 - Setting maximumPoolSize to: 2147483647
+18:17:47,517  INFO HttpShardHandlerFactory:175 - Setting maxThreadIdleTime to: 5
+18:17:47,517  INFO HttpShardHandlerFactory:175 - Setting sizeOfQueue to: -1
+18:17:47,517  INFO HttpShardHandlerFactory:175 - Setting fairnessPolicy to: false
+18:17:47,536 DEBUG HttpClientUtil:104 - Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
+18:17:47,786  INFO LogWatcher:153 - SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+18:17:47,787  INFO LogWatcher:138 - Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+18:17:47,884  INFO CoreContainer:584 - Creating SolrCore 'collection1' using instanceDir: /home/whlee21/workspace/gaia/gaia-search/conf/solr/cores/collection1_0
+18:17:47,884  INFO SolrResourceLoader:116 - new SolrResourceLoader for directory: '/home/whlee21/workspace/gaia/gaia-search/conf/solr/cores/collection1_0/'
+18:17:48,036  INFO SolrConfig:503 - Adding specified lib dirs to ClassLoader
+18:17:48,036  WARN SolrResourceLoader:170 - Can't find (or read) directory to add to classloader: ../../../contrib/extraction/lib (resolved as: /home/whlee21/workspace/gaia/gaia-search/conf/solr/cores/collection1_0/../../../contrib/extraction/lib).
+18:17:48,037  WARN SolrResourceLoader:170 - Can't find (or read) directory to add to classloader: ../../../dist/ (resolved as: /home/whlee21/workspace/gaia/gaia-search/conf/solr/cores/collection1_0/../../../dist).
+18:17:48,043  WARN SolrResourceLoader:170 - Can't find (or read) directory to add to classloader: /total/crap/dir/ignored (resolved as: /total/crap/dir/ignored).
+18:17:48,057 DEBUG Config:367 - solrconfig.xml luceneMatchVersion=LUCENE_44
+18:17:48,066 DEBUG Config:246 - solrconfig.xml missing optional indexDefaults
+18:17:48,074 DEBUG Config:246 - solrconfig.xml missing optional mainIndex
+18:17:48,093 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/nrtMode
+18:17:48,130 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/mergeScheduler
+18:17:48,132 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/mergePolicy
+18:17:48,135 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/luceneAutoCommit
+18:17:48,137 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/useCompoundFile
+18:17:48,140 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/maxBufferedDocs
+18:17:48,142 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/maxMergeDocs
+18:17:48,145 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/maxIndexingThreads
+18:17:48,147 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/mergeFactor
+18:17:48,150 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/ramBufferSizeMB
+18:17:48,152 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/writeLockTimeout
+18:17:48,155 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/lockType
+18:17:48,161 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/termIndexInterval
+18:17:48,163 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/infoStream
+18:17:48,239 DEBUG Config:367 - solrconfig.xml query/maxBooleanClauses=1024
+18:17:48,239  INFO SolrConfig:160 - Using Lucene MatchVersion: LUCENE_44
+18:17:48,241 DEBUG Config:246 - solrconfig.xml missing optional query/boolTofilterOptimizer
+18:17:48,243 DEBUG Config:246 - solrconfig.xml missing optional query/HashDocSet
+18:17:48,245 DEBUG Config:246 - solrconfig.xml missing optional query/useFilterForSortedQuery
+18:17:48,247 DEBUG Config:367 - solrconfig.xml query/queryResultWindowSize=50
+18:17:48,249 DEBUG Config:367 - solrconfig.xml query/queryResultMaxDocsCached=200
+18:17:48,251 DEBUG Config:367 - solrconfig.xml query/enableLazyFieldLoading=true
+18:17:48,265 DEBUG Config:246 - solrconfig.xml missing optional query/fieldValueCache
+18:17:48,276 DEBUG Config:246 - solrconfig.xml missing optional indexConfig/unlockOnStartup
+18:17:48,278 DEBUG Config:367 - solrconfig.xml query/useColdSearcher=false
+18:17:48,280 DEBUG Config:246 - solrconfig.xml missing optional dataDir
+18:17:48,313 DEBUG Config:246 - solrconfig.xml missing optional //HashDocSet/@loadFactor
+18:17:48,318 DEBUG Config:246 - solrconfig.xml missing optional //HashDocSet/@maxSize
+18:17:48,321 DEBUG Config:367 - solrconfig.xml requestDispatcher/httpCaching/@never304=true
+18:17:48,322 DEBUG Config:246 - solrconfig.xml missing optional requestDispatcher/httpCaching/@etagSeed
+18:17:48,323 DEBUG Config:246 - solrconfig.xml missing optional requestDispatcher/httpCaching/@lastModFrom
+18:17:48,325 DEBUG Config:246 - solrconfig.xml missing optional requestDispatcher/httpCaching/cacheControl
+18:17:48,329 DEBUG Config:246 - solrconfig.xml missing optional jmx/@agentId
+18:17:48,330 DEBUG Config:246 - solrconfig.xml missing optional jmx/@serviceUrl
+18:17:48,332 DEBUG Config:246 - solrconfig.xml missing optional jmx/@rootName
+18:17:48,333 DEBUG Config:367 - solrconfig.xml query/maxWarmingSearchers=4
+18:17:48,370 DEBUG Config:367 - solrconfig.xml updateHandler/@class=solr.DirectUpdateHandler2
+18:17:48,371 DEBUG Config:246 - solrconfig.xml missing optional updateHandler/autoCommit/maxDocs
+18:17:48,372 DEBUG Config:367 - solrconfig.xml updateHandler/autoCommit/maxTime=15000
+18:17:48,374 DEBUG Config:367 - solrconfig.xml updateHandler/autoCommit/openSearcher=false
+18:17:48,375 DEBUG Config:246 - solrconfig.xml missing optional updateHandler/commitIntervalLowerBound
+18:17:48,376 DEBUG Config:246 - solrconfig.xml missing optional updateHandler/autoSoftCommit/maxDocs
+18:17:48,377 DEBUG Config:246 - solrconfig.xml missing optional updateHandler/autoSoftCommit/maxTime
+18:17:48,385 DEBUG Config:246 - solrconfig.xml missing optional updateHandler/commitWithin/softCommit
+18:17:48,385  INFO Config:262 - Loaded SolrConfig: solrconfig.xml
+18:17:48,399  INFO IndexSchema:424 - Reading Solr Schema from schema.xml
+18:17:48,488  INFO IndexSchema:452 - [collection1] Schema name=gaia-default
+18:17:48,489 DEBUG Config:367 - schema /schema/@version=1.5
+18:17:48,538 DEBUG AbstractPluginLoader:152 - created string: org.apache.solr.schema.StrField
+18:17:48,546 DEBUG AbstractPluginLoader:152 - created boolean: org.apache.solr.schema.BoolField
+18:17:48,552 DEBUG AbstractPluginLoader:152 - created binary: org.apache.solr.schema.BinaryField
+18:17:48,622 DEBUG AbstractPluginLoader:152 - created int: org.apache.solr.schema.TrieIntField
+18:17:48,627 DEBUG AbstractPluginLoader:152 - created float: org.apache.solr.schema.TrieFloatField
+18:17:48,633 DEBUG AbstractPluginLoader:152 - created long: org.apache.solr.schema.TrieLongField
+18:17:48,638 DEBUG AbstractPluginLoader:152 - created double: org.apache.solr.schema.TrieDoubleField
+18:17:48,649 DEBUG AbstractPluginLoader:152 - created tint: org.apache.solr.schema.TrieIntField
+18:17:48,654 DEBUG AbstractPluginLoader:152 - created tfloat: org.apache.solr.schema.TrieFloatField
+18:17:48,659 DEBUG AbstractPluginLoader:152 - created tlong: org.apache.solr.schema.TrieLongField
+18:17:48,663 DEBUG AbstractPluginLoader:152 - created tdouble: org.apache.solr.schema.TrieDoubleField
+18:17:48,669 DEBUG AbstractPluginLoader:152 - created date: org.apache.solr.schema.TrieDateField
+18:17:48,672 DEBUG AbstractPluginLoader:152 - created tdate: org.apache.solr.schema.TrieDateField
+18:17:48,677 DEBUG AbstractPluginLoader:152 - created pint: org.apache.solr.schema.IntField
+18:17:48,682 DEBUG AbstractPluginLoader:152 - created plong: org.apache.solr.schema.LongField
+18:17:48,687 DEBUG AbstractPluginLoader:152 - created pfloat: org.apache.solr.schema.FloatField
+18:17:48,692 DEBUG AbstractPluginLoader:152 - created pdouble: org.apache.solr.schema.DoubleField
+18:17:48,696 DEBUG AbstractPluginLoader:152 - created pdate: org.apache.solr.schema.DateField
+18:17:48,703 DEBUG AbstractPluginLoader:152 - created random: org.apache.solr.schema.RandomSortField
+18:17:48,711 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.WhitespaceTokenizerFactory
+18:17:48,713 DEBUG AbstractPluginLoader:152 - created text_ws: org.apache.solr.schema.TextField
+18:17:48,717 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:48,719 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:48,738 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.synonym.SynonymFilterFactory
+18:17:48,739 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,744 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:48,744 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:48,744 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,746 DEBUG AbstractPluginLoader:152 - created text_general: org.apache.solr.schema.TextField
+18:17:48,750 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.WhitespaceTokenizerFactory
+18:17:48,751 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.synonym.SynonymFilterFactory
+18:17:48,751 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:48,752 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.WordDelimiterFilterFactory
+18:17:48,752 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,753 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.ASCIIFoldingFilterFactory
+18:17:48,753 DEBUG AbstractPluginLoader:152 - created : gaia.analysis.GaiaPluralStemFilterFactory
+18:17:48,760 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.WhitespaceTokenizerFactory
+18:17:48,760 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.WordDelimiterFilterFactory
+18:17:48,760 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,760 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.ASCIIFoldingFilterFactory
+18:17:48,760 DEBUG AbstractPluginLoader:152 - created : gaia.analysis.GaiaPluralStemFilterFactory
+18:17:48,762 DEBUG AbstractPluginLoader:152 - created text_en: org.apache.solr.schema.TextField
+18:17:48,766 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:48,767 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.synonym.SynonymFilterFactory
+18:17:48,767 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:48,767 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,768 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.en.EnglishPossessiveFilterFactory
+18:17:48,769 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.KeywordMarkerFilterFactory
+18:17:48,769 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.en.PorterStemFilterFactory
+18:17:48,775 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:48,775 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:48,775 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,776 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.en.EnglishPossessiveFilterFactory
+18:17:48,776 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.KeywordMarkerFilterFactory
+18:17:48,776 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.en.PorterStemFilterFactory
+18:17:48,777 DEBUG AbstractPluginLoader:152 - created text_porter_en: org.apache.solr.schema.TextField
+18:17:48,788 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:48,789 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.synonym.SynonymFilterFactory
+18:17:48,789 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:48,789 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,789 DEBUG AbstractPluginLoader:152 - created : gaia.analysis.GaiaPluralStemFilterFactory
+18:17:48,790 DEBUG AbstractPluginLoader:152 - created textTight: org.apache.solr.schema.TextField
+18:17:48,798 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.WhitespaceTokenizerFactory
+18:17:48,798 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.WordDelimiterFilterFactory
+18:17:48,799 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,800 DEBUG AbstractPluginLoader:152 - created uri: org.apache.solr.schema.TextField
+18:17:48,805 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.WhitespaceTokenizerFactory
+18:17:48,805 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.synonym.SynonymFilterFactory
+18:17:48,805 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:48,805 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.WordDelimiterFilterFactory
+18:17:48,805 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,806 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.KeywordMarkerFilterFactory
+18:17:48,806 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.en.PorterStemFilterFactory
+18:17:48,811 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.WhitespaceTokenizerFactory
+18:17:48,811 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:48,811 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.WordDelimiterFilterFactory
+18:17:48,811 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,812 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.KeywordMarkerFilterFactory
+18:17:48,812 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.en.PorterStemFilterFactory
+18:17:48,813 DEBUG AbstractPluginLoader:152 - created text_en_splitting: org.apache.solr.schema.TextField
+18:17:48,819 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.WhitespaceTokenizerFactory
+18:17:48,819 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.synonym.SynonymFilterFactory
+18:17:48,819 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:48,819 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.WordDelimiterFilterFactory
+18:17:48,820 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,820 DEBUG AbstractPluginLoader:152 - created : gaia.analysis.GaiaPluralStemFilterFactory
+18:17:48,820 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.RemoveDuplicatesTokenFilterFactory
+18:17:48,822 DEBUG AbstractPluginLoader:152 - created text_en_splitting_tight: org.apache.solr.schema.TextField
+18:17:48,828 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.pattern.PatternTokenizerFactory
+18:17:48,829 DEBUG AbstractPluginLoader:152 - created comma-separated: org.apache.solr.schema.TextField
+18:17:48,835 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:48,836 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardFilterFactory
+18:17:48,836 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,837 DEBUG AbstractPluginLoader:152 - created textSpell: org.apache.solr.schema.TextField
+18:17:48,841 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:48,842 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.synonym.SynonymFilterFactory
+18:17:48,842 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:48,842 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,847 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:48,847 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:48,847 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,858 DEBUG AbstractPluginLoader:152 - created : org.apache.solr.analysis.ReversedWildcardFilterFactory
+18:17:48,859 DEBUG AbstractPluginLoader:152 - created text_general_rev: org.apache.solr.schema.TextField
+18:17:48,865 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.KeywordTokenizerFactory
+18:17:48,866 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,866 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.TrimFilterFactory
+18:17:48,867 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.pattern.PatternReplaceFilterFactory
+18:17:48,868 DEBUG AbstractPluginLoader:152 - created alphaOnlySort: org.apache.solr.schema.TextField
+18:17:48,874 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:48,875 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.phonetic.DoubleMetaphoneFilterFactory
+18:17:48,876 DEBUG AbstractPluginLoader:152 - created phonetic: org.apache.solr.schema.TextField
+18:17:48,882 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.WhitespaceTokenizerFactory
+18:17:48,883 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.payloads.DelimitedPayloadTokenFilterFactory
+18:17:48,884 DEBUG AbstractPluginLoader:152 - created payloads: org.apache.solr.schema.TextField
+18:17:48,891 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.KeywordTokenizerFactory
+18:17:48,891 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:48,892 DEBUG AbstractPluginLoader:152 - created lowercase: org.apache.solr.schema.TextField
+18:17:48,896 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.KeywordTokenizerFactory
+18:17:48,911 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.path.PathHierarchyTokenizerFactory
+18:17:48,913 DEBUG AbstractPluginLoader:152 - created descendent_path: org.apache.solr.schema.TextField
+18:17:48,917 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.path.PathHierarchyTokenizerFactory
+18:17:48,922 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.KeywordTokenizerFactory
+18:17:48,923 DEBUG AbstractPluginLoader:152 - created ancestor_path: org.apache.solr.schema.TextField
+18:17:48,928 DEBUG AbstractPluginLoader:152 - created ignored: org.apache.solr.schema.StrField
+18:17:48,939 DEBUG AbstractPluginLoader:152 - created point: org.apache.solr.schema.PointType
+18:17:48,945 DEBUG AbstractPluginLoader:152 - created location: org.apache.solr.schema.LatLonType
+18:17:48,987 DEBUG AbstractPluginLoader:152 - created location_rpt: org.apache.solr.schema.SpatialRecursivePrefixTreeFieldType
+18:17:48,996 DEBUG AbstractPluginLoader:152 - created currency: org.apache.solr.schema.CurrencyField
+18:17:49,002 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.KeywordTokenizerFactory
+18:17:49,002 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,004 DEBUG AbstractPluginLoader:152 - created acl: org.apache.solr.schema.TextField
+18:17:49,010 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,010 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,010 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,011 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.ar.ArabicNormalizationFilterFactory
+18:17:49,011 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.ar.ArabicStemFilterFactory
+18:17:49,013 DEBUG AbstractPluginLoader:152 - created text_ar: org.apache.solr.schema.TextField
+18:17:49,019 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,019 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,019 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,020 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.bg.BulgarianStemFilterFactory
+18:17:49,021 DEBUG AbstractPluginLoader:152 - created text_bg: org.apache.solr.schema.TextField
+18:17:49,028 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,028 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.util.ElisionFilterFactory
+18:17:49,028 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,029 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,029 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,030 DEBUG AbstractPluginLoader:152 - created text_ca: org.apache.solr.schema.TextField
+18:17:49,037 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,038 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.cjk.CJKWidthFilterFactory
+18:17:49,038 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,039 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.cjk.CJKBigramFilterFactory
+18:17:49,040 DEBUG AbstractPluginLoader:152 - created text_cjk: org.apache.solr.schema.TextField
+18:17:49,047 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,047 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,047 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,048 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.cz.CzechStemFilterFactory
+18:17:49,049 DEBUG AbstractPluginLoader:152 - created text_cz: org.apache.solr.schema.TextField
+18:17:49,056 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,056 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,057 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,057 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,058 DEBUG AbstractPluginLoader:152 - created text_da: org.apache.solr.schema.TextField
+18:17:49,067 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,067 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,067 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,068 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.de.GermanNormalizationFilterFactory
+18:17:49,068 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.de.GermanLightStemFilterFactory
+18:17:49,070 DEBUG AbstractPluginLoader:152 - created text_de: org.apache.solr.schema.TextField
+18:17:49,078 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,079 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.el.GreekLowerCaseFilterFactory
+18:17:49,079 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,079 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.el.GreekStemFilterFactory
+18:17:49,081 DEBUG AbstractPluginLoader:152 - created text_el: org.apache.solr.schema.TextField
+18:17:49,089 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,089 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,090 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,090 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.es.SpanishLightStemFilterFactory
+18:17:49,092 DEBUG AbstractPluginLoader:152 - created text_es: org.apache.solr.schema.TextField
+18:17:49,100 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,100 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,101 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,101 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,102 DEBUG AbstractPluginLoader:152 - created text_eu: org.apache.solr.schema.TextField
+18:17:49,111 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.fa.PersianCharFilterFactory
+18:17:49,112 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,112 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,112 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.ar.ArabicNormalizationFilterFactory
+18:17:49,113 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.fa.PersianNormalizationFilterFactory
+18:17:49,113 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,114 DEBUG AbstractPluginLoader:152 - created text_fa: org.apache.solr.schema.TextField
+18:17:49,122 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,123 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,123 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,123 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,125 DEBUG AbstractPluginLoader:152 - created text_fi: org.apache.solr.schema.TextField
+18:17:49,143 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,143 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.util.ElisionFilterFactory
+18:17:49,143 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,143 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,144 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.fr.FrenchLightStemFilterFactory
+18:17:49,145 DEBUG AbstractPluginLoader:152 - created text_fr: org.apache.solr.schema.TextField
+18:17:49,152 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,152 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.util.ElisionFilterFactory
+18:17:49,153 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,153 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.ga.IrishLowerCaseFilterFactory
+18:17:49,153 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,154 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,155 DEBUG AbstractPluginLoader:152 - created text_ga: org.apache.solr.schema.TextField
+18:17:49,163 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,163 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,164 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,164 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.gl.GalicianStemFilterFactory
+18:17:49,165 DEBUG AbstractPluginLoader:152 - created text_gl: org.apache.solr.schema.TextField
+18:17:49,172 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,172 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,173 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.in.IndicNormalizationFilterFactory
+18:17:49,174 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.hi.HindiNormalizationFilterFactory
+18:17:49,174 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,174 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.hi.HindiStemFilterFactory
+18:17:49,175 DEBUG AbstractPluginLoader:152 - created text_hi: org.apache.solr.schema.TextField
+18:17:49,182 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,182 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,183 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,183 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,184 DEBUG AbstractPluginLoader:152 - created text_hu: org.apache.solr.schema.TextField
+18:17:49,191 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,191 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,191 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,191 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,193 DEBUG AbstractPluginLoader:152 - created text_hy: org.apache.solr.schema.TextField
+18:17:49,200 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,200 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,200 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,201 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.id.IndonesianStemFilterFactory
+18:17:49,202 DEBUG AbstractPluginLoader:152 - created text_id: org.apache.solr.schema.TextField
+18:17:49,209 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,209 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.util.ElisionFilterFactory
+18:17:49,209 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,209 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,210 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.it.ItalianLightStemFilterFactory
+18:17:49,211 DEBUG AbstractPluginLoader:152 - created text_it: org.apache.solr.schema.TextField
+18:17:49,227 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.ja.JapaneseTokenizerFactory
+18:17:49,227 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.ja.JapaneseBaseFormFilterFactory
+18:17:49,228 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.ja.JapanesePartOfSpeechStopFilterFactory
+18:17:49,228 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.cjk.CJKWidthFilterFactory
+18:17:49,228 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,229 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.ja.JapaneseKatakanaStemFilterFactory
+18:17:49,229 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,230 DEBUG AbstractPluginLoader:152 - created text_ja: org.apache.solr.schema.TextField
+18:17:49,237 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,238 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,238 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,239 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.lv.LatvianStemFilterFactory
+18:17:49,240 DEBUG AbstractPluginLoader:152 - created text_lv: org.apache.solr.schema.TextField
+18:17:49,247 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,247 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,247 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,248 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.miscellaneous.StemmerOverrideFilterFactory
+18:17:49,248 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,249 DEBUG AbstractPluginLoader:152 - created text_nl: org.apache.solr.schema.TextField
+18:17:49,256 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,257 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,257 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,257 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,258 DEBUG AbstractPluginLoader:152 - created text_no: org.apache.solr.schema.TextField
+18:17:49,265 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,265 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,266 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,266 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.pt.PortugueseLightStemFilterFactory
+18:17:49,268 DEBUG AbstractPluginLoader:152 - created text_pt: org.apache.solr.schema.TextField
+18:17:49,275 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,275 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,275 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,275 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,276 DEBUG AbstractPluginLoader:152 - created text_ro: org.apache.solr.schema.TextField
+18:17:49,284 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,284 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,284 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,284 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,285 DEBUG AbstractPluginLoader:152 - created text_ru: org.apache.solr.schema.TextField
+18:17:49,293 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,293 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,293 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,293 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,294 DEBUG AbstractPluginLoader:152 - created text_se: org.apache.solr.schema.TextField
+18:17:49,302 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,302 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.LowerCaseFilterFactory
+18:17:49,303 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.th.ThaiWordFilterFactory
+18:17:49,303 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,304 DEBUG AbstractPluginLoader:152 - created text_th: org.apache.solr.schema.TextField
+18:17:49,312 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.standard.StandardTokenizerFactory
+18:17:49,312 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.tr.TurkishLowerCaseFilterFactory
+18:17:49,312 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.core.StopFilterFactory
+18:17:49,313 DEBUG AbstractPluginLoader:152 - created : org.apache.lucene.analysis.snowball.SnowballPorterFilterFactory
+18:17:49,314 DEBUG AbstractPluginLoader:152 - created text_tr: org.apache.solr.schema.TextField
+18:17:49,332 DEBUG IndexSchema:766 - dynamic field defined: *_i{type=int,properties=indexed,stored,omitNorms,omitTermFreqAndPositions}
+18:17:49,332 DEBUG IndexSchema:766 - dynamic field defined: *_s{type=string,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,332 DEBUG IndexSchema:766 - dynamic field defined: *_l{type=long,properties=indexed,stored,omitNorms,omitTermFreqAndPositions}
+18:17:49,332 DEBUG IndexSchema:766 - dynamic field defined: *_t{type=text_en,properties=indexed,tokenized,stored}
+18:17:49,332 DEBUG IndexSchema:766 - dynamic field defined: *_b{type=boolean,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,332 DEBUG IndexSchema:766 - dynamic field defined: *_f{type=float,properties=indexed,stored,omitNorms,omitTermFreqAndPositions}
+18:17:49,332 DEBUG IndexSchema:766 - dynamic field defined: *_d{type=double,properties=indexed,stored,omitNorms,omitTermFreqAndPositions}
+18:17:49,333 DEBUG IndexSchema:766 - dynamic field defined: *_tiled{type=double,properties=indexed,omitNorms,omitTermFreqAndPositions}
+18:17:49,333 DEBUG IndexSchema:766 - dynamic field defined: *_dt{type=date,properties=indexed,stored,omitTermFreqAndPositions}
+18:17:49,333 DEBUG IndexSchema:766 - dynamic field defined: *_p{type=location,properties=indexed,stored,omitTermFreqAndPositions}
+18:17:49,333 DEBUG IndexSchema:766 - dynamic field defined: random_*{type=random,properties=indexed,stored,omitTermFreqAndPositions}
+18:17:49,333 DEBUG IndexSchema:766 - dynamic field defined: attr_*{type=string,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,multiValued,sortMissingLast}
+18:17:49,333 DEBUG IndexSchema:766 - dynamic field defined: *{type=text_en,properties=indexed,tokenized,stored,multiValued}
+18:17:49,333 DEBUG IndexSchema:666 - field defined: id{type=string,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,333 DEBUG IndexSchema:666 - field defined: data_source_type{type=string,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,334 DEBUG IndexSchema:666 - field defined: data_source_name{type=string,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,334 DEBUG IndexSchema:666 - field defined: data_source{type=string,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,334 DEBUG IndexSchema:666 - field defined: timestamp{type=date,default=NOW,properties=indexed,stored,omitTermFreqAndPositions}
+18:17:49,334 DEBUG IndexSchema:668 - timestamp contains default value: NOW
+18:17:49,334 DEBUG IndexSchema:666 - field defined: text_all{type=text_en,properties=indexed,tokenized,multiValued}
+18:17:49,334 DEBUG IndexSchema:666 - field defined: batch_id{type=string,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,334 DEBUG IndexSchema:666 - field defined: url{type=string,properties=stored,sortMissingLast}
+18:17:49,334 DEBUG IndexSchema:666 - field defined: title{type=text_en,properties=indexed,tokenized,stored,multiValued}
+18:17:49,334 DEBUG IndexSchema:666 - field defined: body{type=text_en,properties=indexed,tokenized,stored,multiValued}
+18:17:49,335 DEBUG IndexSchema:666 - field defined: author{type=text_en,properties=indexed,tokenized,stored,multiValued}
+18:17:49,335 DEBUG IndexSchema:666 - field defined: keywords{type=text_en,properties=indexed,tokenized,stored,multiValued}
+18:17:49,335 DEBUG IndexSchema:666 - field defined: description{type=text_en,properties=indexed,tokenized,stored}
+18:17:49,335 DEBUG IndexSchema:666 - field defined: dateCreated{type=date,properties=indexed,stored,omitTermFreqAndPositions}
+18:17:49,335 DEBUG IndexSchema:666 - field defined: lastModified{type=date,properties=indexed,stored,omitTermFreqAndPositions}
+18:17:49,335 DEBUG IndexSchema:666 - field defined: pageCount{type=int,properties=indexed,stored,omitNorms,omitTermFreqAndPositions}
+18:17:49,335 DEBUG IndexSchema:666 - field defined: mimeType{type=string,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,335 DEBUG IndexSchema:666 - field defined: author_display{type=string,properties=indexed,omitNorms,omitTermFreqAndPositions,multiValued,sortMissingLast}
+18:17:49,335 DEBUG IndexSchema:666 - field defined: keywords_display{type=comma-separated,properties=indexed,tokenized,multiValued}
+18:17:49,336 DEBUG IndexSchema:666 - field defined: crawl_uri{type=string,properties=indexed,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,336 DEBUG IndexSchema:666 - field defined: fileSize{type=int,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,multiValued}
+18:17:49,336 DEBUG IndexSchema:666 - field defined: characterSet{type=string,properties=stored,sortMissingLast}
+18:17:49,336 DEBUG IndexSchema:666 - field defined: fileName{type=text_en,properties=indexed,tokenized,stored,multiValued}
+18:17:49,336 DEBUG IndexSchema:666 - field defined: creator{type=text_en,properties=indexed,tokenized,stored,multiValued}
+18:17:49,336 DEBUG IndexSchema:666 - field defined: spell{type=textSpell,properties=indexed,tokenized,omitTermFreqAndPositions,multiValued}
+18:17:49,336 DEBUG IndexSchema:666 - field defined: autocomplete{type=textSpell,properties=indexed,tokenized,multiValued}
+18:17:49,336 DEBUG IndexSchema:666 - field defined: click{type=string,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,337 DEBUG IndexSchema:666 - field defined: click_terms{type=text_ws,properties=indexed,tokenized,stored,multiValued}
+18:17:49,337 DEBUG IndexSchema:666 - field defined: click_val{type=string,properties=indexed,stored,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,337 DEBUG IndexSchema:666 - field defined: acl{type=acl,properties=indexed,tokenized,stored,omitNorms,multiValued,sortMissingLast}
+18:17:49,337 DEBUG IndexSchema:666 - field defined: signatureField{type=string,properties=indexed,omitNorms,omitTermFreqAndPositions,sortMissingLast}
+18:17:49,337 DEBUG IndexSchema:666 - field defined: _version_{type=long,properties=indexed,stored,omitNorms,omitTermFreqAndPositions}
+18:17:49,341  INFO IndexSchema:510 - default search field in schema is text_all
+18:17:49,342 DEBUG IndexSchema:517 - using default query parser operator (OR)
+18:17:49,343  INFO IndexSchema:550 - unique key field: id
+18:17:49,345 DEBUG IndexSchema:790 - copyField source='author' dest='author_display' maxChars=0
+18:17:49,346 DEBUG IndexSchema:790 - copyField source='keywords' dest='keywords_display' maxChars=0
+18:17:49,346 DEBUG IndexSchema:790 - copyField source='id' dest='text_all' maxChars=0
+18:17:49,346 DEBUG IndexSchema:790 - copyField source='url' dest='text_all' maxChars=0
+18:17:49,346 DEBUG IndexSchema:790 - copyField source='title' dest='text_all' maxChars=0
+18:17:49,346 DEBUG IndexSchema:790 - copyField source='description' dest='text_all' maxChars=0
+18:17:49,346 DEBUG IndexSchema:790 - copyField source='keywords' dest='text_all' maxChars=0
+18:17:49,346 DEBUG IndexSchema:790 - copyField source='author' dest='text_all' maxChars=0
+18:17:49,347 DEBUG IndexSchema:790 - copyField source='body' dest='text_all' maxChars=0
+18:17:49,347 DEBUG IndexSchema:790 - copyField source='*_t' dest='text_all' maxChars=0
+18:17:49,347 DEBUG IndexSchema:790 - copyField source='title' dest='spell' maxChars=0
+18:17:49,347 DEBUG IndexSchema:790 - copyField source='body' dest='spell' maxChars=0
+18:17:49,347 DEBUG IndexSchema:790 - copyField source='description' dest='spell' maxChars=0
+18:17:49,348 DEBUG IndexSchema:790 - copyField source='author' dest='spell' maxChars=0
+18:17:49,348 DEBUG IndexSchema:790 - copyField source='title' dest='autocomplete' maxChars=0
+18:17:49,348 DEBUG IndexSchema:790 - copyField source='body' dest='autocomplete' maxChars=0
+18:17:49,348 DEBUG IndexSchema:790 - copyField source='description' dest='autocomplete' maxChars=0
+18:17:49,348 DEBUG IndexSchema:790 - copyField source='author' dest='autocomplete' maxChars=0
+18:17:49,348 DEBUG IndexSchema:756 - dynamic field creation for schema field: *____currency
+18:17:49,348 DEBUG IndexSchema:766 - dynamic field defined: *____currency{type=currency_type_string,properties=indexed,omitNorms}
+18:17:49,348 DEBUG IndexSchema:756 - dynamic field creation for schema field: *____amount_raw
+18:17:49,348 DEBUG IndexSchema:766 - dynamic field defined: *____amount_raw{type=amount_raw_type_tlong,properties=indexed,omitNorms}
+18:17:49,535  INFO FileExchangeRateProvider:787 - Reloading exchange rates from file currency.xml
+18:17:49,543  INFO FileExchangeRateProvider:787 - Reloading exchange rates from file currency.xml
+18:17:49,680  INFO SolrCore:437 - solr.NRTCachingDirectoryFactory
+18:17:49,689  INFO SolrCore:686 - [collection1] Opening new SolrCore at /home/whlee21/workspace/gaia/gaia-search/conf/solr/cores/collection1_0/, dataDir=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/
+18:17:49,690  INFO JmxMonitoredMap:85 - No JMX servers found, not exposing Solr information with JMX.
+18:17:49,719  INFO CachingDirectoryFactory:360 - return new directory for /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data
+18:17:49,719 DEBUG CachingDirectoryFactory:441 - Releasing directory: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data 0 false
+18:17:49,719  INFO SolrCore:282 - New index directory detected: old=null new=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index/
+18:17:49,724  INFO CachingDirectoryFactory:360 - return new directory for /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index
+18:17:49,731 DEBUG CachingDirectoryFactory:441 - Releasing directory: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index 0 false
+18:17:49,733  INFO SolrCore:1980 - created json: solr.JSONResponseWriter
+18:17:49,736  INFO SolrCore:1980 - created xslt: solr.XSLTResponseWriter
+18:17:49,736  INFO XSLTResponseWriter:63 - xsltCacheLifetimeSeconds=5
+18:17:49,808 DEBUG RoleBasedFilterComponent:41 - Using filters [-*:*] for non existing roles.
+18:17:49,808 DEBUG RoleBasedFilterComponent:58 - Adding filter '*:*' for roleDEFAULT
+18:17:49,841  INFO UpdateRequestProcessorChain:115 - creating updateRequestProcessorChain "gaia-update-chain" (default)
+18:17:49,861  INFO RequestHandlers:165 - created standard: solr.SearchHandler
+18:17:49,861  INFO RequestHandlers:165 - created /query: solr.SearchHandler
+18:17:49,862  INFO RequestHandlers:165 - created /get: solr.RealTimeGetHandler
+18:17:49,865  INFO RequestHandlers:165 - created /gaia: solr.StandardRequestHandler
+18:17:49,865  INFO RequestHandlers:165 - created /autocomplete: org.apache.solr.handler.component.SearchHandler
+18:17:49,866  INFO RequestHandlers:165 - created /rulesMgr: gaia.rules.RulesEngineManagerHandler
+18:17:49,869  INFO RequestHandlers:165 - created /update: solr.UpdateRequestHandler
+18:17:49,869  INFO RequestHandlers:165 - created /update/xml: solr.UpdateRequestHandler
+18:17:49,870  WARN SolrResourceLoader:486 - Solr loaded a deprecated plugin/analysis class [solr.JsonUpdateRequestHandler]. Please consult documentation how to replace it accordingly.
+18:17:49,870  INFO RequestHandlers:165 - created /update/json: solr.JsonUpdateRequestHandler
+18:17:49,871  WARN SolrResourceLoader:486 - Solr loaded a deprecated plugin/analysis class [solr.CSVRequestHandler]. Please consult documentation how to replace it accordingly.
+18:17:49,872  INFO RequestHandlers:165 - created /update/csv: solr.CSVRequestHandler
+18:17:49,872  INFO RequestHandlers:147 - adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
+18:17:49,872  INFO RequestHandlers:165 - created /update/extract: solr.extraction.ExtractingRequestHandler
+18:17:49,872  INFO RequestHandlers:147 - adding lazy requestHandler: gaia.handler.DocumentHighlighterRequestHandler
+18:17:49,872  INFO RequestHandlers:165 - created /dochl: gaia.handler.DocumentHighlighterRequestHandler
+18:17:49,873  INFO RequestHandlers:165 - created /click: gaia.handler.ClickAnalysisRequestHandler
+18:17:49,874  INFO RequestHandlers:165 - created /fmap: gaia.handler.FieldMappingRequestHandler
+18:17:49,874  INFO RequestHandlers:147 - adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+18:17:49,875  INFO RequestHandlers:165 - created /analysis/field: solr.FieldAnalysisRequestHandler
+18:17:49,875  INFO RequestHandlers:147 - adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+18:17:49,875  INFO RequestHandlers:165 - created /analysis/document: solr.DocumentAnalysisRequestHandler
+18:17:49,876  INFO RequestHandlers:165 - created /admin/: solr.admin.AdminHandlers
+18:17:49,878  INFO RequestHandlers:165 - created /admin/ping: solr.PingRequestHandler
+18:17:49,879  INFO RequestHandlers:165 - created /debug/dump: solr.DumpRequestHandler
+18:17:49,886  INFO RequestHandlers:165 - created /replication: solr.ReplicationHandler
+18:17:49,886  INFO RequestHandlers:147 - adding lazy requestHandler: solr.SearchHandler
+18:17:49,886  INFO RequestHandlers:165 - created /terms: solr.SearchHandler
+18:17:49,941  INFO XMLLoader:111 - xsltCacheLifetimeSeconds=60
+18:17:49,943  INFO XMLLoader:111 - xsltCacheLifetimeSeconds=60
+18:17:49,944  INFO XMLLoader:111 - xsltCacheLifetimeSeconds=60
+18:17:49,945  INFO XMLLoader:111 - xsltCacheLifetimeSeconds=60
+18:17:49,946 DEBUG Config:246 - solrconfig.xml missing optional admin/gettableFiles
+18:17:49,948 DEBUG Config:246 - solrconfig.xml missing optional //bool[@name='facet.sort']
+18:17:49,986 DEBUG UpdateLog:241 - UpdateHandler init: tlogDir=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/tlog, existing tlogs=[], next id=0
+18:17:49,990  INFO SolrCore:83 - Hard AutoCommit: if uncommited for 15000ms; 
+18:17:49,990  INFO SolrCore:83 - Soft AutoCommit: disabled
+18:17:49,990 DEBUG CachingDirectoryFactory:363 - Reusing cached directory: CachedDir<<refCount=1;path=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data;done=false>>
+18:17:49,991 DEBUG CachingDirectoryFactory:441 - Releasing directory: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data 0 false
+18:17:49,991 DEBUG CachingDirectoryFactory:363 - Reusing cached directory: CachedDir<<refCount=1;path=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data;done=false>>
+18:17:49,991 DEBUG CachingDirectoryFactory:441 - Releasing directory: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data 0 false
+18:17:49,991 DEBUG CachingDirectoryFactory:363 - Reusing cached directory: CachedDir<<refCount=1;path=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index;done=false>>
+18:17:50,068  INFO SolrCore:85 - SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@429a52dc; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1}
+18:17:50,068 DEBUG SolrCore:87 - SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.MMapDirectory@/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@429a52dc; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1,generation=1,filenames=[segments_1]}
+18:17:50,068  INFO SolrCore:165 - newest commit generation = 1
+18:17:50,069 DEBUG SolrIndexWriter:82 - Opened Writer DirectUpdateHandler2
+18:17:50,072 DEBUG CachingDirectoryFactory:363 - Reusing cached directory: CachedDir<<refCount=1;path=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data;done=false>>
+18:17:50,072 DEBUG CachingDirectoryFactory:441 - Releasing directory: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data 0 false
+18:17:50,072  INFO ClickIndexReaderFactory:116 - Click not enabled, /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index/
+18:17:50,076  INFO SolrIndexSearcher:197 - Opening Searcher@bafedcf main
+18:17:50,076 DEBUG CachingDirectoryFactory:408 - incRef'ed: CachedDir<<refCount=2;path=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index;done=false>>
+18:17:50,080  INFO SpellCheckComponent:614 - Initializing spell checkers
+18:17:50,082  INFO Suggester:86 - init: {name=autocomplete,classname=org.apache.solr.spelling.suggest.Suggester,lookupImpl=org.apache.solr.spelling.suggest.tst.TSTLookup,field=autocomplete,storeDir=autocomplete,buildOnCommit=false,threshold=0.005}
+18:17:50,086  WARN Suggester:118 - Loading stored lookup data failed
+java.io.FileNotFoundException: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/autocomplete/tst.dat (그런 파일이나 디렉터리가 없습니다)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+	at org.apache.solr.spelling.suggest.Suggester.init(Suggester.java:116)
+	at org.apache.solr.handler.component.SpellCheckComponent.inform(SpellCheckComponent.java:627)
+	at org.apache.solr.core.SolrResourceLoader.inform(SolrResourceLoader.java:631)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:829)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:625)
+	at org.apache.solr.core.CoreContainer.createFromLocal(CoreContainer.java:557)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:592)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:271)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:263)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+18:17:50,095  INFO RulesComponent:20 - Loading RulesComponent
+18:17:50,095  INFO RulesComponent:20 - Loading RulesComponent
+18:17:50,095  INFO SpellCheckComponent:614 - Initializing spell checkers
+18:17:50,098  INFO DirectSolrSpellChecker:102 - init: {classname=org.apache.solr.spelling.DirectSolrSpellChecker,name=default,field=spell,distanceMeasure=internal,accuracy=0.75,maxEdits=2,minPrefix=1,maxInspections=5,thresholdTokenFrequency=1.0,minQueryLength=4,maxQueryFrequency=0.01}
+18:17:50,129 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.QueryComponent@383fb859
+18:17:50,129 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.FacetComponent@5f5ff7e8
+18:17:50,129 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.MoreLikeThisComponent@158cd143
+18:17:50,129 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.HighlightComponent@4ffe90c2
+18:17:50,130 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.StatsComponent@51d1d995
+18:17:50,130 DEBUG SearchHandler:138 - Adding  debug component:org.apache.solr.handler.component.DebugComponent@2823ef2a
+18:17:50,130 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.QueryComponent@383fb859
+18:17:50,130 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.FacetComponent@5f5ff7e8
+18:17:50,130 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.MoreLikeThisComponent@158cd143
+18:17:50,130 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.HighlightComponent@4ffe90c2
+18:17:50,130 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.StatsComponent@51d1d995
+18:17:50,130 DEBUG SearchHandler:138 - Adding  debug component:org.apache.solr.handler.component.DebugComponent@2823ef2a
+18:17:50,130 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.RealTimeGetComponent@4f2ac2fc
+18:17:50,130 DEBUG SearchHandler:133 - Adding  component:gaia.handler.RoleBasedFilterComponent@6756ff
+18:17:50,130 DEBUG SearchHandler:133 - Adding  component:gaia.rules.LandingPageComponent@807f8e
+18:17:50,130 DEBUG SearchHandler:133 - Adding  component:gaia.rules.RulesComponent@743643e3
+18:17:50,130 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.QueryComponent@383fb859
+18:17:50,131 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.MoreLikeThisComponent@158cd143
+18:17:50,131 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.StatsComponent@51d1d995
+18:17:50,131 DEBUG SearchHandler:133 - Adding  component:gaia.feedback.FeedbackComponent@16a327b0
+18:17:50,131 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.HighlightComponent@4ffe90c2
+18:17:50,131 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.FacetComponent@5f5ff7e8
+18:17:50,131 DEBUG SearchHandler:133 - Adding  component:gaia.spellchecking.GaiaSpellCheckComponent@31829f6c
+18:17:50,131 DEBUG SearchHandler:133 - Adding  component:gaia.rules.RulesComponent@76b084d8
+18:17:50,131 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.DebugComponent@2823ef2a
+18:17:50,131 DEBUG SearchHandler:133 - Adding  component:org.apache.solr.handler.component.SpellCheckComponent@3ee1bdc8
+18:17:50,141  INFO RulesEngineManagerHandler:42 - Loading first rules engine as class: gaia.rules.drools.stateless.StatelessDroolsRulesEngine
+18:17:50,437  INFO BaseDroolsRulesEngine:74 - Loading rules from: rules/defaultFirst.drl
+18:17:50,598  INFO BaseDroolsRulesEngine:91 - No rules defined for Drools engine
+18:17:50,598  INFO BaseDroolsRulesEngine:62 - Instantiating FactCollector: gaia.rules.drools.FactCollector
+18:17:50,599  INFO RulesEngineManagerHandler:48 - Nor rules found for engine first. 
+18:17:50,599  INFO RulesEngineManagerHandler:42 - Loading landing rules engine as class: gaia.rules.drools.stateless.StatelessDroolsRulesEngine
+18:17:50,603  INFO BaseDroolsRulesEngine:74 - Loading rules from: rules/defaultLanding.drl
+18:17:50,605  INFO BaseDroolsRulesEngine:91 - No rules defined for Drools engine
+18:17:50,605  INFO BaseDroolsRulesEngine:62 - Instantiating FactCollector: gaia.rules.drools.FactCollector
+18:17:50,606  INFO RulesEngineManagerHandler:48 - Nor rules found for engine landing. 
+18:17:50,606  INFO RulesEngineManagerHandler:42 - Loading last rules engine as class: gaia.rules.drools.stateless.StatelessDroolsRulesEngine
+18:17:50,609  INFO BaseDroolsRulesEngine:74 - Loading rules from: rules/defaultLast.drl
+18:17:50,612  INFO BaseDroolsRulesEngine:91 - No rules defined for Drools engine
+18:17:50,612  INFO BaseDroolsRulesEngine:62 - Instantiating FactCollector: gaia.rules.drools.FactCollector
+18:17:50,612  INFO RulesEngineManagerHandler:48 - Nor rules found for engine last. 
+18:17:50,612  INFO RulesEngineManagerHandler:42 - Loading docs rules engine as class: gaia.rules.drools.stateless.StatelessDroolsRulesEngine
+18:17:50,616  INFO BaseDroolsRulesEngine:74 - Loading rules from: rules/defaultDocs.drl
+18:17:50,618  INFO BaseDroolsRulesEngine:91 - No rules defined for Drools engine
+18:17:50,618  INFO BaseDroolsRulesEngine:62 - Instantiating FactCollector: gaia.rules.drools.FactCollector
+18:17:50,618  INFO RulesEngineManagerHandler:48 - Nor rules found for engine docs. 
+18:17:50,619  INFO ClickAnalysisRequestHandler:121 - Query and clickthrough logs: /home/whlee21/workspace/gaia/gaia-search
+18:17:50,619  INFO ClickAnalysisRequestHandler:122 - Intermediate data dir: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/click-prepare
+18:17:50,619  INFO ClickAnalysisRequestHandler:123 - Boost data dir: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/click-data
+18:17:50,619  INFO ClickAnalysisRequestHandler:124 - Frequent phrase dict output: (none)
+18:17:50,620  INFO FieldMappingRequestHandler:54 - No saved field mappings
+18:17:50,626  INFO ReplicationHandler:888 - Replication enabled for following config files: admin-extra.html,admin-extra.menu-bottom.html,admin-extra.menu-top.html,elevate.xml,GaiaStemRules_en.txt,protwords.txt,schema.xml,solrconfig.xml,stopwords.txt,lang/stopwords_ar.txt,lang/stopwords_cjk.txt,lang/stopwords_cs.txt,lang/stopwords_da.txt,lang/stopwords_de.txt,lang/stopwords_el.txt,lang/stopwords_es.txt,lang/stopwords_fa.txt,lang/stopwords_fi.txt,lang/stopwords_fr.txt,lang/stopwords_hu.txt,lang/stopwords_it.txt,lang/stopwords_ja.txt,lang/stopwords_ko.txt,lang/stopwords_nl.txt,lang/stopwords_pl.txt,lang/stopwords_pt.txt,lang/stopwords_ru.txt,lang/stopwords_se.txt,lang/stopwords_tr.txt,lang/stopwords_ur.txt,lang/stopwords_zh.txt,synonyms.txt,lang/contractions_fr.txt,lang/contractions_it.txt,lang/stoptags_ja.txt,mapping-japanese.txt,lang/stemdict_nl.txt,rules/defaultFirst.drl,rules/defaultLast.drl,rules/defaultLanding.drl,rules/defaultDocs.drl,currency.xml
+18:17:50,626  INFO ReplicationHandler:965 - Commits will be reserved for  10000
+18:17:50,627  INFO SolrCore:1812 - [collection1] Registered new searcher Searcher@bafedcf main{StandardDirectoryReader(segments_1:1:nrt)}
+18:17:50,627  INFO CoreContainer:488 - registering core: collection1
+18:17:50,635 DEBUG YamlBean:52 - Loading YamlCollectionManager state from /home/whlee21/workspace/gaia/gaia-search/data/search/collections.yml
+18:17:50,689  INFO YamlBean:69 - Loaded YamlCollectionManager
+18:17:50,690  INFO DefaultSolrScheduler:55 - Initializing DefaultSolrScheduler
+18:17:50,737  INFO SchedulerSignalerImpl:60 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+18:17:50,738  INFO QuartzScheduler:220 - Quartz Scheduler v.1.7.3 created.
+18:17:50,741  INFO RAMJobStore:139 - RAMJobStore initialized.
+18:17:50,742  INFO DirectSchedulerFactory:422 - Quartz scheduler 'scheduler_1386926270702
+18:17:50,742  INFO DirectSchedulerFactory:424 - Quartz scheduler version: 1.7.3
+18:17:50,742  INFO QuartzScheduler:2075 - JobFactory set to: gaia.scheduler.SolrQuartzJobFactory@698ff0af
+18:17:50,743  INFO QuartzScheduler:472 - Scheduler scheduler_1386926270702_$_scheduler_1386926270702 started.
+18:17:50,743 DEBUG YamlBean:52 - Loading YamlDataSourceManager state from /home/whlee21/workspace/gaia/gaia-search/data/search/core-datasources.yml
+18:17:50,746  INFO YamlBean:69 - Loaded YamlDataSourceManager
+18:17:50,746  INFO YamlDataSourceManager:36 - Using core-datasources.yml to persist datasources.
+18:17:51,220  INFO RestConnectorManager:97 - Initiating data source loading and back-compat validation...
+18:17:51,228 DEBUG RestConnectorManager:200 - getBoolean: com.sun.jersey.api.client.WebResource$Builder@3352b82b
+18:17:51,305 ERROR YamlDataSourceManager:44 - REMOVING DATASOURCE 39c29f7b69e6494091d2ea48b0bcb596 (gaiasearchlogs) using unavailable crawler gaia.logs
+18:17:51,306  INFO YamlDataSourceManager:95 - Updated existing datasources to the current version: [39c29f7b69e6494091d2ea48b0bcb596]
+18:17:51,306 DEBUG YamlDataSourceManager:104 - syncSave called before initial load, ignoring ...
+18:17:51,306  INFO RestConnectorManager:103 - 0 data sources loaded and validated.
+18:17:51,307 DEBUG RestConnectorManager:172 - getList: com.sun.jersey.api.client.WebResource$Builder@28322c13
+18:17:51,308 ERROR RestConnectorManager:558 - listDataSources: com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: 연결이 거부됨
+18:17:51,335  INFO DefaultSolrScheduler:153 - Stopping: 80f2482fedcc4f5abedd4989ae523b46
+18:17:51,336  INFO DefaultSolrScheduler:153 - Stopping: 7af1c8a85cfc44f4af6d012a64a49ce4
+18:17:51,336  INFO DefaultSolrScheduler:153 - Stopping: b7dac38d55804358ae1ae49bc3af1585
+18:17:51,336  INFO GaiaSearchServer:155 - Getting the controller
+18:17:52,134 DEBUG log:162 - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+18:17:52,151 DEBUG Container:206 - Container org.eclipse.jetty.server.Server@42060c4b + o.e.j.s.ServletContextHandler{/,null} as handler
+18:17:52,170 DEBUG ServletHandler:1347 - filterNameMap={com.google.inject.servlet.GuiceFilter-23be8609=com.google.inject.servlet.GuiceFilter-23be8609}
+18:17:52,171 DEBUG ServletHandler:1348 - pathFilters=[[/*]/[]==0=>com.google.inject.servlet.GuiceFilter-23be8609]
+18:17:52,171 DEBUG ServletHandler:1349 - servletFilterMap={}
+18:17:52,171 DEBUG ServletHandler:1350 - servletPathMap=null
+18:17:52,171 DEBUG ServletHandler:1351 - servletNameMap={}
+18:17:52,175 DEBUG ServletHandler:1347 - filterNameMap={com.google.inject.servlet.GuiceFilter-23be8609=com.google.inject.servlet.GuiceFilter-23be8609}
+18:17:52,176 DEBUG ServletHandler:1348 - pathFilters=[[/*]/[]==0=>com.google.inject.servlet.GuiceFilter-23be8609]
+18:17:52,176 DEBUG ServletHandler:1349 - servletFilterMap={}
+18:17:52,176 DEBUG ServletHandler:1350 - servletPathMap={/=org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b}
+18:17:52,176 DEBUG ServletHandler:1351 - servletNameMap={org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b=org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b}
+18:17:52,178 DEBUG Container:206 - Container org.eclipse.jetty.server.Server@42060c4b + qtp800722304{8<=0<=0/25,-1} as threadpool
+18:17:52,229 DEBUG Container:206 - Container org.eclipse.jetty.server.Server@42060c4b + SelectChannelConnector@0.0.0.0:8088 as connector
+18:17:52,229 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.server.Server@42060c4b
+18:17:52,232  INFO Server:272 - jetty-8.1.14.v20131031
+18:17:52,248 DEBUG AbstractLifeCycle:179 - starting o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search/target/gaia-search-0.1-dist/gaia-search-0.1/web/}
+18:17:52,262 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@19e09966 + com.google.inject.servlet.GuiceFilter-23be8609 as filter
+18:17:52,262 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@19e09966 + [/*]/[]==0=>com.google.inject.servlet.GuiceFilter-23be8609 as filterMapping
+18:17:52,262 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@19e09966 + org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b as servlet
+18:17:52,262 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@19e09966 + [/]=>org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b as servletMapping
+18:17:52,263 DEBUG Container:206 - Container org.eclipse.jetty.security.ConstraintSecurityHandler@687704cf + org.eclipse.jetty.servlet.ServletHandler@19e09966 as handler
+18:17:52,263 DEBUG Container:206 - Container org.eclipse.jetty.server.session.SessionHandler@5ddce79d + org.eclipse.jetty.security.ConstraintSecurityHandler@687704cf as handler
+18:17:52,263 DEBUG Container:206 - Container org.eclipse.jetty.server.session.SessionHandler@5ddce79d + org.eclipse.jetty.server.session.HashSessionManager@51ea248f as sessionManager
+18:17:52,263 DEBUG Container:206 - Container o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search/target/gaia-search-0.1-dist/gaia-search-0.1/web/} + org.eclipse.jetty.server.session.SessionHandler@5ddce79d as handler
+18:17:52,263 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.server.session.SessionHandler@5ddce79d
+18:17:52,263 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.server.session.HashSessionManager@51ea248f
+18:17:52,264 DEBUG Container:206 - Container org.eclipse.jetty.server.Server@42060c4b + org.eclipse.jetty.server.session.HashSessionIdManager@2ecc89e3 as sessionIdManager
+18:17:52,264 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.server.session.HashSessionIdManager@2ecc89e3
+18:17:52,264 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.server.session.HashSessionIdManager@2ecc89e3
+18:17:52,265 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.server.session.HashSessionManager@51ea248f
+18:17:52,265 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.security.ConstraintSecurityHandler@687704cf
+18:17:52,266 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.servlet.ServletHandler@19e09966
+18:17:52,267 DEBUG ServletHandler:1347 - filterNameMap={com.google.inject.servlet.GuiceFilter-23be8609=com.google.inject.servlet.GuiceFilter-23be8609}
+18:17:52,267 DEBUG ServletHandler:1348 - pathFilters=[[/*]/[]==0=>com.google.inject.servlet.GuiceFilter-23be8609]
+18:17:52,267 DEBUG ServletHandler:1349 - servletFilterMap={}
+18:17:52,267 DEBUG ServletHandler:1350 - servletPathMap={/=org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b}
+18:17:52,267 DEBUG ServletHandler:1351 - servletNameMap={org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b=org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b}
+18:17:52,267 DEBUG AbstractHandler:57 - starting org.eclipse.jetty.servlet.ServletHandler@19e09966
+18:17:52,267 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.servlet.ServletHandler@19e09966
+18:17:52,267 DEBUG AbstractHandler:57 - starting org.eclipse.jetty.security.ConstraintSecurityHandler@687704cf
+18:17:52,267 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.security.ConstraintSecurityHandler@687704cf
+18:17:52,267 DEBUG AbstractHandler:57 - starting org.eclipse.jetty.server.session.SessionHandler@5ddce79d
+18:17:52,267 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.server.session.SessionHandler@5ddce79d
+18:17:52,268 DEBUG AbstractHandler:57 - starting o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search/target/gaia-search-0.1-dist/gaia-search-0.1/web/}
+18:17:52,268 DEBUG AbstractLifeCycle:179 - starting com.google.inject.servlet.GuiceFilter-23be8609
+18:17:52,283  WARN DefaultJmxManager:62 - No JMX servers found, not exposing GaiaSearch information with JMX.
+18:17:52,285  WARN VersionUtil:44 - Could not find file with version info: /home/whlee21/workspace/gaia/gaia-search/app/VERSION.txt
+18:17:52,285  INFO SolrDispatchFilter:123 - SolrDispatchFilter.init()
+18:17:52,285  INFO SolrDispatchFilter:130 - user.dir=/home/whlee21/workspace/gaia/gaia-search
+18:17:52,285  INFO SolrDispatchFilter:138 - SolrDispatchFilter.init() done
+18:17:52,296 DEBUG DefaultServlet:298 - resource base = file:/home/whlee21/workspace/gaia/gaia-search/
+12월 13, 2013 6:17:52 오후 com.sun.jersey.api.core.PackagesResourceConfig init
+정보: Scanning for root resource and provider classes in the packages:
+  gaia.search.server.api.services
+  gaia.search.server.api
+12월 13, 2013 6:17:52 오후 com.sun.jersey.api.core.ScanningResourceConfig logClasses
+정보: Root resource classes found:
+  class gaia.search.server.api.services.SslConfigService
+  class gaia.search.server.api.services.CrawlersService
+  class gaia.search.server.api.services.CollectionTemplateService
+  class gaia.search.server.api.services.CollectionService
+  class gaia.search.server.api.services.AlertService
+12월 13, 2013 6:17:52 오후 com.sun.jersey.api.core.ScanningResourceConfig init
+정보: No provider classes found.
+12월 13, 2013 6:17:52 오후 com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+정보: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+12월 13, 2013 6:17:53 오후 com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory getComponentProvider
+정보: Binding gaia.search.server.api.services.CollectionService to GuiceInstantiatedComponentProvider
+12월 13, 2013 6:17:53 오후 com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory getComponentProvider
+정보: Binding gaia.search.server.api.services.SslConfigService to GuiceInstantiatedComponentProvider
+12월 13, 2013 6:17:53 오후 com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory getComponentProvider
+정보: Binding gaia.search.server.api.services.CollectionTemplateService to GuiceInstantiatedComponentProvider
+12월 13, 2013 6:17:53 오후 com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory getComponentProvider
+정보: Binding gaia.search.server.api.services.CrawlersService to GuiceInstantiatedComponentProvider
+12월 13, 2013 6:17:53 오후 com.sun.jersey.guice.spi.container.GuiceComponentProviderFactory getComponentProvider
+정보: Binding gaia.search.server.api.services.AlertService to GuiceInstantiatedComponentProvider
+18:17:53,122 DEBUG AbstractLifeCycle:172 - STARTED com.google.inject.servlet.GuiceFilter-23be8609
+18:17:53,122 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b
+18:17:53,122 DEBUG Holder:109 - Holding class org.eclipse.jetty.servlet.DefaultServlet
+18:17:53,124 DEBUG DefaultServlet:298 - resource base = null
+18:17:53,124 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b
+18:17:53,124 DEBUG AbstractLifeCycle:172 - STARTED o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search/target/gaia-search-0.1-dist/gaia-search-0.1/web/}
+18:17:53,124 DEBUG AbstractHandler:57 - starting org.eclipse.jetty.server.Server@42060c4b
+18:17:53,124 DEBUG AbstractLifeCycle:179 - starting qtp800722304{8<=0<=0/25,-1}
+18:17:53,126 DEBUG AbstractLifeCycle:172 - STARTED qtp800722304{8<=7<=8/25,0}
+18:17:53,127 DEBUG AbstractLifeCycle:179 - starting SelectChannelConnector@0.0.0.0:8088
+18:17:53,151 DEBUG AbstractLifeCycle:179 - starting null/null
+18:17:53,153 DEBUG AbstractLifeCycle:172 - STARTED PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
+18:17:53,153 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@10f4fd78
+18:17:53,223 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@10f4fd78
+18:17:53,223 DEBUG nio:285 - Starting Thread[qtp800722304-29 Selector0,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@1dc21ecf
+18:17:53,223 DEBUG nio:285 - Starting Thread[qtp800722304-30 Selector1,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@3374b74c
+18:17:53,224  INFO AbstractConnector:338 - Started SelectChannelConnector@0.0.0.0:8088
+18:17:53,225 DEBUG AbstractLifeCycle:172 - STARTED SelectChannelConnector@0.0.0.0:8088
+18:17:53,225 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.server.Server@42060c4b
+18:18:01,306  WARN RestConnectorManager:904 - No connection to remote ConnectorManager! Switching to read-only cache (noop).
+12:38:00,330 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.server.Server@42060c4b
+12:38:00,471 DEBUG AbstractLifeCycle:187 - stopping SelectChannelConnector@0.0.0.0:8088
+12:38:00,471 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@10f4fd78
+12:38:00,472 DEBUG nio:304 - Stopped Thread[qtp800722304-29 Selector0,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@1dc21ecf
+12:38:00,483 DEBUG nio:304 - Stopped Thread[qtp800722304-30 Selector1,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@3374b74c
+12:38:00,494 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@10f4fd78
+12:38:00,495 DEBUG AbstractLifeCycle:187 - stopping PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
+12:38:00,495 DEBUG AbstractLifeCycle:196 - STOPPED null/null
+12:38:00,495 DEBUG AbstractLifeCycle:196 - STOPPED SelectChannelConnector@0.0.0.0:8088
+12:38:00,496 DEBUG AbstractLifeCycle:187 - stopping o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search/target/gaia-search-0.1-dist/gaia-search-0.1/web/}
+12:38:00,496 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.server.session.SessionHandler@5ddce79d
+12:38:00,496 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.server.session.HashSessionManager@51ea248f
+12:38:00,496 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.server.session.HashSessionManager@51ea248f
+12:38:00,497 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.security.ConstraintSecurityHandler@687704cf
+12:38:00,497 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.servlet.ServletHandler@19e09966
+12:38:00,497 DEBUG AbstractHandler:68 - stopping org.eclipse.jetty.servlet.ServletHandler@19e09966
+12:38:00,498 DEBUG AbstractLifeCycle:187 - stopping com.google.inject.servlet.GuiceFilter-23be8609
+12:38:00,498  INFO QuartzScheduler:507 - Scheduler scheduler_1386926270702_$_scheduler_1386926270702 paused.
+12:38:00,499  INFO QuartzScheduler:472 - Scheduler scheduler_1386926270702_$_scheduler_1386926270702 started.
+12:38:00,499  INFO QuartzScheduler:507 - Scheduler scheduler_1386926270702_$_scheduler_1386926270702 paused.
+12:38:00,500  INFO QuartzScheduler:472 - Scheduler scheduler_1386926270702_$_scheduler_1386926270702 started.
+12:38:00,500  INFO DefaultSolrScheduler:365 - Shutting down scheduler
+12:38:00,500  INFO QuartzScheduler:581 - Scheduler scheduler_1386926270702_$_scheduler_1386926270702 shutting down.
+12:38:00,500  INFO QuartzScheduler:507 - Scheduler scheduler_1386926270702_$_scheduler_1386926270702 paused.
+12:38:00,518  INFO QuartzScheduler:632 - Scheduler scheduler_1386926270702_$_scheduler_1386926270702 shutdown complete.
+12:38:00,518  INFO DefaultSolrScheduler:367 - Scheduler shutdown
+12:38:00,519 DEBUG SimpleThreadPool:592 - WorkerThread is shut down.
+12:38:00,519  INFO CoreContainer:356 - Shutting down CoreContainer instance=1737011065
+12:38:00,520  INFO SolrCore:983 - [collection1]  CLOSING SolrCore org.apache.solr.core.SolrCore@74ced4e1
+12:38:00,521  INFO UpdateHandler:687 - closing DirectUpdateHandler2{commits=0,autocommit maxTime=15000ms,autocommits=0,soft autocommits=0,optimizes=0,rollbacks=0,expungeDeletes=0,docsPending=0,adds=0,deletesById=0,deletesByQuery=0,errors=0,cumulative_adds=0,cumulative_deletesById=0,cumulative_deletesByQuery=0,cumulative_errors=0}
+12:38:00,521  INFO SolrCoreState:71 - Closing SolrCoreState
+12:38:00,521  INFO DefaultSolrCoreState:65 - SolrCoreState ref count has reached 0 - closing IndexWriter
+12:38:00,521  INFO DefaultSolrCoreState:67 - closing IndexWriter with IndexWriterCloser
+12:38:00,550 DEBUG SolrIndexWriter:126 - Closing Writer DirectUpdateHandler2
+12:38:00,554 DEBUG CachingDirectoryFactory:441 - Releasing directory: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index 1 false
+12:38:00,554  INFO SolrCore:1829 - [collection1] Closing main searcher on request.
+12:38:00,555 DEBUG SolrIndexSearcher:332 - Closing Searcher@bafedcf main
+	fieldValueCache{lookups=0,hits=0,hitratio=0.0,inserts=0,evictions=0,size=0,warmupTime=0,cumulative_lookups=0,cumulative_hits=0,cumulative_hitratio=0.0,cumulative_inserts=0,cumulative_evictions=0}
+	filterCache{lookups=0,hits=0,hitratio=0.0,inserts=0,evictions=0,size=0,warmupTime=0,cumulative_lookups=0,cumulative_hits=0,cumulative_hitratio=0.0,cumulative_inserts=0,cumulative_evictions=0}
+	queryResultCache{lookups=0,hits=0,hitratio=0.0,inserts=0,evictions=0,size=0,warmupTime=0,cumulative_lookups=0,cumulative_hits=0,cumulative_hitratio=0.0,cumulative_inserts=0,cumulative_evictions=0}
+	documentCache{lookups=0,hits=0,hitratio=0.0,inserts=0,evictions=0,size=0,warmupTime=0,cumulative_lookups=0,cumulative_hits=0,cumulative_hitratio=0.0,cumulative_inserts=0,cumulative_evictions=0}
+12:38:00,556 DEBUG CachingDirectoryFactory:441 - Releasing directory: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index 0 false
+12:38:00,556  INFO CachingDirectoryFactory:168 - Closing NRTCachingDirectoryFactory - 2 directories currently being tracked
+12:38:00,556 DEBUG CachingDirectoryFactory:172 - Closing NRTCachingDirectoryFactory - currently tracking: CachedDir<<refCount=0;path=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index;done=false>>
+12:38:00,556 DEBUG CachingDirectoryFactory:172 - Closing NRTCachingDirectoryFactory - currently tracking: CachedDir<<refCount=0;path=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data;done=false>>
+12:38:00,556 DEBUG CachingDirectoryFactory:200 - Closing directory when closing factory: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index
+12:38:00,556  INFO CachingDirectoryFactory:235 - looking to close /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index [CachedDir<<refCount=0;path=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index;done=false>>]
+12:38:00,556  INFO CachingDirectoryFactory:304 - Closing directory: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index
+12:38:00,556 DEBUG CachingDirectoryFactory:200 - Closing directory when closing factory: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data
+12:38:00,557  INFO CachingDirectoryFactory:235 - looking to close /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data [CachedDir<<refCount=0;path=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data;done=false>>]
+12:38:00,557  INFO CachingDirectoryFactory:304 - Closing directory: /home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data
+12:38:00,557 DEBUG CachingDirectoryFactory:227 - Removing from cache: CachedDir<<refCount=0;path=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data/index;done=false>>
+12:38:00,557 DEBUG CachingDirectoryFactory:227 - Removing from cache: CachedDir<<refCount=0;path=/home/whlee21/workspace/gaia/gaia-search/data/solr/cores/collection1_0/data;done=false>>
+12:38:00,557 DEBUG PoolingClientConnectionManager:287 - Connection manager is shutting down
+12:38:00,557 DEBUG PoolingClientConnectionManager:293 - Connection manager shut down
+12:38:00,558 DEBUG AbstractLifeCycle:196 - STOPPED com.google.inject.servlet.GuiceFilter-23be8609
+12:38:00,558 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b
+12:38:00,558 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.servlet.DefaultServlet-21a7fd8b
+12:38:00,558 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.servlet.ServletHandler@19e09966
+12:38:00,558 DEBUG AbstractHandler:68 - stopping org.eclipse.jetty.security.ConstraintSecurityHandler@687704cf
+12:38:00,558 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.security.ConstraintSecurityHandler@687704cf
+12:38:00,558 DEBUG AbstractHandler:68 - stopping org.eclipse.jetty.server.session.SessionHandler@5ddce79d
+12:38:00,558 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.server.session.SessionHandler@5ddce79d
+12:38:00,558 DEBUG AbstractHandler:68 - stopping o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search/target/gaia-search-0.1-dist/gaia-search-0.1/web/}
+12:38:00,558  INFO ContextHandler:843 - stopped o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search/target/gaia-search-0.1-dist/gaia-search-0.1/web/}
+12:38:00,559 DEBUG Container:224 - Container o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search/target/gaia-search-0.1-dist/gaia-search-0.1/web/} - org.eclipse.jetty.server.session.SessionHandler@5ddce79d as handler
+12:38:00,559 DEBUG AbstractLifeCycle:196 - STOPPED o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search/target/gaia-search-0.1-dist/gaia-search-0.1/web/}
+12:38:00,559 DEBUG AbstractHandler:68 - stopping org.eclipse.jetty.server.Server@42060c4b
+12:38:00,559 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.server.session.HashSessionIdManager@2ecc89e3
+12:38:00,559 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.server.session.HashSessionIdManager@2ecc89e3
+12:38:00,559 DEBUG AbstractLifeCycle:187 - stopping qtp800722304{8<=8<=8/25,0}
+12:38:00,645 DEBUG AbstractLifeCycle:196 - STOPPED qtp800722304{8<=0<=0/25,0}
+12:38:00,645  INFO GaiaSearchServer:107 - Joined the Server
+12:38:00,645 DEBUG ShutdownThread:83 - shutdown already commenced
+12:38:00,645 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.server.Server@42060c4b
+12:38:00,646 DEBUG ShutdownThread:133 - Stopped org.eclipse.jetty.server.Server@42060c4b
+12:38:00,646 DEBUG Container:224 - Container org.eclipse.jetty.server.Server@42060c4b - o.e.j.s.ServletContextHandler{/,file:/home/whlee21/workspace/gaia/gaia-search/target/gaia-search-0.1-dist/gaia-search-0.1/web/} as handler
+12:38:00,646 DEBUG ShutdownThread:139 - Destroyed org.eclipse.jetty.server.Server@42060c4b

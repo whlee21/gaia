@@ -1,0 +1,12 @@
+12-06 12:07:26 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "ROLES" not found; SQL statement:
+SELECT role_name FROM roles WHERE role_name <> role_name [42102-173]
+12-06 12:07:26 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "USERS" not found; SQL statement:
+SELECT user_id FROM users WHERE user_id <> user_id [42102-173]
+12-06 12:07:26 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "USER_ROLES" not found; SQL statement:
+SELECT user_id FROM user_roles WHERE user_id <> user_id [42102-173]
+12-06 12:07:26 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "GAIA_SEQUENCES" not found; SQL statement:
+SELECT sequence_name FROM gaia_sequences WHERE sequence_name <> sequence_name [42102-173]

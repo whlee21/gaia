@@ -1,0 +1,7 @@
+ALTER TABLE users DROP CONSTRAINT UNQ_users_0
+ALTER TABLE user_roles DROP CONSTRAINT FK_user_roles_user_id
+ALTER TABLE user_roles DROP CONSTRAINT FK_user_roles_role_name
+DROP TABLE roles
+DROP TABLE users
+DROP TABLE user_roles
+DELETE FROM gaia_sequences WHERE sequence_name = 'user_id_seq'

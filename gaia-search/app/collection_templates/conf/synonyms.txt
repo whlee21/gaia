@@ -1,0 +1,27 @@
+# blank lines and lines starting with pound are comments.
+
+#Explicit mappings match any token sequence on the LHS of "=>"
+#and replace with all alternatives on the RHS.  These types of mappings
+#ignore the expand parameter in the schema.
+#Examples:
+#i-pod, i pod => ipod,
+#sea biscuit, sea biscit => seabiscuit
+
+#Equivalent synonyms may be separated with commas and give
+#no explicit mapping. This allows
+#the same synonym file to be used in different synonym handling strategies.
+#Examples:
+lawyer, attorney
+one, 1
+two, 2
+three, 3
+ten, 10
+hundred, 100
+thousand, 1000
+tv, television
+
+#multiple synonym mapping entries are merged.
+#foo => foo bar
+#foo => baz
+#is equivalent to
+#foo => foo bar, baz

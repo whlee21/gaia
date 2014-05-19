@@ -1,0 +1,29 @@
+<workflow-app xmlns="uri:oozie:workflow:0.1" name="annotate">
+  <start to="annotate-with-uima"/>
+
+  <!-- Generate UIMA OpenNLP annotations -->
+  <action name="annotate-with-uima">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>uima.annotations.filter</name><value>opennlp.uima.Location,opennlp.uima.Organization,opennlp.uima.Person</value></property>
+        <property><name>mapred.child.java.opts</name><value>-Xms256m -Xmx4g</value></property>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.behemoth.UIMADriver</main-class>
+      <arg>--input</arg><arg>${documentsAsText}</arg>
+      <arg>--zkConnect</arg><arg>${zkConnect}</arg>
+      <arg>--pearPath</arg><arg>${concat(wf:appPath(),"/lib/OpenNlpTextAnalyzer.pear")}</arg>
+      <arg>--numberOfRegions</arg><arg>${numberOfRegions}</arg>
+    </java>
+    <ok to="end"/>
+    <error to="fail"/>
+  </action>
+    
+  <kill name="fail">
+      <message>Annotate Sub workflow failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+  </kill>
+
+  <end name="end"/>
+</workflow-app>

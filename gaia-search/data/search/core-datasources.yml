@@ -1,0 +1,20 @@
+datasources:
+- createDate: null
+  dsId:
+    id: 39c29f7b69e6494091d2ea48b0bcb596
+    user: ''
+  fieldMapping: null
+  lastModified: null
+  properties:
+    id: 39c29f7b69e6494091d2ea48b0bcb596
+    output_args: threads=2,buffer=1
+    category: Other
+    delete_after: 86400000
+    name: gaiasearchlogs
+    commit_within: 900000
+    output_type: solr
+    collection: GaiaSearchLogs
+    type: gaiasearchlogs
+    crawler: gaia.logs
+file: core-datasources.yml
+location: DATA

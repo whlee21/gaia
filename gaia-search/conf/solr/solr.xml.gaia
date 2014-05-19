@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<solr persistent='true' sharedLib="lib">
+  <cores adminPath="/admin/cores" host="${host:}" hostPort="${jetty.port:}" defaultCoreName="collection1">
+    <core name="collection1" instanceDir="cores/collection1_0" dataDir="${lucidworksDataHome}/solr/cores/collection1_0/data"/>
+    <core name="LucidWorksLogs" instanceDir="cores/LucidWorksLogs" dataDir="${lucidworksDataHome}/solr/cores/LucidWorksLogs/data"/>
+    <!--
+      SolrCloud related attributes on core:
+        collection - The name of the collection this core belongs to.
+          Defaults to the name of the core.
+        shard - which shard of the collection this core has.  Defaults
+          to a name derived from host:port_webapp_corename.
+    -->
+  </cores>
+</solr>

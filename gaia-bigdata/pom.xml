@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>gaia</groupId>
+		<artifactId>gaia</artifactId>
+		<version>0.1</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>gaia-bigdata</artifactId>
+	<packaging>pom</packaging>
+	<name>Gaia :: Big Data</name>
+	<modules>
+		<module>gbd-hbase-lib</module>
+		<module>gbd-hadoop-job</module>
+		<module>gbd-services-api</module>
+		<module>gbd-services-core</module>
+		<module>gbd-admin-service-impl</module>
+		<module>gbd-analytics-service-impl</module>
+		<module>gbd-classifier-service-impl</module>
+		<module>gbd-client-service-impl</module>
+		<module>gbd-connector-service-impl</module>
+		<module>gbd-data-mgmt-service-impl</module>
+		<module>gbd-document-service-impl</module>
+		<module>gbd-id-service-impl</module>
+		<module>gbd-user-service-impl</module>
+		<module>gbd-workflow-service-impl</module>
+		<module>gbd-server</module>
+	</modules>
+</project>

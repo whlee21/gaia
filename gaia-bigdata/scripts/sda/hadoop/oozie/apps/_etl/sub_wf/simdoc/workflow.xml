@@ -1,0 +1,88 @@
+<workflow-app xmlns="uri:oozie:workflow:0.1" name="simdoc">
+    <start to='run-matrix' />
+
+  <action name="run-matrix">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.util.RunClass</main-class>
+      <arg>org.apache.mahout.utils.vectors.RowIdJob</arg>
+      <arg>--input</arg><arg>${input}</arg>
+      <arg>--output</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/sim-matrix")}</arg>
+    </java>
+    <ok to="run-rowsim"/>
+    <error to="fail"/>
+  </action>
+
+  <action name="run-rowsim">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+        <!-- <property>
+        <name>mapred.child.java.opts</name>
+        <value>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=5758,suspend=y</value>
+        </property> -->                    
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.util.RunClass</main-class>
+      <arg>org.apache.mahout.math.hadoop.similarity.cooccurrence.RowSimilarityJob</arg>
+      <arg>--input</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/sim-matrix/matrix")}</arg>
+      <arg>--output</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/simdoc")}</arg>
+      <arg>--similarityClassname</arg><arg>org.apache.mahout.math.hadoop.similarity.cooccurrence.measures.CosineSimilarity</arg>
+      <arg>--threshold</arg><arg>${simdoc_threshold}</arg>
+      <arg>--tempDir</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/temp")}</arg>
+    </java>
+    <ok to="run-seqfile-to-mapfile"/>
+    <error to="fail"/>
+  </action>
+
+  <action name="run-seqfile-to-mapfile">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+        <!-- job history is still stored centrally,  this file can be created elsewhere, but for not just not creating it.  MapFileOutputFormat.getReaders() cannot distinguish between log and part files... -->
+        <property><name>hadoop.job.history.user.location</name><value>none</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.util.RunClass</main-class>
+      <arg>com.lucid.sda.hadoop.simdoc.SequenceFileToMapFileJob</arg>
+      <arg>--input</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/sim-matrix/docIndex")}</arg>
+      <arg>--output</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/sim-matrix-doclookup")}</arg>
+    </java>
+    <ok to="run-simdoc-to-hbase"/>
+    <error to="fail"/>
+  </action>
+
+  <action name="run-simdoc-to-hbase">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.util.RunClass</main-class>
+      <arg>com.lucid.sda.hadoop.simdoc.SimdocToHBaseJob</arg>
+      <arg>--input</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/simdoc")}</arg>
+      <arg>--docLookup</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/sim-matrix-doclookup")}</arg>
+      <arg>--output</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/simdoc-hbase")}</arg>
+      <arg>--collection</arg><arg>${collection}</arg>
+      <arg>--zk</arg><arg>${zkhost}</arg>
+      <arg>--numberOfRegions</arg><arg>${numberOfRegions}</arg>
+    </java>
+    <ok to="end"/>
+    <error to="fail"/>
+  </action>
+
+
+        
+    <kill name="fail">
+        <message>Simdoc Sub workflow failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end" />
+     
+</workflow-app>

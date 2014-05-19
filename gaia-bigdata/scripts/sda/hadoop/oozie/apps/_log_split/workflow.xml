@@ -1,0 +1,27 @@
+<workflow-app xmlns="uri:oozie:workflow:0.2" name="_log_split">
+	<start to="partition-logs"/>
+
+    <action name="partition-logs">
+    	<java>
+        	<job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+            	<property>
+                	<name>mapred.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <main-class>com.lucid.sda.hadoop.util.RunClass</main-class>
+            <arg>com.lucid.sda.hadoop.logs.ProcessClickLogs</arg>
+            <arg>--input</arg><arg>/data/logs/{query,click}/${date}/${hour}/*/*</arg>
+            <arg>--output</arg><arg>/data</arg> <!-- writes to /data/collections/${collection} -->
+            <arg>--delimiter</arg><arg>09</arg>
+        </java>
+        <ok to="end"/>
+        <error to="fail"/>
+    </action>
+    <kill name="fail">
+        <message>_log_split failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

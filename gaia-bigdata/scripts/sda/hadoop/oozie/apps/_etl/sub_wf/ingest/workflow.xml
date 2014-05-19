@@ -1,0 +1,37 @@
+<workflow-app xmlns="uri:oozie:workflow:0.1" name="ingest">
+  <start to="ingest-docs"/>
+
+  <action name="ingest-docs">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+        <property><name>fs.s3n.awsAccessKeyId</name><value>${awsAccessKeyId}</value></property>
+        <property><name>fs.s3n.awsSecretAccessKey</name><value>${awsSecretAccessKey}</value></property>
+        <property><name>idField</name><value>${idField}</value></property>
+        <property><name>csvFieldMapping</name><value>${csvFieldMapping}</value></property>
+        <property><name>csvStrategy</name><value>${csvStrategy}</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.ingest.IngestJob</main-class>
+      <arg>--input</arg><arg>${inputDir}</arg>
+      <arg>--mapperClass</arg><arg>${mapperClass}</arg>
+      <arg>--mimeType</arg><arg>${inputType}</arg>
+      <arg>--zkConnect</arg><arg>${zkConnect}</arg>
+      <arg>--collection</arg><arg>${collection}</arg>
+      <arg>--overwrite</arg><arg>${overwrite}</arg>
+      <arg>--tempDir</arg><arg>${nameNode}/${concat(wf:conf("workingDir"), wf:conf("parentWfId"))}</arg>
+      <arg>--numberOfRegions</arg><arg>${numberOfRegions}</arg>
+    </java>
+    <ok to="end"/>
+    <error to="fail"/>
+  </action>
+
+
+    
+  <kill name="fail">
+    <message>Document ingest sub workflow failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+  </kill>
+
+  <end name="end"/>
+</workflow-app>

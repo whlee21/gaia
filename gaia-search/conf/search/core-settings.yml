@@ -1,0 +1,6 @@
+file: core-settings.yml
+initCalled: true
+location: CONF
+readOnly: false
+values:
+  control.blockUpdates: false

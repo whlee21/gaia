@@ -1,0 +1,55 @@
+<workflow-app xmlns="uri:oozie:workflow:0.1" name="index_sips">
+    <start to='solr-cloud' />
+
+  <decision name="solr-cloud">
+    <switch>
+      <!-- If solr_url is set, use that, otherwise use solr_zkHost. If neither is set, we fail -->
+      <case to="index-sips-solr">${wf:conf("solr_url") != null}</case>
+      <case to="index-sips-solrcloud">${(wf:conf("solr_zkHost") != null) and (wf:conf("collection") != null)}</case>
+      <default to="fail"/>
+    </switch>
+  </decision>
+  
+  
+    <!-- Send the Sips to Solr -->
+  <action name="index-sips-solrcloud">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.sips.SipsToSolr</main-class>
+      <arg>--input</arg><arg>${input}</arg>
+      <arg>--output</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/sips-to-solr")}</arg>            
+      <arg>--solrZkHost</arg><arg>${solr_zkHost}</arg>
+      <arg>--solrZkCollection</arg><arg>${collection}</arg>
+      <arg>--solrFailedThresholdPercent</arg><arg>${solrFailedThresholdPercent}</arg>
+    </java>
+    <ok to="end"/>
+    <error to="fail"/>
+  </action>
+
+  <action name="index-sips-solr">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.sips.SipsToSolr</main-class>
+      <arg>--input</arg><arg>${input}</arg>
+      <arg>--output</arg><arg>${nameNode}/${concat(concat(wf:conf("workingDir"), wf:conf("parentWfId")), "/sips-to-solr")}</arg>
+      <arg>--solrUrl</arg><arg>${solr_url}</arg>
+      <arg>--solrFailedThresholdPercent</arg><arg>${solrFailedThresholdPercent}</arg>
+    </java>
+    <ok to="end"/>
+    <error to="fail"/>
+  </action>
+        
+    <kill name="fail">
+        <message>Index Sips Sub workflow failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end" />
+     
+</workflow-app>

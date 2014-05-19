@@ -1,0 +1,26 @@
+# This file contains Lucid's default rules, as specified in the default solrconfig.xml
+# The default configuration uses this rules file in three places:
+#   1. The Landing Page component, which can be used to short circuit results and just return a landing page
+#   2. The RulesComponent configured to run before all other SearchComponents (there is also
+#       one configured to run after all other components, except debug.
+#   3. The RulesDocTransformer, which can be used to alter the fields on a document before it
+#       is written out.
+#
+# Rule writers may rely on, when using the RulesComponent, the LandingPageComponent or the RulesDocTransformerFactory, the fact that
+# the name of the "handler" (specified in the configuration) will be available as part of the Request context (request.getContext().get("rulesHandler")) along
+# with the phase the component is in (prepare or process -- getContext().get("rulesPhase")) such that rules can be written that target a specific
+# handler and/or a specific phase.
+#
+#
+package rules;
+
+#Some common imports
+import org.apache.solr.handler.component.ResponseBuilder;
+import function gaia.rules.drools.DroolsHelper.*;
+import org.apache.solr.common.SolrDocument;
+import org.apache.lucene.search.Query;
+import org.apache.solr.common.params.SolrParams;
+import org.apache.solr.common.params.ModifiableSolrParams;
+
+import org.slf4j.Logger;
+global org.slf4j.Logger logger;

@@ -1,0 +1,35 @@
+<assembly>
+	<id>dist</id>
+	<formats>
+		<format>dir</format>
+		<format>tar.gz</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<files>
+		<file>
+			<source>${project.build.directory}/${artifact.artifactId}-${artifact.version}.jar</source>
+			<outputDirectory>gaia-connector/lib</outputDirectory>
+		</file>
+	</files>
+	<fileSets>
+		<fileSet>
+			<directory>${basedir}</directory>
+			<outputDirectory>gaia-connector</outputDirectory>
+			<includes>
+				<include>*.sh</include>
+				<include>*.log</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/conf</directory>
+			<outputDirectory>gaia-connector/conf</outputDirectory>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>gaia-connector/lib</outputDirectory>
+			<unpack>false</unpack>
+			<scope>compile</scope>
+		</dependencySet>
+	</dependencySets>
+</assembly>

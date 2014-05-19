@@ -1,0 +1,27 @@
+<workflow-app xmlns="uri:oozie:workflow:0.2" name="_s3_seqfile">
+    <start to="s3_seqfile"/>
+    <action name="s3_seqfile">
+    	<java>
+        	<job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+            	<property><name>mapred.queue.name</name><value>${queueName}</value></property>
+            </configuration>
+            <main-class>com.lucid.sda.hadoop.util.S3Downloader</main-class>
+            <arg>--accessKey</arg><arg>${awsAccessKeyId}</arg>
+            <arg>--secretKey</arg><arg>${awsSecretAccessKey}</arg>
+            <arg>--bucket</arg><arg>${bucket}</arg>
+            <arg>--bufferSize</arg><arg>${bufferSize}</arg>
+            <arg>--writer</arg><arg>${writer}</arg>
+            <arg>--output</arg><arg>${output}</arg>
+            <arg>--prefix</arg><arg>${prefix}</arg>
+        </java>
+    	<ok to="end"/>
+        <error to="fail"/>
+    </action>
+
+    <kill name="fail">
+        <message>S3 Downloader failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end"/>
+</workflow-app>

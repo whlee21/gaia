@@ -1,0 +1,27 @@
+<workflow-app xmlns="uri:oozie:workflow:0.1" name="sips">
+    <start to='run-sips' />
+
+  <action name="run-sips">
+    <java>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <configuration>
+        <property><name>mapred.queue.name</name><value>${queueName}</value></property>
+      </configuration>
+      <main-class>com.lucid.sda.hadoop.util.RunClass</main-class>
+      <arg>org.apache.mahout.vectorizer.collocations.llr.CollocDriver</arg>
+      <arg>--input</arg><arg>${input}</arg>
+      <arg>--output</arg><arg>${output}</arg>
+      <arg>--maxNGramSize</arg><arg>${sips_maxNGramSize}</arg>
+      <arg>--minLLR</arg><arg>${sips_minLLR}</arg>
+    </java>
+    <ok to="end"/>
+    <error to="fail"/>
+  </action>
+        
+    <kill name="fail">
+        <message>Sips Sub workflow failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <end name="end" />
+     
+</workflow-app>

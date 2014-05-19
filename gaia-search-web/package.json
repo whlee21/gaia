@@ -1,0 +1,32 @@
+{
+  "name":"RestMVCSample",
+  "description":"Front-end package for the Rest MVC Sample Project",
+  "version":"1.0.0",
+  "homepage":"",
+  "repository":{
+    "type":"git",
+    "url":""
+  },
+  "engines":{
+    "node":"~0.6.10 || 0.8 || 0.9 || 0.10"
+  },
+  "scripts":{
+    "start":"brunch watch --server"
+  },
+  "dependencies":{
+    "javascript-brunch":">= 1.0 < 1.5",
+    "css-brunch":">= 1.0 < 1.5",
+    "uglify-js-brunch":">= 1.0 < 1.5",
+    "clean-css-brunch":">= 1.0 < 1.5",
+    "ember-precompiler-brunch":">= 1.0 < 1.5",
+    "less-brunch":">= 1.0 < 1.5",
+	"cssstyle":"0.2.3"	
+  },
+  "devDependencies":{
+    "mocha":"1.9.0",
+    "chai":"*",
+    "sinon":"*",
+    "sinon-chai":"*",
+    "express":"2.5.8"
+  }
+}

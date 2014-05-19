@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>gaia</groupId>
+		<artifactId>gaia-project</artifactId>
+		<version>0.1</version>
+		<relativePath>../../gaia-project/pom.xml</relativePath>
+	</parent>
+
+	<artifactId>gbd-connector-service-impl</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Gaia :: BigData :: Connector Service</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<dependency>
+			<groupId>gaia</groupId>
+			<artifactId>gaia-commons</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>gaia</groupId>
+			<artifactId>gaia-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>gaia</groupId>
+			<artifactId>gbd-services-api</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<!-- unbinds rpm creation from maven lifecycle -->
+						<phase>none</phase>
+						<goals>
+							<goal>attached-rpm</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<copyright>2012, Apache Software Foundation</copyright>
+					<group>Development</group>
+					<description>Maven Recipe: RPM Package.</description>
+					<mappings />
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

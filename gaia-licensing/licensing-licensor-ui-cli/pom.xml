@@ -1,0 +1,184 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>gaia</groupId>
+		<artifactId>gaia-project</artifactId>
+		<version>0.1</version>
+		<relativePath>../../gaia-project/pom.xml</relativePath>
+	</parent>
+
+	<artifactId>licensing-licensor-ui-cli</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Gaia :: Licensing :: Licensor UI Cli</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-cli</groupId>
+			<artifactId>commons-cli</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>gaia</groupId>
+			<artifactId>licensing-licensor-base</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>gaia</groupId>
+			<artifactId>licensing-licensor-ui-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>gaia</groupId>
+			<artifactId>licensing-private</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+<!-- 			<plugin> -->
+<!-- 				<artifactId>maven-assembly-plugin</artifactId> -->
+<!-- 				<configuration> -->
+<!-- 					<descriptors> -->
+<!-- 						<descriptor>gaia-project/src/main/assemblies/empty.xml</descriptor> -->
+<!-- 					</descriptors> -->
+<!-- 				</configuration> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>make-assembly</id> -->
+<!-- 						<phase>package</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>single</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
+			<!-- <plugin> -->
+			<!-- <groupId>org.dstovall</groupId> -->
+			<!-- <artifactId>onejar-maven-plugin</artifactId> -->
+			<!-- <version>1.4.4</version> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <configuration> -->
+			<!-- <mainClass>net.nicholaswilliams.java.licensing.licensor.interfaces.cli.ConsoleLicenseGenerator</mainClass> -->
+			<!-- Optional -->
+			<!-- <onejarVersion>0.97</onejarVersion> -->
+			<!-- Optional, use only if you need to include native libraries -->
+			<!-- (dll's) -->
+			<!-- <binlibs> -->
+			<!-- <fileSet> -->
+			<!-- <directory>${project.build.directory}/lib</directory> -->
+			<!-- <includes> -->
+			<!-- <include>test.dll</include> -->
+			<!-- </includes> -->
+			<!-- </fileSet> -->
+			<!-- </binlibs> -->
+			<!-- Optional, default is false -->
+			<!-- <attachToBuild>true</attachToBuild> -->
+			<!-- Optional, default is "onejar" -->
+			<!-- <classifier>onejar</classifier> -->
+			<!-- </configuration> -->
+			<!-- <goals> -->
+			<!-- <goal>one-jar</goal> -->
+			<!-- </goals> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- </plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<!-- unbinds rpm creation from maven lifecycle -->
+						<phase>none</phase>
+						<goals>
+							<goal>attached-rpm</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<copyright>2012, Apache Software Foundation</copyright>
+					<group>Development</group>
+					<description>Maven Recipe: RPM Package.</description>
+					<mappings />
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.rat</groupId>
+				<artifactId>apache-rat-plugin</artifactId>
+				<version>0.9</version>
+				<configuration>
+					<excludes>
+						<exclude>**/*.json</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<redirectTestOutputToFile>true</redirectTestOutputToFile>
+							<forkMode>always</forkMode>
+							<forkedProcessTimeoutInSeconds>900</forkedProcessTimeoutInSeconds>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<redirectTestOutputToFile>true</redirectTestOutputToFile>
+					<forkMode>always</forkMode>
+					<forkedProcessTimeoutInSeconds>900</forkedProcessTimeoutInSeconds>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

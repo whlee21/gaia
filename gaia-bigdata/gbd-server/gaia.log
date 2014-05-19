@@ -1,0 +1,216 @@
+16:38:22,934  INFO Configuration:92 - Conf Dir : /home/whlee21/workspace/gaia/gaia-bigdata/conf
+16:38:22,936  INFO Configuration:97 - Data Dir : /home/whlee21/workspace/gaia/gaia-bigdata/data
+16:38:22,936  INFO Configuration:102 - Logs Dir : /home/whlee21/workspace/gaia/gaia-bigdata/
+16:38:23,314  INFO GaiaBigDataServer:94 - Getting the controller
+16:38:23,330 DEBUG log:162 - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog
+16:38:23,378  INFO ClassPathXmlApplicationContext:510 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2e7ff81e: startup date [Wed Nov 06 16:38:23 KST 2013]; root of context hierarchy
+16:38:23,428 DEBUG StandardEnvironment:112 - Initializing new StandardEnvironment
+16:38:23,431 DEBUG StandardEnvironment:107 - Adding [systemProperties] PropertySource with lowest search precedence
+16:38:23,433 DEBUG StandardEnvironment:107 - Adding [systemEnvironment] PropertySource with lowest search precedence
+16:38:23,433 DEBUG StandardEnvironment:116 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+16:38:23,481 DEBUG StandardEnvironment:112 - Initializing new StandardEnvironment
+16:38:23,481 DEBUG StandardEnvironment:107 - Adding [systemProperties] PropertySource with lowest search precedence
+16:38:23,481 DEBUG StandardEnvironment:107 - Adding [systemEnvironment] PropertySource with lowest search precedence
+16:38:23,481 DEBUG StandardEnvironment:116 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+16:38:23,489 DEBUG ClassPathXmlApplicationContext:540 - Bean factory for org.springframework.context.support.ClassPathXmlApplicationContext@2e7ff81e: org.springframework.beans.factory.support.DefaultListableBeanFactory@8883936: defining beans []; root of factory hierarchy
+16:38:23,504 DEBUG ClassPathXmlApplicationContext:807 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@10293404]
+16:38:23,508 DEBUG ClassPathXmlApplicationContext:831 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@b8d708f]
+16:38:23,508  INFO DefaultListableBeanFactory:598 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@8883936: defining beans []; root of factory hierarchy
+16:38:23,510 DEBUG ClassPathXmlApplicationContext:858 - Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@24eb3b83]
+16:38:23,510 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean 'lifecycleProcessor'
+16:38:23,511 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+16:38:23,511 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+16:38:23,512 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+16:38:23,523 DEBUG Container:206 - Container org.eclipse.jetty.server.Server@6c69a130 + o.e.j.s.ServletContextHandler{/,null} as handler
+16:38:23,528 DEBUG StandardServletEnvironment:112 - Initializing new StandardServletEnvironment
+16:38:23,528 DEBUG StandardServletEnvironment:107 - Adding [servletConfigInitParams] PropertySource with lowest search precedence
+16:38:23,528 DEBUG StandardServletEnvironment:107 - Adding [servletContextInitParams] PropertySource with lowest search precedence
+16:38:23,532 DEBUG StandardServletEnvironment:107 - Adding [jndiProperties] PropertySource with lowest search precedence
+16:38:23,532 DEBUG StandardServletEnvironment:107 - Adding [systemProperties] PropertySource with lowest search precedence
+16:38:23,532 DEBUG StandardServletEnvironment:107 - Adding [systemEnvironment] PropertySource with lowest search precedence
+16:38:23,532 DEBUG StandardServletEnvironment:116 - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+16:38:23,533 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.profiles.active' in [systemProperties]
+16:38:23,533 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.profiles.active' in [systemEnvironment]
+16:38:23,533 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'spring.profiles.active' in any property source. Returning [null]
+16:38:23,534 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.profiles.default' in [systemProperties]
+16:38:23,534 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.profiles.default' in [systemEnvironment]
+16:38:23,534 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'spring.profiles.default' in any property source. Returning [null]
+16:38:23,534 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.profiles.default' in [systemProperties]
+16:38:23,534 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.profiles.default' in [systemEnvironment]
+16:38:23,535 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'spring.profiles.default' in any property source. Returning [null]
+16:38:23,545 DEBUG ServletHandler:1345 - filterNameMap={com.google.inject.servlet.GuiceFilter-1905367448=com.google.inject.servlet.GuiceFilter-1905367448}
+16:38:23,546 DEBUG ServletHandler:1346 - pathFilters=[[/*]/[]==0=>com.google.inject.servlet.GuiceFilter-1905367448]
+16:38:23,546 DEBUG ServletHandler:1347 - servletFilterMap={}
+16:38:23,546 DEBUG ServletHandler:1348 - servletPathMap=null
+16:38:23,546 DEBUG ServletHandler:1349 - servletNameMap={}
+16:38:23,552 DEBUG ServletHandler:1345 - filterNameMap={com.google.inject.servlet.GuiceFilter-1905367448=com.google.inject.servlet.GuiceFilter-1905367448}
+16:38:23,552 DEBUG ServletHandler:1346 - pathFilters=[[/*]/[]==0=>com.google.inject.servlet.GuiceFilter-1905367448]
+16:38:23,552 DEBUG ServletHandler:1347 - servletFilterMap={}
+16:38:23,552 DEBUG ServletHandler:1348 - servletPathMap={/=org.eclipse.jetty.servlet.DefaultServlet-1}
+16:38:23,552 DEBUG ServletHandler:1349 - servletNameMap={org.eclipse.jetty.servlet.DefaultServlet-1=org.eclipse.jetty.servlet.DefaultServlet-1}
+16:38:23,555 DEBUG Container:206 - Container org.eclipse.jetty.server.Server@6c69a130 + qtp1209949189{8<=0<=0/25,-1} as threadpool
+16:38:23,563 DEBUG Container:206 - Container org.eclipse.jetty.server.Server@6c69a130 + SelectChannelConnector@0.0.0.0:8881 as connector
+16:38:23,563 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean 'lifecycleProcessor'
+16:38:23,563 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.server.Server@6c69a130
+16:38:23,565  INFO Server:272 - jetty-8.1.13.v20130916
+16:38:23,576 DEBUG AbstractLifeCycle:179 - starting o.e.j.s.ServletContextHandler{/,null}
+16:38:23,589 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@62214c6f + com.google.inject.servlet.GuiceFilter-1905367448 as filter
+16:38:23,589 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@62214c6f + [/*]/[]==0=>com.google.inject.servlet.GuiceFilter-1905367448 as filterMapping
+16:38:23,589 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@62214c6f + org.eclipse.jetty.servlet.DefaultServlet-1 as servlet
+16:38:23,589 DEBUG Container:206 - Container org.eclipse.jetty.servlet.ServletHandler@62214c6f + [/]=>org.eclipse.jetty.servlet.DefaultServlet-1 as servletMapping
+16:38:23,589 DEBUG Container:206 - Container o.e.j.s.ServletContextHandler{/,null} + org.eclipse.jetty.servlet.ServletHandler@62214c6f as handler
+16:38:23,589 DEBUG AbstractLifeCycle:179 - starting org.eclipse.jetty.servlet.ServletHandler@62214c6f
+16:38:23,589 DEBUG ServletHandler:1345 - filterNameMap={com.google.inject.servlet.GuiceFilter-1905367448=com.google.inject.servlet.GuiceFilter-1905367448}
+16:38:23,590 DEBUG ServletHandler:1346 - pathFilters=[[/*]/[]==0=>com.google.inject.servlet.GuiceFilter-1905367448]
+16:38:23,590 DEBUG ServletHandler:1347 - servletFilterMap={}
+16:38:23,590 DEBUG ServletHandler:1348 - servletPathMap={/=org.eclipse.jetty.servlet.DefaultServlet-1}
+16:38:23,590 DEBUG ServletHandler:1349 - servletNameMap={org.eclipse.jetty.servlet.DefaultServlet-1=org.eclipse.jetty.servlet.DefaultServlet-1}
+16:38:23,590 DEBUG AbstractHandler:57 - starting org.eclipse.jetty.servlet.ServletHandler@62214c6f
+16:38:23,590 DEBUG AbstractLifeCycle:172 - STARTED org.eclipse.jetty.servlet.ServletHandler@62214c6f
+16:38:23,590 DEBUG AbstractHandler:57 - starting o.e.j.s.ServletContextHandler{/,null}
+16:38:23,591 DEBUG AbstractLifeCycle:179 - starting com.google.inject.servlet.GuiceFilter-1905367448
+11월 06, 2013 4:38:23 오후 com.sun.jersey.api.core.PackagesResourceConfig init
+정보: Scanning for root resource and provider classes in the packages:
+  gaia.bigdata.api.services
+  gaia.bigdata.api
+11월 06, 2013 4:38:23 오후 com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+정보: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+11월 06, 2013 4:38:23 오후 com.sun.jersey.server.impl.application.RootResourceUriRules <init>
+심각: The ResourceConfig instance does not contain any root resource classes.
+16:38:23,979  WARN AbstractLifeCycle:204 - FAILED com.google.inject.servlet.GuiceFilter-1905367448: com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.
+com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.
+	at com.sun.jersey.server.impl.application.RootResourceUriRules.<init>(RootResourceUriRules.java:99)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl._initiate(WebApplicationImpl.java:1331)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.access$700(WebApplicationImpl.java:168)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl$13.f(WebApplicationImpl.java:774)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl$13.f(WebApplicationImpl.java:770)
+	at com.sun.jersey.spi.inject.Errors.processWithErrors(Errors.java:193)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.initiate(WebApplicationImpl.java:770)
+	at com.sun.jersey.guice.spi.container.servlet.GuiceContainer.initiate(GuiceContainer.java:121)
+	at com.sun.jersey.spi.container.servlet.ServletContainer$InternalWebComponent.initiate(ServletContainer.java:319)
+	at com.sun.jersey.spi.container.servlet.WebComponent.load(WebComponent.java:605)
+	at com.sun.jersey.spi.container.servlet.WebComponent.init(WebComponent.java:210)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.init(ServletContainer.java:374)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.init(ServletContainer.java:557)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at com.google.inject.servlet.ServletDefinition.init(ServletDefinition.java:117)
+	at com.google.inject.servlet.ManagedServletPipeline.init(ManagedServletPipeline.java:82)
+	at com.google.inject.servlet.ManagedFilterPipeline.initPipeline(ManagedFilterPipeline.java:102)
+	at com.google.inject.servlet.GuiceFilter.init(GuiceFilter.java:172)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:118)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:763)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:717)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:282)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at gaia.bigdata.server.GaiaBigDataServer.run(GaiaBigDataServer.java:70)
+	at gaia.bigdata.server.GaiaBigDataServer.main(GaiaBigDataServer.java:97)
+16:38:23,982  WARN AbstractLifeCycle:204 - FAILED o.e.j.s.ServletContextHandler{/,null}: com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.
+com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.
+	at com.sun.jersey.server.impl.application.RootResourceUriRules.<init>(RootResourceUriRules.java:99)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl._initiate(WebApplicationImpl.java:1331)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.access$700(WebApplicationImpl.java:168)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl$13.f(WebApplicationImpl.java:774)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl$13.f(WebApplicationImpl.java:770)
+	at com.sun.jersey.spi.inject.Errors.processWithErrors(Errors.java:193)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.initiate(WebApplicationImpl.java:770)
+	at com.sun.jersey.guice.spi.container.servlet.GuiceContainer.initiate(GuiceContainer.java:121)
+	at com.sun.jersey.spi.container.servlet.ServletContainer$InternalWebComponent.initiate(ServletContainer.java:319)
+	at com.sun.jersey.spi.container.servlet.WebComponent.load(WebComponent.java:605)
+	at com.sun.jersey.spi.container.servlet.WebComponent.init(WebComponent.java:210)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.init(ServletContainer.java:374)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.init(ServletContainer.java:557)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at com.google.inject.servlet.ServletDefinition.init(ServletDefinition.java:117)
+	at com.google.inject.servlet.ManagedServletPipeline.init(ManagedServletPipeline.java:82)
+	at com.google.inject.servlet.ManagedFilterPipeline.initPipeline(ManagedFilterPipeline.java:102)
+	at com.google.inject.servlet.GuiceFilter.init(GuiceFilter.java:172)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:118)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:763)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:717)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:282)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at gaia.bigdata.server.GaiaBigDataServer.run(GaiaBigDataServer.java:70)
+	at gaia.bigdata.server.GaiaBigDataServer.main(GaiaBigDataServer.java:97)
+16:38:23,982  WARN AbstractLifeCycle:204 - FAILED org.eclipse.jetty.server.Server@6c69a130: com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.
+com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.
+	at com.sun.jersey.server.impl.application.RootResourceUriRules.<init>(RootResourceUriRules.java:99)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl._initiate(WebApplicationImpl.java:1331)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.access$700(WebApplicationImpl.java:168)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl$13.f(WebApplicationImpl.java:774)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl$13.f(WebApplicationImpl.java:770)
+	at com.sun.jersey.spi.inject.Errors.processWithErrors(Errors.java:193)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.initiate(WebApplicationImpl.java:770)
+	at com.sun.jersey.guice.spi.container.servlet.GuiceContainer.initiate(GuiceContainer.java:121)
+	at com.sun.jersey.spi.container.servlet.ServletContainer$InternalWebComponent.initiate(ServletContainer.java:319)
+	at com.sun.jersey.spi.container.servlet.WebComponent.load(WebComponent.java:605)
+	at com.sun.jersey.spi.container.servlet.WebComponent.init(WebComponent.java:210)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.init(ServletContainer.java:374)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.init(ServletContainer.java:557)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at com.google.inject.servlet.ServletDefinition.init(ServletDefinition.java:117)
+	at com.google.inject.servlet.ManagedServletPipeline.init(ManagedServletPipeline.java:82)
+	at com.google.inject.servlet.ManagedFilterPipeline.initPipeline(ManagedFilterPipeline.java:102)
+	at com.google.inject.servlet.GuiceFilter.init(GuiceFilter.java:172)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:118)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:763)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:717)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:282)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at gaia.bigdata.server.GaiaBigDataServer.run(GaiaBigDataServer.java:70)
+	at gaia.bigdata.server.GaiaBigDataServer.main(GaiaBigDataServer.java:97)
+16:38:23,983 ERROR GaiaBigDataServer:100 - Failed to run the Gaia Connector Server
+com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.
+	at com.sun.jersey.server.impl.application.RootResourceUriRules.<init>(RootResourceUriRules.java:99)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl._initiate(WebApplicationImpl.java:1331)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.access$700(WebApplicationImpl.java:168)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl$13.f(WebApplicationImpl.java:774)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl$13.f(WebApplicationImpl.java:770)
+	at com.sun.jersey.spi.inject.Errors.processWithErrors(Errors.java:193)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.initiate(WebApplicationImpl.java:770)
+	at com.sun.jersey.guice.spi.container.servlet.GuiceContainer.initiate(GuiceContainer.java:121)
+	at com.sun.jersey.spi.container.servlet.ServletContainer$InternalWebComponent.initiate(ServletContainer.java:319)
+	at com.sun.jersey.spi.container.servlet.WebComponent.load(WebComponent.java:605)
+	at com.sun.jersey.spi.container.servlet.WebComponent.init(WebComponent.java:210)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.init(ServletContainer.java:374)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.init(ServletContainer.java:557)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at com.google.inject.servlet.ServletDefinition.init(ServletDefinition.java:117)
+	at com.google.inject.servlet.ManagedServletPipeline.init(ManagedServletPipeline.java:82)
+	at com.google.inject.servlet.ManagedFilterPipeline.initPipeline(ManagedFilterPipeline.java:102)
+	at com.google.inject.servlet.GuiceFilter.init(GuiceFilter.java:172)
+	at org.eclipse.jetty.servlet.FilterHolder.doStart(FilterHolder.java:118)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:763)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:717)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:282)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at gaia.bigdata.server.GaiaBigDataServer.run(GaiaBigDataServer.java:70)
+	at gaia.bigdata.server.GaiaBigDataServer.main(GaiaBigDataServer.java:97)
+16:38:23,984 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.server.Server@6c69a130
+16:38:23,984 DEBUG AbstractLifeCycle:187 - stopping o.e.j.s.ServletContextHandler{/,null}
+16:38:23,984 DEBUG AbstractLifeCycle:187 - stopping org.eclipse.jetty.servlet.ServletHandler@62214c6f
+16:38:23,984 DEBUG AbstractHandler:68 - stopping org.eclipse.jetty.servlet.ServletHandler@62214c6f
+16:38:23,985 DEBUG AbstractLifeCycle:187 - stopping com.google.inject.servlet.GuiceFilter-1905367448
+16:38:23,985 DEBUG AbstractLifeCycle:196 - STOPPED com.google.inject.servlet.GuiceFilter-1905367448
+16:38:23,985 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.servlet.ServletHandler@62214c6f
+16:38:23,985 DEBUG AbstractHandler:68 - stopping o.e.j.s.ServletContextHandler{/,null}
+16:38:23,985  INFO ContextHandler:843 - stopped o.e.j.s.ServletContextHandler{/,null}
+16:38:23,985 DEBUG Container:224 - Container o.e.j.s.ServletContextHandler{/,null} - org.eclipse.jetty.servlet.ServletHandler@62214c6f as handler
+16:38:23,985 DEBUG AbstractLifeCycle:196 - STOPPED o.e.j.s.ServletContextHandler{/,null}
+16:38:23,986 DEBUG AbstractHandler:68 - stopping org.eclipse.jetty.server.Server@6c69a130
+16:38:23,986 DEBUG AbstractLifeCycle:196 - STOPPED org.eclipse.jetty.server.Server@6c69a130

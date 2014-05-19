@@ -1,0 +1,14 @@
+#!/bin/sh
+
+JVM=`which java`
+SVWAIT="25"
+
+exec 2>&1
+exec chpst -u hadoop $($JVM -jar /data/lucid/lucidworks/lwe/app/bin/StartUtil.jar -jvm_cmd $JVM -only lwe-ui ${1+"$@"} --print start)
+
+#exec chpst -u hadoop $JVM -jar bin/StartUtil.jar -jvm_cmd $JVM -only lwe-core ${1+"$@"} --print start
+
+
+
+
+

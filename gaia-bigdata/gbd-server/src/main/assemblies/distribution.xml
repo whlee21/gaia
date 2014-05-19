@@ -1,0 +1,35 @@
+<assembly>
+	<id>dist</id>
+	<formats>
+		<format>dir</format>
+		<format>tar.gz</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<files>
+		<file>
+			<source>${project.build.directory}/${artifact.artifactId}-${artifact.version}.jar</source>
+			<outputDirectory>gbd-server/lib</outputDirectory>
+		</file>
+	</files>
+	<fileSets>
+		<fileSet>
+			<directory>${basedir}</directory>
+			<outputDirectory>gbd-server</outputDirectory>
+			<includes>
+				<include>*.sh</include>
+				<include>*.log</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/conf</directory>
+			<outputDirectory>gbd-server/conf</outputDirectory>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>gbd-server/lib</outputDirectory>
+			<unpack>false</unpack>
+			<scope>compile</scope>
+		</dependencySet>
+	</dependencySets>
+</assembly>

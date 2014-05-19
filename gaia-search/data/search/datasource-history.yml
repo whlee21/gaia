@@ -1,0 +1,55 @@
+39c29f7b69e6494091d2ea48b0bcb596:
+- {num_total: 0, num_robots_denied: 0, num_updated: 0, num_failed: 0, num_not_found: 0,
+  num_unchanged: 0, batch_job: false, num_new: 0, num_filter_denied: 0, crawl_state: FINISHED,
+  id: 39c29f7b69e6494091d2ea48b0bcb596, message: null, crawl_stopped: '2013-09-16T04:25:21+0000',
+  crawl_started: '2013-09-16T04:25:21+0000', num_deleted: 0, num_access_denied: 0,
+  job_id: 39c29f7b69e6494091d2ea48b0bcb596}
+- {num_total: 0, num_robots_denied: 0, num_updated: 0, num_failed: 0, num_not_found: 0,
+  num_unchanged: 0, batch_job: false, num_new: 0, num_filter_denied: 0, crawl_state: FINISHED,
+  id: 39c29f7b69e6494091d2ea48b0bcb596, message: null, crawl_stopped: '2013-09-16T04:26:21+0000',
+  crawl_started: '2013-09-16T04:26:21+0000', num_deleted: 0, num_access_denied: 0,
+  job_id: 39c29f7b69e6494091d2ea48b0bcb596}
+- {num_total: 0, num_robots_denied: 0, num_updated: 0, num_failed: 0, num_not_found: 0,
+  num_unchanged: 0, batch_job: false, num_new: 0, num_filter_denied: 0, crawl_state: FINISHED,
+  id: 39c29f7b69e6494091d2ea48b0bcb596, message: null, crawl_stopped: '2013-09-16T04:27:21+0000',
+  crawl_started: '2013-09-16T04:27:21+0000', num_deleted: 0, num_access_denied: 0,
+  job_id: 39c29f7b69e6494091d2ea48b0bcb596}
+- {num_total: 0, num_robots_denied: 0, num_updated: 0, num_failed: 0, num_not_found: 0,
+  num_unchanged: 0, batch_job: false, num_new: 0, num_filter_denied: 0, crawl_state: FINISHED,
+  id: 39c29f7b69e6494091d2ea48b0bcb596, message: null, crawl_stopped: '2013-09-16T04:28:21+0000',
+  crawl_started: '2013-09-16T04:28:21+0000', num_deleted: 0, num_access_denied: 0,
+  job_id: 39c29f7b69e6494091d2ea48b0bcb596}
+- {num_total: 0, num_robots_denied: 0, num_updated: 0, num_failed: 0, num_not_found: 0,
+  num_unchanged: 0, batch_job: false, num_new: 0, num_filter_denied: 0, crawl_state: FINISHED,
+  id: 39c29f7b69e6494091d2ea48b0bcb596, message: null, crawl_stopped: '2013-09-16T04:29:21+0000',
+  crawl_started: '2013-09-16T04:29:21+0000', num_deleted: 0, num_access_denied: 0,
+  job_id: 39c29f7b69e6494091d2ea48b0bcb596}
+- {num_total: 0, num_robots_denied: 0, num_updated: 0, num_failed: 0, num_not_found: 0,
+  num_unchanged: 0, batch_job: false, num_new: 0, num_filter_denied: 0, crawl_state: FINISHED,
+  id: 39c29f7b69e6494091d2ea48b0bcb596, message: null, crawl_stopped: '2013-09-16T04:30:21+0000',
+  crawl_started: '2013-09-16T04:30:21+0000', num_deleted: 0, num_access_denied: 0,
+  job_id: 39c29f7b69e6494091d2ea48b0bcb596}
+- {num_total: 0, num_robots_denied: 0, num_updated: 0, num_failed: 0, num_not_found: 0,
+  num_unchanged: 0, batch_job: false, num_new: 0, num_filter_denied: 0, crawl_state: FINISHED,
+  id: 39c29f7b69e6494091d2ea48b0bcb596, message: null, crawl_stopped: '2013-09-16T04:31:21+0000',
+  crawl_started: '2013-09-16T04:31:21+0000', num_deleted: 0, num_access_denied: 0,
+  job_id: 39c29f7b69e6494091d2ea48b0bcb596}
+- {num_total: 0, num_robots_denied: 0, num_updated: 0, num_failed: 0, num_not_found: 0,
+  num_unchanged: 0, batch_job: false, num_new: 0, num_filter_denied: 0, crawl_state: FINISHED,
+  id: 39c29f7b69e6494091d2ea48b0bcb596, message: null, crawl_stopped: '2013-09-16T04:32:21+0000',
+  crawl_started: '2013-09-16T04:32:21+0000', num_deleted: 0, num_access_denied: 0,
+  job_id: 39c29f7b69e6494091d2ea48b0bcb596}
+- {num_total: 0, num_robots_denied: 0, num_updated: 0, num_failed: 0, num_not_found: 0,
+  num_unchanged: 0, batch_job: false, num_new: 0, num_filter_denied: 0, crawl_state: FINISHED,
+  id: 39c29f7b69e6494091d2ea48b0bcb596, message: null, crawl_stopped: '2013-09-16T04:33:21+0000',
+  crawl_started: '2013-09-16T04:33:21+0000', num_deleted: 0, num_access_denied: 0,
+  job_id: 39c29f7b69e6494091d2ea48b0bcb596}
+- {num_total: 0, num_robots_denied: 0, num_updated: 0, num_failed: 0, num_not_found: 0,
+  num_unchanged: 0, batch_job: false, num_new: 0, num_filter_denied: 0, crawl_state: FINISHED,
+  id: 39c29f7b69e6494091d2ea48b0bcb596, message: null, crawl_stopped: '2013-09-16T04:34:21+0000',
+  crawl_started: '2013-09-16T04:34:21+0000', num_deleted: 0, num_access_denied: 0,
+  job_id: 39c29f7b69e6494091d2ea48b0bcb596}
+---
+39c29f7b69e6494091d2ea48b0bcb596: {num_total: 0, total_time: 0, num_robots_denied: 0,
+  num_not_found: 0, num_failed: 0, num_updated: 0, num_unchanged: 0, num_deleted: 0,
+  num_filter_denied: 0, num_new: 0, total_runs: 18, num_access_denied: 0}
