@@ -3,6 +3,7 @@ target
 .classpath
 .project
 .settings
+public
 
 # Package Files #
 *.jar
