@@ -27,7 +27,7 @@
 		<servletapi.version>2.5</servletapi.version>
 		<guice.version>3.0</guice.version>
 		<jetty.version>8.1.14.v20131031</jetty.version>
-		<spring.security.version>3.1.4.RELEASE</spring.security.version>
+		<spring.security.version>5.3.3.RELEASE</spring.security.version>
 		<jersey.version>1.17.1</jersey.version>
 		<jackson.version>1.9.13</jackson.version>
 		<behemoth.version>1.1-SNAPSHOT</behemoth.version>
