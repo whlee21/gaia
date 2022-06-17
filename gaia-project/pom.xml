@@ -31,7 +31,7 @@
 		<jersey.version>1.17.1</jersey.version>
 		<jackson.version>1.9.13</jackson.version>
 		<behemoth.version>1.1-SNAPSHOT</behemoth.version>
-		<drools.version>5.5.0.Final</drools.version>
+		<drools.version>7.60.0.Final</drools.version>
 		<protobuf.version>2.4.0a</protobuf.version>
 		<restlet.version>2.1.4</restlet.version>
 		<hadoop.version>2.2.0.2.0.6.0-76</hadoop.version>
