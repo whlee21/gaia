@@ -35,7 +35,7 @@
 		<protobuf.version>2.4.0a</protobuf.version>
 		<restlet.version>2.1.4</restlet.version>
 		<hadoop.version>2.2.0.2.0.6.0-76</hadoop.version>
-		<zookeeper.version>3.4.5.2.0.6.0-76</zookeeper.version>
+		<zookeeper.version>3.4.14</zookeeper.version>
 		<oozie.version>4.0.0.2.0.6.0-76</oozie.version>
 		<hbase.version>0.96.0.2.0.6.0-76-hadoop2</hbase.version>
 		<pig.version>0.12.0.2.0.6.0-76</pig.version>
